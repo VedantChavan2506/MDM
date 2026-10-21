@@ -1,0 +1,18733 @@
+window.TELEMETRY_DATA = {
+  "metadata": {
+    "project": "Group 7 - Three-Wheel Omnidirectional Robot",
+    "wheel_radius_m": 0.04,
+    "chassis_radius_m": 0.25,
+    "encoder_ppr": 360,
+    "fps": 30,
+    "total_frames": 480,
+    "duration_s": 16.0
+  },
+  "telemetry": [
+    {
+      "frame": 1,
+      "time_s": 0.033,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.0133,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -17,
+        17
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0219,
+        "accel_x_m_s2": 11.99,
+        "accel_y_m_s2": 0.0084
+      },
+      "ultrasonic": {
+        "front_m": 1.907,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 2,
+      "time_s": 0.067,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.0267,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -33,
+        33
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0011,
+        "accel_x_m_s2": -0.0127,
+        "accel_y_m_s2": 0.0284
+      },
+      "ultrasonic": {
+        "front_m": 1.901,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 3,
+      "time_s": 0.1,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.04,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -50,
+        50
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.003,
+        "accel_x_m_s2": -0.019,
+        "accel_y_m_s2": 0.0036
+      },
+      "ultrasonic": {
+        "front_m": 1.872,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 4,
+      "time_s": 0.133,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.0533,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -66,
+        66
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0037,
+        "accel_x_m_s2": 0.0054,
+        "accel_y_m_s2": 0.0108
+      },
+      "ultrasonic": {
+        "front_m": 1.863,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 5,
+      "time_s": 0.167,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.0667,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -83,
+        83
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.002,
+        "accel_x_m_s2": -0.0114,
+        "accel_y_m_s2": -0.0138
+      },
+      "ultrasonic": {
+        "front_m": 1.849,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 6,
+      "time_s": 0.2,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.08,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -99,
+        99
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0118,
+        "accel_x_m_s2": -0.0277,
+        "accel_y_m_s2": 0.0051
+      },
+      "ultrasonic": {
+        "front_m": 1.84,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 7,
+      "time_s": 0.233,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.0933,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -116,
+        116
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.02,
+        "accel_x_m_s2": -0.0027,
+        "accel_y_m_s2": 0.0018
+      },
+      "ultrasonic": {
+        "front_m": 1.83,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 8,
+      "time_s": 0.267,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.1067,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -132,
+        132
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0026,
+        "accel_x_m_s2": 0.0088,
+        "accel_y_m_s2": -0.0016
+      },
+      "ultrasonic": {
+        "front_m": 1.821,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 9,
+      "time_s": 0.3,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.12,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -149,
+        149
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0012,
+        "accel_x_m_s2": 0.0014,
+        "accel_y_m_s2": -0.0135
+      },
+      "ultrasonic": {
+        "front_m": 1.796,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 10,
+      "time_s": 0.333,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.1333,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -165,
+        165
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.013,
+        "accel_x_m_s2": 0.0021,
+        "accel_y_m_s2": -0.0118
+      },
+      "ultrasonic": {
+        "front_m": 1.784,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 11,
+      "time_s": 0.367,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.1467,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -182,
+        182
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0015,
+        "accel_x_m_s2": -0.0016,
+        "accel_y_m_s2": -0.001
+      },
+      "ultrasonic": {
+        "front_m": 1.771,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 12,
+      "time_s": 0.4,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.16,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -198,
+        198
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0013,
+        "accel_x_m_s2": 0.0007,
+        "accel_y_m_s2": -0.016
+      },
+      "ultrasonic": {
+        "front_m": 1.763,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 13,
+      "time_s": 0.433,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.1733,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -215,
+        215
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0077,
+        "accel_x_m_s2": -0.0173,
+        "accel_y_m_s2": 0.0334
+      },
+      "ultrasonic": {
+        "front_m": 1.75,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 14,
+      "time_s": 0.467,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.1867,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -232,
+        232
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0049,
+        "accel_x_m_s2": -0.0164,
+        "accel_y_m_s2": -0.0148
+      },
+      "ultrasonic": {
+        "front_m": 1.731,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 15,
+      "time_s": 0.5,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.2,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -248,
+        248
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0111,
+        "accel_x_m_s2": 0.0005,
+        "accel_y_m_s2": -0.0242
+      },
+      "ultrasonic": {
+        "front_m": 1.721,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 16,
+      "time_s": 0.533,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.2133,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -265,
+        265
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0003,
+        "accel_x_m_s2": 0.0252,
+        "accel_y_m_s2": 0.0088
+      },
+      "ultrasonic": {
+        "front_m": 1.704,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 17,
+      "time_s": 0.567,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.2267,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -281,
+        281
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0115,
+        "accel_x_m_s2": 0.0169,
+        "accel_y_m_s2": -0.0084
+      },
+      "ultrasonic": {
+        "front_m": 1.687,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 18,
+      "time_s": 0.6,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.24,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -298,
+        298
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.008,
+        "accel_x_m_s2": -0.0105,
+        "accel_y_m_s2": 0.0
+      },
+      "ultrasonic": {
+        "front_m": 1.675,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 19,
+      "time_s": 0.633,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.2533,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -314,
+        314
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0077,
+        "accel_x_m_s2": -0.0045,
+        "accel_y_m_s2": -0.0218
+      },
+      "ultrasonic": {
+        "front_m": 1.668,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 20,
+      "time_s": 0.667,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.2667,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -331,
+        331
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0051,
+        "accel_x_m_s2": 0.0288,
+        "accel_y_m_s2": 0.0156
+      },
+      "ultrasonic": {
+        "front_m": 1.653,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 21,
+      "time_s": 0.7,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.28,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -347,
+        347
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0008,
+        "accel_x_m_s2": 0.0246,
+        "accel_y_m_s2": 0.0107
+      },
+      "ultrasonic": {
+        "front_m": 1.634,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 22,
+      "time_s": 0.733,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.2933,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -364,
+        364
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0087,
+        "accel_x_m_s2": -0.004,
+        "accel_y_m_s2": 0.0161
+      },
+      "ultrasonic": {
+        "front_m": 1.622,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 23,
+      "time_s": 0.767,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.3067,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -380,
+        380
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0082,
+        "accel_x_m_s2": 0.0089,
+        "accel_y_m_s2": -0.0116
+      },
+      "ultrasonic": {
+        "front_m": 1.611,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 24,
+      "time_s": 0.8,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.32,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -397,
+        397
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0136,
+        "accel_x_m_s2": 0.004,
+        "accel_y_m_s2": 0.0107
+      },
+      "ultrasonic": {
+        "front_m": 1.594,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 25,
+      "time_s": 0.833,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.3333,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -413,
+        413
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0038,
+        "accel_x_m_s2": -0.0001,
+        "accel_y_m_s2": -0.0066
+      },
+      "ultrasonic": {
+        "front_m": 1.586,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 26,
+      "time_s": 0.867,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.3467,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -430,
+        430
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0003,
+        "accel_x_m_s2": -0.0263,
+        "accel_y_m_s2": 0.0043
+      },
+      "ultrasonic": {
+        "front_m": 1.569,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 27,
+      "time_s": 0.9,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.36,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -447,
+        447
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0009,
+        "accel_x_m_s2": 0.0117,
+        "accel_y_m_s2": -0.002
+      },
+      "ultrasonic": {
+        "front_m": 1.565,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 28,
+      "time_s": 0.933,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.3733,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -463,
+        463
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0057,
+        "accel_x_m_s2": -0.0207,
+        "accel_y_m_s2": -0.0116
+      },
+      "ultrasonic": {
+        "front_m": 1.545,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 29,
+      "time_s": 0.967,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.3867,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -480,
+        480
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0081,
+        "accel_x_m_s2": -0.0205,
+        "accel_y_m_s2": 0.0071
+      },
+      "ultrasonic": {
+        "front_m": 1.534,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 30,
+      "time_s": 1.0,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.4,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -496,
+        496
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0,
+        "accel_x_m_s2": 0.0314,
+        "accel_y_m_s2": -0.0013
+      },
+      "ultrasonic": {
+        "front_m": 1.519,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 31,
+      "time_s": 1.033,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.4133,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -513,
+        513
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0052,
+        "accel_x_m_s2": -0.0077,
+        "accel_y_m_s2": -0.0095
+      },
+      "ultrasonic": {
+        "front_m": 1.503,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 32,
+      "time_s": 1.067,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.4267,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -529,
+        529
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0067,
+        "accel_x_m_s2": 0.0054,
+        "accel_y_m_s2": -0.0069
+      },
+      "ultrasonic": {
+        "front_m": 1.491,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 33,
+      "time_s": 1.1,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.44,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -546,
+        546
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0094,
+        "accel_x_m_s2": -0.0172,
+        "accel_y_m_s2": 0.0126
+      },
+      "ultrasonic": {
+        "front_m": 1.475,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 34,
+      "time_s": 1.133,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.4533,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -562,
+        562
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0146,
+        "accel_x_m_s2": -0.0118,
+        "accel_y_m_s2": 0.0092
+      },
+      "ultrasonic": {
+        "front_m": 1.464,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 35,
+      "time_s": 1.167,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.4667,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -579,
+        579
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0064,
+        "accel_x_m_s2": 0.0009,
+        "accel_y_m_s2": -0.0287
+      },
+      "ultrasonic": {
+        "front_m": 1.451,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 36,
+      "time_s": 1.2,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.48,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -595,
+        595
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0036,
+        "accel_x_m_s2": -0.013,
+        "accel_y_m_s2": -0.0094
+      },
+      "ultrasonic": {
+        "front_m": 1.437,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 37,
+      "time_s": 1.233,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.4933,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -612,
+        612
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0079,
+        "accel_x_m_s2": -0.0025,
+        "accel_y_m_s2": 0.0117
+      },
+      "ultrasonic": {
+        "front_m": 1.431,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 38,
+      "time_s": 1.267,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.5067,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -629,
+        629
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0044,
+        "accel_x_m_s2": -0.0386,
+        "accel_y_m_s2": 0.0243
+      },
+      "ultrasonic": {
+        "front_m": 1.409,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 39,
+      "time_s": 1.3,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.52,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -645,
+        645
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0053,
+        "accel_x_m_s2": -0.0022,
+        "accel_y_m_s2": 0.0139
+      },
+      "ultrasonic": {
+        "front_m": 1.4,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 40,
+      "time_s": 1.333,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.5333,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -662,
+        662
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0039,
+        "accel_x_m_s2": -0.0061,
+        "accel_y_m_s2": 0.0183
+      },
+      "ultrasonic": {
+        "front_m": 1.382,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 41,
+      "time_s": 1.367,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.5467,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -678,
+        678
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0071,
+        "accel_x_m_s2": 0.0086,
+        "accel_y_m_s2": -0.0203
+      },
+      "ultrasonic": {
+        "front_m": 1.369,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 42,
+      "time_s": 1.4,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.56,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -695,
+        695
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0093,
+        "accel_x_m_s2": 0.0077,
+        "accel_y_m_s2": -0.0016
+      },
+      "ultrasonic": {
+        "front_m": 1.356,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 43,
+      "time_s": 1.433,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.5733,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -711,
+        711
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0054,
+        "accel_x_m_s2": -0.016,
+        "accel_y_m_s2": -0.0348
+      },
+      "ultrasonic": {
+        "front_m": 1.341,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 44,
+      "time_s": 1.467,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.5867,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -728,
+        728
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0105,
+        "accel_x_m_s2": 0.012,
+        "accel_y_m_s2": 0.0009
+      },
+      "ultrasonic": {
+        "front_m": 1.332,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 45,
+      "time_s": 1.5,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.6,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -744,
+        744
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.001,
+        "accel_x_m_s2": -0.0033,
+        "accel_y_m_s2": 0.0024
+      },
+      "ultrasonic": {
+        "front_m": 1.32,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 46,
+      "time_s": 1.533,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.6133,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -761,
+        761
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0,
+        "accel_x_m_s2": 0.0046,
+        "accel_y_m_s2": -0.0142
+      },
+      "ultrasonic": {
+        "front_m": 1.303,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 47,
+      "time_s": 1.567,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.6267,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -777,
+        777
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0041,
+        "accel_x_m_s2": -0.028,
+        "accel_y_m_s2": -0.0095
+      },
+      "ultrasonic": {
+        "front_m": 1.297,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 48,
+      "time_s": 1.6,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.64,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -794,
+        794
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0063,
+        "accel_x_m_s2": 0.0171,
+        "accel_y_m_s2": -0.018
+      },
+      "ultrasonic": {
+        "front_m": 1.284,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 49,
+      "time_s": 1.633,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.6533,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -810,
+        810
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0108,
+        "accel_x_m_s2": -0.0038,
+        "accel_y_m_s2": -0.0069
+      },
+      "ultrasonic": {
+        "front_m": 1.272,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 50,
+      "time_s": 1.667,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.6667,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -827,
+        827
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0009,
+        "accel_x_m_s2": 0.003,
+        "accel_y_m_s2": -0.017
+      },
+      "ultrasonic": {
+        "front_m": 1.254,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 51,
+      "time_s": 1.7,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.68,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -844,
+        844
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0079,
+        "accel_x_m_s2": 0.0119,
+        "accel_y_m_s2": 0.0011
+      },
+      "ultrasonic": {
+        "front_m": 1.24,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 52,
+      "time_s": 1.733,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.6933,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -860,
+        860
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0192,
+        "accel_x_m_s2": -0.0006,
+        "accel_y_m_s2": -0.0145
+      },
+      "ultrasonic": {
+        "front_m": 1.224,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 53,
+      "time_s": 1.767,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.7067,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -877,
+        877
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0167,
+        "accel_x_m_s2": 0.0077,
+        "accel_y_m_s2": -0.011
+      },
+      "ultrasonic": {
+        "front_m": 1.213,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 54,
+      "time_s": 1.8,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.72,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -893,
+        893
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0118,
+        "accel_x_m_s2": -0.0029,
+        "accel_y_m_s2": -0.009
+      },
+      "ultrasonic": {
+        "front_m": 1.21,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 55,
+      "time_s": 1.833,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.7333,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -910,
+        910
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0078,
+        "accel_x_m_s2": -0.0009,
+        "accel_y_m_s2": 0.0072
+      },
+      "ultrasonic": {
+        "front_m": 1.189,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 56,
+      "time_s": 1.867,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.7467,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -926,
+        926
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0182,
+        "accel_x_m_s2": -0.0132,
+        "accel_y_m_s2": -0.0223
+      },
+      "ultrasonic": {
+        "front_m": 1.174,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 57,
+      "time_s": 1.9,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.76,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -943,
+        943
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0036,
+        "accel_x_m_s2": 0.0225,
+        "accel_y_m_s2": -0.0242
+      },
+      "ultrasonic": {
+        "front_m": 1.154,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 58,
+      "time_s": 1.933,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.7733,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -959,
+        959
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0095,
+        "accel_x_m_s2": 0.0172,
+        "accel_y_m_s2": 0.0071
+      },
+      "ultrasonic": {
+        "front_m": 1.147,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 59,
+      "time_s": 1.967,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.7867,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -976,
+        976
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0103,
+        "accel_x_m_s2": 0.0008,
+        "accel_y_m_s2": 0.0177
+      },
+      "ultrasonic": {
+        "front_m": 1.129,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 60,
+      "time_s": 2.0,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.8,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -992,
+        992
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0019,
+        "accel_x_m_s2": -0.0174,
+        "accel_y_m_s2": 0.0169
+      },
+      "ultrasonic": {
+        "front_m": 1.118,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 61,
+      "time_s": 2.033,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.8133,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -1009,
+        1009
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0189,
+        "accel_x_m_s2": -0.0014,
+        "accel_y_m_s2": -0.0081
+      },
+      "ultrasonic": {
+        "front_m": 1.101,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 62,
+      "time_s": 2.067,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.8267,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -1025,
+        1025
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0007,
+        "accel_x_m_s2": -0.0135,
+        "accel_y_m_s2": -0.0042
+      },
+      "ultrasonic": {
+        "front_m": 1.097,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 63,
+      "time_s": 2.1,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.84,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -1042,
+        1042
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0072,
+        "accel_x_m_s2": -0.0301,
+        "accel_y_m_s2": 0.0219
+      },
+      "ultrasonic": {
+        "front_m": 1.08,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 64,
+      "time_s": 2.133,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.8533,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -1059,
+        1059
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0013,
+        "accel_x_m_s2": 0.0186,
+        "accel_y_m_s2": 0.0055
+      },
+      "ultrasonic": {
+        "front_m": 1.067,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 65,
+      "time_s": 2.167,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.8667,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -1075,
+        1075
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0082,
+        "accel_x_m_s2": 0.0249,
+        "accel_y_m_s2": -0.0318
+      },
+      "ultrasonic": {
+        "front_m": 1.045,
+        "left_m": 1.353,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 66,
+      "time_s": 2.2,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.88,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -1092,
+        1092
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0077,
+        "accel_x_m_s2": -0.0279,
+        "accel_y_m_s2": -0.0042
+      },
+      "ultrasonic": {
+        "front_m": 1.043,
+        "left_m": 1.362,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 67,
+      "time_s": 2.233,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.8933,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -1108,
+        1108
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0034,
+        "accel_x_m_s2": 0.0081,
+        "accel_y_m_s2": -0.0012
+      },
+      "ultrasonic": {
+        "front_m": 1.022,
+        "left_m": 1.354,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 68,
+      "time_s": 2.267,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.9067,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -1125,
+        1125
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0068,
+        "accel_x_m_s2": -0.0066,
+        "accel_y_m_s2": 0.0118
+      },
+      "ultrasonic": {
+        "front_m": 1.018,
+        "left_m": 1.362,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 69,
+      "time_s": 2.3,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.92,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -1141,
+        1141
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0021,
+        "accel_x_m_s2": 0.0043,
+        "accel_y_m_s2": 0.0129
+      },
+      "ultrasonic": {
+        "front_m": 0.995,
+        "left_m": 1.354,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 70,
+      "time_s": 2.333,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.9333,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -1158,
+        1158
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0034,
+        "accel_x_m_s2": 0.0013,
+        "accel_y_m_s2": -0.0233
+      },
+      "ultrasonic": {
+        "front_m": 0.982,
+        "left_m": 1.355,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 71,
+      "time_s": 2.367,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.9467,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -1174,
+        1174
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0026,
+        "accel_x_m_s2": -0.0155,
+        "accel_y_m_s2": 0.0048
+      },
+      "ultrasonic": {
+        "front_m": 0.978,
+        "left_m": 1.348,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 72,
+      "time_s": 2.4,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.96,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -1191,
+        1191
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0035,
+        "accel_x_m_s2": -0.0117,
+        "accel_y_m_s2": -0.0109
+      },
+      "ultrasonic": {
+        "front_m": 0.954,
+        "left_m": 1.356,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 73,
+      "time_s": 2.433,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.9733,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -1207,
+        1207
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0,
+        "accel_x_m_s2": -0.0329,
+        "accel_y_m_s2": 0.0042
+      },
+      "ultrasonic": {
+        "front_m": 0.946,
+        "left_m": 1.357,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 74,
+      "time_s": 2.467,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 0.9867,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -1224,
+        1224
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0022,
+        "accel_x_m_s2": 0.0115,
+        "accel_y_m_s2": 0.0127
+      },
+      "ultrasonic": {
+        "front_m": 0.929,
+        "left_m": 1.359,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 75,
+      "time_s": 2.5,
+      "phase": "Phase 1: Pure Forward Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.4,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3464,
+        0.3464
+      ],
+      "wheel_rpms": [
+        0.0,
+        -82.7,
+        82.7
+      ],
+      "encoder_ticks": [
+        0,
+        -1240,
+        1240
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0082,
+        "accel_x_m_s2": -0.0024,
+        "accel_y_m_s2": -0.0094
+      },
+      "ultrasonic": {
+        "front_m": 0.923,
+        "left_m": 1.354,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 76,
+      "time_s": 2.533,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.0133,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        19,
+        -1250,
+        1231
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0075,
+        "accel_x_m_s2": -12.005,
+        "accel_y_m_s2": 12.0177
+      },
+      "ultrasonic": {
+        "front_m": 0.904,
+        "left_m": 1.356,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 77,
+      "time_s": 2.567,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.0267,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        38,
+        -1260,
+        1221
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0019,
+        "accel_x_m_s2": -0.0294,
+        "accel_y_m_s2": -0.0018
+      },
+      "ultrasonic": {
+        "front_m": 0.91,
+        "left_m": 1.342,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 78,
+      "time_s": 2.6,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.04,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        57,
+        -1269,
+        1212
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0018,
+        "accel_x_m_s2": -0.0225,
+        "accel_y_m_s2": -0.0203
+      },
+      "ultrasonic": {
+        "front_m": 0.908,
+        "left_m": 1.325,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 79,
+      "time_s": 2.633,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.0533,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        76,
+        -1279,
+        1202
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0024,
+        "accel_x_m_s2": -0.023,
+        "accel_y_m_s2": -0.0226
+      },
+      "ultrasonic": {
+        "front_m": 0.912,
+        "left_m": 1.316,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 80,
+      "time_s": 2.667,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.0667,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        95,
+        -1288,
+        1193
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0026,
+        "accel_x_m_s2": 0.0138,
+        "accel_y_m_s2": 0.016
+      },
+      "ultrasonic": {
+        "front_m": 0.909,
+        "left_m": 1.299,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 81,
+      "time_s": 2.7,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.08,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        115,
+        -1298,
+        1183
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0007,
+        "accel_x_m_s2": 0.0099,
+        "accel_y_m_s2": 0.0003
+      },
+      "ultrasonic": {
+        "front_m": 0.907,
+        "left_m": 1.29,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 82,
+      "time_s": 2.733,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.0933,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        134,
+        -1307,
+        1174
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0067,
+        "accel_x_m_s2": 0.0064,
+        "accel_y_m_s2": -0.0173
+      },
+      "ultrasonic": {
+        "front_m": 0.915,
+        "left_m": 1.276,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 83,
+      "time_s": 2.767,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.1067,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        153,
+        -1317,
+        1164
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.006,
+        "accel_x_m_s2": 0.0074,
+        "accel_y_m_s2": -0.003
+      },
+      "ultrasonic": {
+        "front_m": 0.913,
+        "left_m": 1.263,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 84,
+      "time_s": 2.8,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.12,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        172,
+        -1326,
+        1155
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0007,
+        "accel_x_m_s2": -0.0242,
+        "accel_y_m_s2": -0.0236
+      },
+      "ultrasonic": {
+        "front_m": 0.923,
+        "left_m": 1.248,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 85,
+      "time_s": 2.833,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.1333,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        191,
+        -1336,
+        1145
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0013,
+        "accel_x_m_s2": -0.0134,
+        "accel_y_m_s2": -0.0088
+      },
+      "ultrasonic": {
+        "front_m": 0.925,
+        "left_m": 1.242,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 86,
+      "time_s": 2.867,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.1467,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        210,
+        -1346,
+        1135
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0069,
+        "accel_x_m_s2": 0.0031,
+        "accel_y_m_s2": -0.0059
+      },
+      "ultrasonic": {
+        "front_m": 0.933,
+        "left_m": 1.223,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 87,
+      "time_s": 2.9,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.16,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        229,
+        -1355,
+        1126
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.008,
+        "accel_x_m_s2": 0.0002,
+        "accel_y_m_s2": 0.0126
+      },
+      "ultrasonic": {
+        "front_m": 0.942,
+        "left_m": 1.213,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 88,
+      "time_s": 2.933,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.1733,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        248,
+        -1365,
+        1116
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0004,
+        "accel_x_m_s2": -0.0168,
+        "accel_y_m_s2": 0.0047
+      },
+      "ultrasonic": {
+        "front_m": 0.944,
+        "left_m": 1.195,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 89,
+      "time_s": 2.967,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.1867,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        267,
+        -1374,
+        1107
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0094,
+        "accel_x_m_s2": 0.0013,
+        "accel_y_m_s2": 0.0066
+      },
+      "ultrasonic": {
+        "front_m": 0.949,
+        "left_m": 1.178,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 90,
+      "time_s": 3.0,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.2,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        286,
+        -1384,
+        1097
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0055,
+        "accel_x_m_s2": 0.0027,
+        "accel_y_m_s2": 0.0117
+      },
+      "ultrasonic": {
+        "front_m": 0.961,
+        "left_m": 1.167,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 91,
+      "time_s": 3.033,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.2133,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        306,
+        -1393,
+        1088
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0013,
+        "accel_x_m_s2": 0.0126,
+        "accel_y_m_s2": -0.0014
+      },
+      "ultrasonic": {
+        "front_m": 0.97,
+        "left_m": 1.15,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 92,
+      "time_s": 3.067,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.2267,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        325,
+        -1403,
+        1078
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0017,
+        "accel_x_m_s2": -0.0053,
+        "accel_y_m_s2": 0.0061
+      },
+      "ultrasonic": {
+        "front_m": 0.977,
+        "left_m": 1.144,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 93,
+      "time_s": 3.1,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.24,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        344,
+        -1412,
+        1069
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0014,
+        "accel_x_m_s2": -0.0091,
+        "accel_y_m_s2": -0.0563
+      },
+      "ultrasonic": {
+        "front_m": 0.992,
+        "left_m": 1.125,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 94,
+      "time_s": 3.133,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.2533,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        363,
+        -1422,
+        1059
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0184,
+        "accel_x_m_s2": -0.003,
+        "accel_y_m_s2": -0.0033
+      },
+      "ultrasonic": {
+        "front_m": 1.002,
+        "left_m": 1.114,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 95,
+      "time_s": 3.167,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.2667,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        382,
+        -1431,
+        1050
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0122,
+        "accel_x_m_s2": -0.0119,
+        "accel_y_m_s2": 0.0174
+      },
+      "ultrasonic": {
+        "front_m": 1.011,
+        "left_m": 1.102,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 96,
+      "time_s": 3.2,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.28,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        401,
+        -1441,
+        1040
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0006,
+        "accel_x_m_s2": -0.0167,
+        "accel_y_m_s2": 0.0217
+      },
+      "ultrasonic": {
+        "front_m": 1.033,
+        "left_m": 1.09,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 97,
+      "time_s": 3.233,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.2933,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        420,
+        -1451,
+        1030
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0002,
+        "accel_x_m_s2": -0.029,
+        "accel_y_m_s2": -0.0049
+      },
+      "ultrasonic": {
+        "front_m": 1.043,
+        "left_m": 1.079,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 98,
+      "time_s": 3.267,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.3067,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        439,
+        -1460,
+        1021
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0017,
+        "accel_x_m_s2": -0.0185,
+        "accel_y_m_s2": 0.0052
+      },
+      "ultrasonic": {
+        "front_m": 1.06,
+        "left_m": 1.067,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 99,
+      "time_s": 3.3,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.32,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        458,
+        -1470,
+        1011
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0048,
+        "accel_x_m_s2": 0.0061,
+        "accel_y_m_s2": 0.0161
+      },
+      "ultrasonic": {
+        "front_m": 1.093,
+        "left_m": 1.046,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 100,
+      "time_s": 3.333,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.3333,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        477,
+        -1479,
+        1002
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0024,
+        "accel_x_m_s2": 0.0017,
+        "accel_y_m_s2": -0.0057
+      },
+      "ultrasonic": {
+        "front_m": 1.113,
+        "left_m": 1.032,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 101,
+      "time_s": 3.367,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.3467,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        497,
+        -1489,
+        992
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0152,
+        "accel_x_m_s2": 0.0102,
+        "accel_y_m_s2": -0.006
+      },
+      "ultrasonic": {
+        "front_m": 1.155,
+        "left_m": 1.016,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 102,
+      "time_s": 3.4,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.36,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        516,
+        -1498,
+        983
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0069,
+        "accel_x_m_s2": 0.0149,
+        "accel_y_m_s2": -0.0119
+      },
+      "ultrasonic": {
+        "front_m": 1.231,
+        "left_m": 1.015,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 103,
+      "time_s": 3.433,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.3733,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        535,
+        -1508,
+        973
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0145,
+        "accel_x_m_s2": -0.005,
+        "accel_y_m_s2": 0.001
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.991,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 104,
+      "time_s": 3.467,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.3867,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        554,
+        -1517,
+        964
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0082,
+        "accel_x_m_s2": -0.0191,
+        "accel_y_m_s2": -0.0062
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.982,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 105,
+      "time_s": 3.5,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.4,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        573,
+        -1527,
+        954
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0036,
+        "accel_x_m_s2": 0.0063,
+        "accel_y_m_s2": 0.0124
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.969,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 106,
+      "time_s": 3.533,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.4133,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        592,
+        -1537,
+        944
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0018,
+        "accel_x_m_s2": 0.0174,
+        "accel_y_m_s2": -0.0083
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.96,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 107,
+      "time_s": 3.567,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.4267,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        611,
+        -1546,
+        935
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0045,
+        "accel_x_m_s2": 0.0154,
+        "accel_y_m_s2": 0.0204
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.941,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 108,
+      "time_s": 3.6,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.44,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        630,
+        -1556,
+        925
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0009,
+        "accel_x_m_s2": 0.0156,
+        "accel_y_m_s2": -0.0047
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.93,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 109,
+      "time_s": 3.633,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.4533,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        649,
+        -1565,
+        916
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0049,
+        "accel_x_m_s2": -0.0122,
+        "accel_y_m_s2": -0.0059
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.912,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 110,
+      "time_s": 3.667,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.4667,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        668,
+        -1575,
+        906
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0214,
+        "accel_x_m_s2": 0.0044,
+        "accel_y_m_s2": 0.0062
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.898,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 111,
+      "time_s": 3.7,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.48,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        688,
+        -1584,
+        897
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0152,
+        "accel_x_m_s2": -0.0094,
+        "accel_y_m_s2": 0.016
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.888,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 112,
+      "time_s": 3.733,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.4933,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        707,
+        -1594,
+        887
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0058,
+        "accel_x_m_s2": 0.0044,
+        "accel_y_m_s2": -0.0075
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.871,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 113,
+      "time_s": 3.767,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.5067,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        726,
+        -1603,
+        878
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.007,
+        "accel_x_m_s2": -0.0005,
+        "accel_y_m_s2": 0.0189
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.863,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 114,
+      "time_s": 3.8,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.52,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        745,
+        -1613,
+        868
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0023,
+        "accel_x_m_s2": -0.0189,
+        "accel_y_m_s2": 0.001
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.852,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 115,
+      "time_s": 3.833,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.5333,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        764,
+        -1622,
+        859
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0104,
+        "accel_x_m_s2": 0.0169,
+        "accel_y_m_s2": -0.0045
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.829,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 116,
+      "time_s": 3.867,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.5467,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        783,
+        -1632,
+        849
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0046,
+        "accel_x_m_s2": 0.0269,
+        "accel_y_m_s2": -0.0294
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.816,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 117,
+      "time_s": 3.9,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.56,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        802,
+        -1642,
+        839
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0045,
+        "accel_x_m_s2": -0.031,
+        "accel_y_m_s2": 0.0101
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.814,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 118,
+      "time_s": 3.933,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.5733,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        821,
+        -1651,
+        830
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0007,
+        "accel_x_m_s2": 0.0063,
+        "accel_y_m_s2": -0.0127
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.799,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 119,
+      "time_s": 3.967,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.5867,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        840,
+        -1661,
+        820
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0085,
+        "accel_x_m_s2": 0.0218,
+        "accel_y_m_s2": -0.0054
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.784,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 120,
+      "time_s": 4.0,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.6,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        859,
+        -1670,
+        811
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0054,
+        "accel_x_m_s2": -0.0073,
+        "accel_y_m_s2": -0.022
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.766,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 121,
+      "time_s": 4.033,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.6133,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        879,
+        -1680,
+        801
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0112,
+        "accel_x_m_s2": -0.0441,
+        "accel_y_m_s2": -0.0331
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.756,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 122,
+      "time_s": 4.067,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.6267,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        898,
+        -1689,
+        792
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0106,
+        "accel_x_m_s2": 0.0037,
+        "accel_y_m_s2": 0.0109
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.74,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 123,
+      "time_s": 4.1,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.64,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        917,
+        -1699,
+        782
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.012,
+        "accel_x_m_s2": -0.0034,
+        "accel_y_m_s2": -0.031
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.733,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 124,
+      "time_s": 4.133,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.6533,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        936,
+        -1708,
+        773
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0035,
+        "accel_x_m_s2": -0.031,
+        "accel_y_m_s2": -0.0047
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.719,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 125,
+      "time_s": 4.167,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.6667,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        955,
+        -1718,
+        763
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.01,
+        "accel_x_m_s2": 0.0002,
+        "accel_y_m_s2": -0.0166
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.703,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 126,
+      "time_s": 4.2,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.68,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        974,
+        -1728,
+        753
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0003,
+        "accel_x_m_s2": -0.0238,
+        "accel_y_m_s2": 0.0393
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.687,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 127,
+      "time_s": 4.233,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.6933,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        993,
+        -1737,
+        744
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0033,
+        "accel_x_m_s2": -0.0051,
+        "accel_y_m_s2": 0.0062
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.682,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 128,
+      "time_s": 4.267,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.7067,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        1012,
+        -1747,
+        734
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0002,
+        "accel_x_m_s2": 0.0221,
+        "accel_y_m_s2": 0.0073
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.656,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 129,
+      "time_s": 4.3,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.72,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        1031,
+        -1756,
+        725
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0054,
+        "accel_x_m_s2": -0.0296,
+        "accel_y_m_s2": 0.025
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.648,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 130,
+      "time_s": 4.333,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.7333,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        1050,
+        -1766,
+        715
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0006,
+        "accel_x_m_s2": 0.0221,
+        "accel_y_m_s2": 0.0029
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.639,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 131,
+      "time_s": 4.367,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.7467,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        1070,
+        -1775,
+        706
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0022,
+        "accel_x_m_s2": 0.0005,
+        "accel_y_m_s2": 0.002
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.619,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 132,
+      "time_s": 4.4,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.76,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        1089,
+        -1785,
+        696
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0029,
+        "accel_x_m_s2": -0.0385,
+        "accel_y_m_s2": -0.0047
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.603,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 133,
+      "time_s": 4.433,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.7733,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        1108,
+        -1794,
+        687
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.009,
+        "accel_x_m_s2": 0.0114,
+        "accel_y_m_s2": -0.0254
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.597,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 134,
+      "time_s": 4.467,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.7867,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        1127,
+        -1804,
+        677
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0094,
+        "accel_x_m_s2": 0.021,
+        "accel_y_m_s2": 0.0001
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.582,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 135,
+      "time_s": 4.5,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.8,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        1146,
+        -1813,
+        668
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0034,
+        "accel_x_m_s2": -0.0035,
+        "accel_y_m_s2": -0.0131
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.567,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 136,
+      "time_s": 4.533,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.8133,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        1165,
+        -1823,
+        658
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0154,
+        "accel_x_m_s2": -0.0017,
+        "accel_y_m_s2": -0.0055
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.548,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 137,
+      "time_s": 4.567,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.8267,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        1184,
+        -1833,
+        648
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0055,
+        "accel_x_m_s2": -0.0173,
+        "accel_y_m_s2": -0.0048
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.539,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 138,
+      "time_s": 4.6,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.84,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        1203,
+        -1842,
+        639
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0029,
+        "accel_x_m_s2": 0.0055,
+        "accel_y_m_s2": 0.0373
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.526,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 139,
+      "time_s": 4.633,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.8533,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        1222,
+        -1852,
+        629
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0078,
+        "accel_x_m_s2": 0.0131,
+        "accel_y_m_s2": 0.0203
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.514,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 140,
+      "time_s": 4.667,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.8667,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        1241,
+        -1861,
+        620
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0016,
+        "accel_x_m_s2": 0.0106,
+        "accel_y_m_s2": 0.0119
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.501,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 141,
+      "time_s": 4.7,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.88,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        1261,
+        -1871,
+        610
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0149,
+        "accel_x_m_s2": -0.0407,
+        "accel_y_m_s2": 0.0437
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.49,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 142,
+      "time_s": 4.733,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.8933,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        1280,
+        -1880,
+        601
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.005,
+        "accel_x_m_s2": 0.0248,
+        "accel_y_m_s2": -0.0013
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.478,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 143,
+      "time_s": 4.767,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.9067,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        1299,
+        -1890,
+        591
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0116,
+        "accel_x_m_s2": 0.0099,
+        "accel_y_m_s2": -0.0041
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.467,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 144,
+      "time_s": 4.8,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.92,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        1318,
+        -1899,
+        582
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0129,
+        "accel_x_m_s2": -0.0155,
+        "accel_y_m_s2": 0.0082
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.448,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 145,
+      "time_s": 4.833,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.9333,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        1337,
+        -1909,
+        572
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0051,
+        "accel_x_m_s2": -0.001,
+        "accel_y_m_s2": -0.0171
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.438,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 146,
+      "time_s": 4.867,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.9467,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        1356,
+        -1918,
+        562
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.001,
+        "accel_x_m_s2": 0.0108,
+        "accel_y_m_s2": 0.0238
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.425,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 147,
+      "time_s": 4.9,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.96,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        1375,
+        -1928,
+        553
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0054,
+        "accel_x_m_s2": -0.0084,
+        "accel_y_m_s2": 0.0046
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.41,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 148,
+      "time_s": 4.933,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.9733,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        1394,
+        -1938,
+        543
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0091,
+        "accel_x_m_s2": -0.0202,
+        "accel_y_m_s2": 0.004
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.386,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 149,
+      "time_s": 4.967,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 0.9867,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        1413,
+        -1947,
+        534
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0046,
+        "accel_x_m_s2": -0.0158,
+        "accel_y_m_s2": -0.0081
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.388,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 150,
+      "time_s": 5.0,
+      "phase": "Phase 2: Pure Lateral (Sideways) Translation",
+      "robot_x": 1.0,
+      "robot_y": 1.0,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.4,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.4,
+        -0.2,
+        -0.2
+      ],
+      "wheel_rpms": [
+        95.5,
+        -47.7,
+        -47.7
+      ],
+      "encoder_ticks": [
+        1432,
+        -1957,
+        524
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.009,
+        "accel_x_m_s2": -0.01,
+        "accel_y_m_s2": 0.0112
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.364,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 151,
+      "time_s": 5.033,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.01,
+      "robot_y": 0.99,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1418,
+        -1962,
+        544
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0098,
+        "accel_x_m_s2": 8.9837,
+        "accel_y_m_s2": -21.0054
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.352,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 152,
+      "time_s": 5.067,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.02,
+      "robot_y": 0.98,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1404,
+        -1967,
+        563
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0041,
+        "accel_x_m_s2": 0.0038,
+        "accel_y_m_s2": 0.0307
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.366,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 153,
+      "time_s": 5.1,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.03,
+      "robot_y": 0.97,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1389,
+        -1972,
+        583
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.001,
+        "accel_x_m_s2": 0.0026,
+        "accel_y_m_s2": -0.0213
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.371,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 154,
+      "time_s": 5.133,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.04,
+      "robot_y": 0.96,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1375,
+        -1978,
+        603
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0006,
+        "accel_x_m_s2": 0.0048,
+        "accel_y_m_s2": 0.0291
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.381,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 155,
+      "time_s": 5.167,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.05,
+      "robot_y": 0.95,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1361,
+        -1983,
+        622
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0031,
+        "accel_x_m_s2": -0.0196,
+        "accel_y_m_s2": 0.0003
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.391,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 156,
+      "time_s": 5.2,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.06,
+      "robot_y": 0.94,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1346,
+        -1988,
+        642
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0093,
+        "accel_x_m_s2": -0.0018,
+        "accel_y_m_s2": 0.0134
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.409,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 157,
+      "time_s": 5.233,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.07,
+      "robot_y": 0.93,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1332,
+        -1993,
+        661
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0006,
+        "accel_x_m_s2": 0.0273,
+        "accel_y_m_s2": 0.0496
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.411,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 158,
+      "time_s": 5.267,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.08,
+      "robot_y": 0.92,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1318,
+        -1999,
+        681
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0084,
+        "accel_x_m_s2": 0.0031,
+        "accel_y_m_s2": -0.0359
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.422,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 159,
+      "time_s": 5.3,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.09,
+      "robot_y": 0.91,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1303,
+        -2004,
+        700
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0,
+        "accel_x_m_s2": 0.0144,
+        "accel_y_m_s2": 0.004
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.435,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 160,
+      "time_s": 5.333,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.1,
+      "robot_y": 0.9,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1289,
+        -2009,
+        720
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0015,
+        "accel_x_m_s2": 0.0051,
+        "accel_y_m_s2": -0.0126
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.444,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 161,
+      "time_s": 5.367,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.11,
+      "robot_y": 0.89,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1275,
+        -2014,
+        740
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0041,
+        "accel_x_m_s2": 0.0255,
+        "accel_y_m_s2": -0.0222
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.456,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 162,
+      "time_s": 5.4,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.12,
+      "robot_y": 0.88,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1261,
+        -2020,
+        759
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.004,
+        "accel_x_m_s2": 0.023,
+        "accel_y_m_s2": 0.0075
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.465,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 163,
+      "time_s": 5.433,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.13,
+      "robot_y": 0.87,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1246,
+        -2025,
+        779
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0054,
+        "accel_x_m_s2": -0.0264,
+        "accel_y_m_s2": 0.0035
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.469,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 164,
+      "time_s": 5.467,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.14,
+      "robot_y": 0.86,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1232,
+        -2030,
+        798
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0004,
+        "accel_x_m_s2": -0.0127,
+        "accel_y_m_s2": -0.0044
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.484,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 165,
+      "time_s": 5.5,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.15,
+      "robot_y": 0.85,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1218,
+        -2035,
+        818
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0044,
+        "accel_x_m_s2": -0.009,
+        "accel_y_m_s2": -0.0063
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.496,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 166,
+      "time_s": 5.533,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.16,
+      "robot_y": 0.84,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1203,
+        -2041,
+        837
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0059,
+        "accel_x_m_s2": 0.0203,
+        "accel_y_m_s2": -0.0083
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.511,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 167,
+      "time_s": 5.567,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.17,
+      "robot_y": 0.83,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1189,
+        -2046,
+        857
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0016,
+        "accel_x_m_s2": -0.0101,
+        "accel_y_m_s2": -0.0119
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.521,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 168,
+      "time_s": 5.6,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.18,
+      "robot_y": 0.82,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1175,
+        -2051,
+        876
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0152,
+        "accel_x_m_s2": -0.0101,
+        "accel_y_m_s2": 0.0155
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.536,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 169,
+      "time_s": 5.633,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.19,
+      "robot_y": 0.81,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1160,
+        -2056,
+        896
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0176,
+        "accel_x_m_s2": -0.0245,
+        "accel_y_m_s2": 0.0163
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.538,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 170,
+      "time_s": 5.667,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.2,
+      "robot_y": 0.8,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1146,
+        -2062,
+        916
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.01,
+        "accel_x_m_s2": 0.0191,
+        "accel_y_m_s2": 0.0112
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.547,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 171,
+      "time_s": 5.7,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.21,
+      "robot_y": 0.79,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1132,
+        -2067,
+        935
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.012,
+        "accel_x_m_s2": -0.0046,
+        "accel_y_m_s2": -0.0008
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.559,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 172,
+      "time_s": 5.733,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.22,
+      "robot_y": 0.78,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1117,
+        -2072,
+        955
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0025,
+        "accel_x_m_s2": -0.0057,
+        "accel_y_m_s2": -0.0312
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.554,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 173,
+      "time_s": 5.767,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.23,
+      "robot_y": 0.77,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1103,
+        -2077,
+        974
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0041,
+        "accel_x_m_s2": -0.0108,
+        "accel_y_m_s2": -0.0154
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.574,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 174,
+      "time_s": 5.8,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.24,
+      "robot_y": 0.76,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1089,
+        -2083,
+        994
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0001,
+        "accel_x_m_s2": 0.0128,
+        "accel_y_m_s2": -0.0014
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.582,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 175,
+      "time_s": 5.833,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.25,
+      "robot_y": 0.75,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1074,
+        -2088,
+        1013
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0015,
+        "accel_x_m_s2": -0.0253,
+        "accel_y_m_s2": -0.0231
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.599,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 176,
+      "time_s": 5.867,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.26,
+      "robot_y": 0.74,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1060,
+        -2093,
+        1033
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0133,
+        "accel_x_m_s2": 0.0194,
+        "accel_y_m_s2": 0.0196
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.605,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 177,
+      "time_s": 5.9,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.27,
+      "robot_y": 0.73,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1046,
+        -2098,
+        1053
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0082,
+        "accel_x_m_s2": -0.0172,
+        "accel_y_m_s2": 0.0199
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.617,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 178,
+      "time_s": 5.933,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.28,
+      "robot_y": 0.72,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1031,
+        -2103,
+        1072
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0112,
+        "accel_x_m_s2": 0.0244,
+        "accel_y_m_s2": 0.006
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.63,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 179,
+      "time_s": 5.967,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.29,
+      "robot_y": 0.71,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1017,
+        -2109,
+        1092
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0104,
+        "accel_x_m_s2": 0.0013,
+        "accel_y_m_s2": -0.0008
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.633,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 180,
+      "time_s": 6.0,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.3,
+      "robot_y": 0.7,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        1003,
+        -2114,
+        1111
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0067,
+        "accel_x_m_s2": -0.0043,
+        "accel_y_m_s2": 0.01
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.652,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 181,
+      "time_s": 6.033,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.31,
+      "robot_y": 0.69,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        988,
+        -2119,
+        1131
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0008,
+        "accel_x_m_s2": -0.012,
+        "accel_y_m_s2": -0.0055
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.658,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 182,
+      "time_s": 6.067,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.32,
+      "robot_y": 0.68,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        974,
+        -2124,
+        1150
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0172,
+        "accel_x_m_s2": 0.0094,
+        "accel_y_m_s2": -0.0351
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.661,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 183,
+      "time_s": 6.1,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.33,
+      "robot_y": 0.67,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        960,
+        -2130,
+        1170
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0099,
+        "accel_x_m_s2": -0.0003,
+        "accel_y_m_s2": 0.0178
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.675,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 184,
+      "time_s": 6.133,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.34,
+      "robot_y": 0.66,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        945,
+        -2135,
+        1190
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0097,
+        "accel_x_m_s2": 0.0024,
+        "accel_y_m_s2": -0.0007
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.681,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 185,
+      "time_s": 6.167,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.35,
+      "robot_y": 0.65,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        931,
+        -2140,
+        1209
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0134,
+        "accel_x_m_s2": -0.0052,
+        "accel_y_m_s2": 0.0248
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.698,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 186,
+      "time_s": 6.2,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.36,
+      "robot_y": 0.64,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        917,
+        -2145,
+        1229
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.019,
+        "accel_x_m_s2": 0.0033,
+        "accel_y_m_s2": 0.0037
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.702,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 187,
+      "time_s": 6.233,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.37,
+      "robot_y": 0.63,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        902,
+        -2151,
+        1248
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0111,
+        "accel_x_m_s2": -0.016,
+        "accel_y_m_s2": 0.0074
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.718,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 188,
+      "time_s": 6.267,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.38,
+      "robot_y": 0.62,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        888,
+        -2156,
+        1268
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0045,
+        "accel_x_m_s2": 0.0185,
+        "accel_y_m_s2": 0.0125
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.726,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 189,
+      "time_s": 6.3,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.39,
+      "robot_y": 0.61,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        874,
+        -2161,
+        1287
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0023,
+        "accel_x_m_s2": -0.0133,
+        "accel_y_m_s2": -0.0056
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.736,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 190,
+      "time_s": 6.333,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.4,
+      "robot_y": 0.6,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        859,
+        -2166,
+        1307
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0098,
+        "accel_x_m_s2": 0.0113,
+        "accel_y_m_s2": 0.0048
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.737,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 191,
+      "time_s": 6.367,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.41,
+      "robot_y": 0.59,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        845,
+        -2172,
+        1327
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.006,
+        "accel_x_m_s2": 0.0264,
+        "accel_y_m_s2": 0.0013
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.754,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 192,
+      "time_s": 6.4,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.42,
+      "robot_y": 0.58,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        831,
+        -2177,
+        1346
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0167,
+        "accel_x_m_s2": 0.0024,
+        "accel_y_m_s2": 0.0138
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.769,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 193,
+      "time_s": 6.433,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.43,
+      "robot_y": 0.57,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        816,
+        -2182,
+        1366
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0042,
+        "accel_x_m_s2": 0.0032,
+        "accel_y_m_s2": 0.0345
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.78,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 194,
+      "time_s": 6.467,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.44,
+      "robot_y": 0.56,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        802,
+        -2187,
+        1385
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0071,
+        "accel_x_m_s2": 0.0029,
+        "accel_y_m_s2": -0.0232
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.784,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 195,
+      "time_s": 6.5,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.45,
+      "robot_y": 0.55,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        788,
+        -2193,
+        1405
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0074,
+        "accel_x_m_s2": -0.0198,
+        "accel_y_m_s2": -0.0007
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.798,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 196,
+      "time_s": 6.533,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.46,
+      "robot_y": 0.54,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        773,
+        -2198,
+        1424
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0027,
+        "accel_x_m_s2": -0.033,
+        "accel_y_m_s2": 0.0104
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.806,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 197,
+      "time_s": 6.567,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.47,
+      "robot_y": 0.53,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        759,
+        -2203,
+        1444
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0149,
+        "accel_x_m_s2": 0.0076,
+        "accel_y_m_s2": 0.0159
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.813,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 198,
+      "time_s": 6.6,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.48,
+      "robot_y": 0.52,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        745,
+        -2208,
+        1464
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0008,
+        "accel_x_m_s2": 0.002,
+        "accel_y_m_s2": 0.012
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.824,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 199,
+      "time_s": 6.633,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.49,
+      "robot_y": 0.51,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        731,
+        -2214,
+        1483
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0071,
+        "accel_x_m_s2": 0.0307,
+        "accel_y_m_s2": -0.0399
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.836,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 200,
+      "time_s": 6.667,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.5,
+      "robot_y": 0.5,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        716,
+        -2219,
+        1503
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0032,
+        "accel_x_m_s2": 0.0015,
+        "accel_y_m_s2": 0.0193
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.845,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 201,
+      "time_s": 6.7,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.51,
+      "robot_y": 0.49,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        702,
+        -2224,
+        1522
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0052,
+        "accel_x_m_s2": -0.0358,
+        "accel_y_m_s2": 0.0024
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.858,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 202,
+      "time_s": 6.733,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.52,
+      "robot_y": 0.48,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        688,
+        -2229,
+        1542
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0089,
+        "accel_x_m_s2": 0.0243,
+        "accel_y_m_s2": -0.0122
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.871,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 203,
+      "time_s": 6.767,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.53,
+      "robot_y": 0.47,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        673,
+        -2235,
+        1561
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0011,
+        "accel_x_m_s2": 0.0128,
+        "accel_y_m_s2": -0.0105
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.87,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 204,
+      "time_s": 6.8,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.54,
+      "robot_y": 0.46,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        659,
+        -2240,
+        1581
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0026,
+        "accel_x_m_s2": -0.0148,
+        "accel_y_m_s2": -0.009
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.888,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 205,
+      "time_s": 6.833,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.55,
+      "robot_y": 0.45,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        645,
+        -2245,
+        1600
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0041,
+        "accel_x_m_s2": 0.0211,
+        "accel_y_m_s2": -0.023
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.889,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 206,
+      "time_s": 6.867,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.56,
+      "robot_y": 0.44,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        630,
+        -2250,
+        1620
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0013,
+        "accel_x_m_s2": 0.0197,
+        "accel_y_m_s2": -0.0051
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 0.902,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 207,
+      "time_s": 6.9,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.57,
+      "robot_y": 0.43,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        616,
+        -2256,
+        1640
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0005,
+        "accel_x_m_s2": -0.0072,
+        "accel_y_m_s2": 0.0245
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 208,
+      "time_s": 6.933,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.58,
+      "robot_y": 0.42,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        602,
+        -2261,
+        1659
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0044,
+        "accel_x_m_s2": 0.0211,
+        "accel_y_m_s2": -0.0041
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 209,
+      "time_s": 6.967,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.59,
+      "robot_y": 0.41,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        587,
+        -2266,
+        1679
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0064,
+        "accel_x_m_s2": 0.0205,
+        "accel_y_m_s2": 0.0235
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 210,
+      "time_s": 7.0,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.6,
+      "robot_y": 0.4,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        573,
+        -2271,
+        1698
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0072,
+        "accel_x_m_s2": 0.0198,
+        "accel_y_m_s2": 0.0149
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 211,
+      "time_s": 7.033,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.61,
+      "robot_y": 0.39,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        559,
+        -2277,
+        1718
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0003,
+        "accel_x_m_s2": -0.0416,
+        "accel_y_m_s2": 0.0145
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 212,
+      "time_s": 7.067,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.62,
+      "robot_y": 0.38,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        544,
+        -2282,
+        1737
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0073,
+        "accel_x_m_s2": -0.0388,
+        "accel_y_m_s2": 0.0117
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 213,
+      "time_s": 7.1,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.63,
+      "robot_y": 0.37,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        530,
+        -2287,
+        1757
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0066,
+        "accel_x_m_s2": -0.0005,
+        "accel_y_m_s2": -0.0069
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 214,
+      "time_s": 7.133,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.64,
+      "robot_y": 0.36,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        516,
+        -2292,
+        1777
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0075,
+        "accel_x_m_s2": 0.0127,
+        "accel_y_m_s2": -0.0072
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 215,
+      "time_s": 7.167,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.65,
+      "robot_y": 0.35,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        501,
+        -2297,
+        1796
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0028,
+        "accel_x_m_s2": 0.0063,
+        "accel_y_m_s2": 0.0114
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 216,
+      "time_s": 7.2,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.66,
+      "robot_y": 0.34,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        487,
+        -2303,
+        1816
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0049,
+        "accel_x_m_s2": 0.0047,
+        "accel_y_m_s2": -0.0044
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 217,
+      "time_s": 7.233,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.67,
+      "robot_y": 0.33,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        473,
+        -2308,
+        1835
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0008,
+        "accel_x_m_s2": 0.022,
+        "accel_y_m_s2": -0.0057
+      },
+      "ultrasonic": {
+        "front_m": 0.51,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 218,
+      "time_s": 7.267,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.68,
+      "robot_y": 0.32,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        458,
+        -2313,
+        1855
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0049,
+        "accel_x_m_s2": -0.0024,
+        "accel_y_m_s2": 0.0147
+      },
+      "ultrasonic": {
+        "front_m": 0.47,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 219,
+      "time_s": 7.3,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.69,
+      "robot_y": 0.31,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        444,
+        -2318,
+        1874
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0194,
+        "accel_x_m_s2": -0.0071,
+        "accel_y_m_s2": 0.0206
+      },
+      "ultrasonic": {
+        "front_m": 0.433,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 220,
+      "time_s": 7.333,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.7,
+      "robot_y": 0.3,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        430,
+        -2324,
+        1894
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0036,
+        "accel_x_m_s2": -0.0305,
+        "accel_y_m_s2": 0.0133
+      },
+      "ultrasonic": {
+        "front_m": 0.407,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 221,
+      "time_s": 7.367,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.71,
+      "robot_y": 0.29,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        415,
+        -2329,
+        1914
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0131,
+        "accel_x_m_s2": -0.0131,
+        "accel_y_m_s2": -0.0148
+      },
+      "ultrasonic": {
+        "front_m": 0.373,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 222,
+      "time_s": 7.4,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.72,
+      "robot_y": 0.28,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        401,
+        -2334,
+        1933
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0084,
+        "accel_x_m_s2": -0.0188,
+        "accel_y_m_s2": -0.0148
+      },
+      "ultrasonic": {
+        "front_m": 0.348,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 223,
+      "time_s": 7.433,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.73,
+      "robot_y": 0.27,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        387,
+        -2339,
+        1953
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0133,
+        "accel_x_m_s2": 0.0065,
+        "accel_y_m_s2": -0.0394
+      },
+      "ultrasonic": {
+        "front_m": 0.333,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 224,
+      "time_s": 7.467,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.74,
+      "robot_y": 0.26,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        372,
+        -2345,
+        1972
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 0.0089,
+        "accel_x_m_s2": 0.0035,
+        "accel_y_m_s2": 0.0072
+      },
+      "ultrasonic": {
+        "front_m": 0.302,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 225,
+      "time_s": 7.5,
+      "phase": "Phase 3: Diagonal Translation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 0.0,
+      "vx_cmd": 0.3,
+      "vy_cmd": -0.3,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        -0.3,
+        -0.1098,
+        0.4098
+      ],
+      "wheel_rpms": [
+        -71.6,
+        -26.2,
+        97.8
+      ],
+      "encoder_ticks": [
+        358,
+        -2350,
+        1992
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": -0.0007,
+        "accel_x_m_s2": -0.005,
+        "accel_y_m_s2": 0.0005
+      },
+      "ultrasonic": {
+        "front_m": 0.282,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 226,
+      "time_s": 7.533,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 2.29,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        372,
+        -2336,
+        2006
+      ],
+      "imu": {
+        "yaw_rad": 0.0,
+        "yaw_deg": 0.0,
+        "gyro_z_rad_s": 1.1987,
+        "accel_x_m_s2": -8.9938,
+        "accel_y_m_s2": 9.0304
+      },
+      "ultrasonic": {
+        "front_m": 0.259,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 227,
+      "time_s": 7.567,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 4.58,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        387,
+        -2321,
+        2020
+      ],
+      "imu": {
+        "yaw_rad": 0.04,
+        "yaw_deg": 2.291831180523293,
+        "gyro_z_rad_s": 1.2164,
+        "accel_x_m_s2": 0.0025,
+        "accel_y_m_s2": 0.0124
+      },
+      "ultrasonic": {
+        "front_m": 0.288,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 228,
+      "time_s": 7.6,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 6.88,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        401,
+        -2307,
+        2035
+      ],
+      "imu": {
+        "yaw_rad": 0.08,
+        "yaw_deg": 4.583662361046586,
+        "gyro_z_rad_s": 1.2083,
+        "accel_x_m_s2": 0.0165,
+        "accel_y_m_s2": -0.0013
+      },
+      "ultrasonic": {
+        "front_m": 0.306,
+        "left_m": 2.254,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 229,
+      "time_s": 7.633,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 9.17,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        415,
+        -2293,
+        2049
+      ],
+      "imu": {
+        "yaw_rad": 0.12,
+        "yaw_deg": 6.875493541569878,
+        "gyro_z_rad_s": 1.1939,
+        "accel_x_m_s2": -0.0107,
+        "accel_y_m_s2": -0.0158
+      },
+      "ultrasonic": {
+        "front_m": 0.38,
+        "left_m": 1.424,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 230,
+      "time_s": 7.667,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 11.46,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        430,
+        -2278,
+        2063
+      ],
+      "imu": {
+        "yaw_rad": 0.16,
+        "yaw_deg": 9.167324722093172,
+        "gyro_z_rad_s": 1.204,
+        "accel_x_m_s2": -0.0042,
+        "accel_y_m_s2": 0.0183
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 1.124,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 231,
+      "time_s": 7.7,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 13.75,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        444,
+        -2264,
+        2078
+      ],
+      "imu": {
+        "yaw_rad": 0.2,
+        "yaw_deg": 11.459155902616466,
+        "gyro_z_rad_s": 1.1915,
+        "accel_x_m_s2": -0.0098,
+        "accel_y_m_s2": -0.0134
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 1.137,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 232,
+      "time_s": 7.733,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 16.04,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        458,
+        -2250,
+        2092
+      ],
+      "imu": {
+        "yaw_rad": 0.24000000000000002,
+        "yaw_deg": 13.750987083139758,
+        "gyro_z_rad_s": 1.2057,
+        "accel_x_m_s2": -0.0111,
+        "accel_y_m_s2": 0.014
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 1.151,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 233,
+      "time_s": 7.767,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 18.33,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        473,
+        -2235,
+        2106
+      ],
+      "imu": {
+        "yaw_rad": 0.28,
+        "yaw_deg": 16.04281826366305,
+        "gyro_z_rad_s": 1.2037,
+        "accel_x_m_s2": 0.0134,
+        "accel_y_m_s2": 0.0028
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 1.166,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 234,
+      "time_s": 7.8,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 20.63,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        487,
+        -2221,
+        2121
+      ],
+      "imu": {
+        "yaw_rad": 0.32,
+        "yaw_deg": 18.334649444186343,
+        "gyro_z_rad_s": 1.2053,
+        "accel_x_m_s2": 0.0017,
+        "accel_y_m_s2": -0.002
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 1.178,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 235,
+      "time_s": 7.833,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 22.92,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        501,
+        -2207,
+        2135
+      ],
+      "imu": {
+        "yaw_rad": 0.36,
+        "yaw_deg": 20.626480624709636,
+        "gyro_z_rad_s": 1.2074,
+        "accel_x_m_s2": -0.0085,
+        "accel_y_m_s2": 0.0174
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 1.202,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 236,
+      "time_s": 7.867,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 25.21,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        516,
+        -2192,
+        2149
+      ],
+      "imu": {
+        "yaw_rad": 0.39999999999999997,
+        "yaw_deg": 22.91831180523293,
+        "gyro_z_rad_s": 1.2122,
+        "accel_x_m_s2": -0.0015,
+        "accel_y_m_s2": -0.0168
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 1.222,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 237,
+      "time_s": 7.9,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 27.5,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        530,
+        -2178,
+        2164
+      ],
+      "imu": {
+        "yaw_rad": 0.43999999999999995,
+        "yaw_deg": 25.210142985756217,
+        "gyro_z_rad_s": 1.197,
+        "accel_x_m_s2": -0.0229,
+        "accel_y_m_s2": 0.0164
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 1.251,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 238,
+      "time_s": 7.933,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 29.79,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        544,
+        -2164,
+        2178
+      ],
+      "imu": {
+        "yaw_rad": 0.4799999999999999,
+        "yaw_deg": 27.50197416627951,
+        "gyro_z_rad_s": 1.2106,
+        "accel_x_m_s2": -0.0205,
+        "accel_y_m_s2": 0.0059
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 1.283,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 239,
+      "time_s": 7.967,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 32.09,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        559,
+        -2149,
+        2192
+      ],
+      "imu": {
+        "yaw_rad": 0.5199999999999999,
+        "yaw_deg": 29.793805346802802,
+        "gyro_z_rad_s": 1.1948,
+        "accel_x_m_s2": -0.0137,
+        "accel_y_m_s2": 0.0071
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 1.305,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 240,
+      "time_s": 8.0,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 34.38,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        573,
+        -2135,
+        2207
+      ],
+      "imu": {
+        "yaw_rad": 0.5599999999999999,
+        "yaw_deg": 32.085636527326095,
+        "gyro_z_rad_s": 1.1994,
+        "accel_x_m_s2": 0.0003,
+        "accel_y_m_s2": -0.0035
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 1.355,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 241,
+      "time_s": 8.033,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 36.67,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        587,
+        -2121,
+        2221
+      ],
+      "imu": {
+        "yaw_rad": 0.6,
+        "yaw_deg": 34.37746770784939,
+        "gyro_z_rad_s": 1.1965,
+        "accel_x_m_s2": -0.0072,
+        "accel_y_m_s2": -0.0176
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 242,
+      "time_s": 8.067,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 38.96,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        602,
+        -2106,
+        2235
+      ],
+      "imu": {
+        "yaw_rad": 0.64,
+        "yaw_deg": 36.66929888837269,
+        "gyro_z_rad_s": 1.2,
+        "accel_x_m_s2": 0.008,
+        "accel_y_m_s2": 0.0229
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 243,
+      "time_s": 8.1,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 41.25,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        616,
+        -2092,
+        2250
+      ],
+      "imu": {
+        "yaw_rad": 0.68,
+        "yaw_deg": 38.96113006889598,
+        "gyro_z_rad_s": 1.2177,
+        "accel_x_m_s2": -0.0062,
+        "accel_y_m_s2": -0.0146
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 244,
+      "time_s": 8.133,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 43.54,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        630,
+        -2078,
+        2264
+      ],
+      "imu": {
+        "yaw_rad": 0.7200000000000001,
+        "yaw_deg": 41.25296124941928,
+        "gyro_z_rad_s": 1.1823,
+        "accel_x_m_s2": -0.0039,
+        "accel_y_m_s2": 0.0259
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 245,
+      "time_s": 8.167,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 45.84,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        645,
+        -2063,
+        2278
+      ],
+      "imu": {
+        "yaw_rad": 0.7600000000000001,
+        "yaw_deg": 43.544792429942575,
+        "gyro_z_rad_s": 1.2098,
+        "accel_x_m_s2": -0.024,
+        "accel_y_m_s2": 0.0301
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 246,
+      "time_s": 8.2,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 48.13,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        659,
+        -2049,
+        2293
+      ],
+      "imu": {
+        "yaw_rad": 0.8000000000000002,
+        "yaw_deg": 45.836623610465864,
+        "gyro_z_rad_s": 1.2012,
+        "accel_x_m_s2": -0.0237,
+        "accel_y_m_s2": -0.0238
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.4,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 247,
+      "time_s": 8.233,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 50.42,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        673,
+        -2035,
+        2307
+      ],
+      "imu": {
+        "yaw_rad": 0.8400000000000002,
+        "yaw_deg": 48.12845479098916,
+        "gyro_z_rad_s": 1.2071,
+        "accel_x_m_s2": -0.0044,
+        "accel_y_m_s2": 0.006
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.328,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 248,
+      "time_s": 8.267,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 52.71,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        688,
+        -2020,
+        2321
+      ],
+      "imu": {
+        "yaw_rad": 0.8800000000000002,
+        "yaw_deg": 50.420285971512456,
+        "gyro_z_rad_s": 1.2006,
+        "accel_x_m_s2": 0.0049,
+        "accel_y_m_s2": -0.027
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.299,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 249,
+      "time_s": 8.3,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 55.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        702,
+        -2006,
+        2336
+      ],
+      "imu": {
+        "yaw_rad": 0.9200000000000003,
+        "yaw_deg": 52.71211715203575,
+        "gyro_z_rad_s": 1.2118,
+        "accel_x_m_s2": -0.004,
+        "accel_y_m_s2": 0.03
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.257,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 250,
+      "time_s": 8.333,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 57.3,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        716,
+        -1992,
+        2350
+      ],
+      "imu": {
+        "yaw_rad": 0.9600000000000003,
+        "yaw_deg": 55.00394833255905,
+        "gyro_z_rad_s": 1.207,
+        "accel_x_m_s2": -0.0143,
+        "accel_y_m_s2": -0.0123
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.252,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 251,
+      "time_s": 8.367,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 59.59,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        731,
+        -1977,
+        2364
+      ],
+      "imu": {
+        "yaw_rad": 1.0000000000000002,
+        "yaw_deg": 57.29577951308234,
+        "gyro_z_rad_s": 1.2042,
+        "accel_x_m_s2": -0.0192,
+        "accel_y_m_s2": 0.0104
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.228,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 252,
+      "time_s": 8.4,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 61.88,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        745,
+        -1963,
+        2379
+      ],
+      "imu": {
+        "yaw_rad": 1.0400000000000003,
+        "yaw_deg": 59.58761069360563,
+        "gyro_z_rad_s": 1.2145,
+        "accel_x_m_s2": 0.0133,
+        "accel_y_m_s2": -0.0027
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.217,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 253,
+      "time_s": 8.433,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 64.17,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        759,
+        -1949,
+        2393
+      ],
+      "imu": {
+        "yaw_rad": 1.0800000000000003,
+        "yaw_deg": 61.87944187412892,
+        "gyro_z_rad_s": 1.212,
+        "accel_x_m_s2": -0.0221,
+        "accel_y_m_s2": 0.0092
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.215,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 254,
+      "time_s": 8.467,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 66.46,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        773,
+        -1935,
+        2407
+      ],
+      "imu": {
+        "yaw_rad": 1.1200000000000003,
+        "yaw_deg": 64.17127305465222,
+        "gyro_z_rad_s": 1.207,
+        "accel_x_m_s2": -0.0004,
+        "accel_y_m_s2": 0.0182
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.201,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 255,
+      "time_s": 8.5,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 68.75,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        788,
+        -1920,
+        2422
+      ],
+      "imu": {
+        "yaw_rad": 1.1600000000000004,
+        "yaw_deg": 66.46310423517552,
+        "gyro_z_rad_s": 1.2016,
+        "accel_x_m_s2": 0.0043,
+        "accel_y_m_s2": 0.012
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.207,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 256,
+      "time_s": 8.533,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 71.05,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        802,
+        -1906,
+        2436
+      ],
+      "imu": {
+        "yaw_rad": 1.2000000000000004,
+        "yaw_deg": 68.75493541569881,
+        "gyro_z_rad_s": 1.201,
+        "accel_x_m_s2": -0.0024,
+        "accel_y_m_s2": 0.0052
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.202,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 257,
+      "time_s": 8.567,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 73.34,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        816,
+        -1892,
+        2450
+      ],
+      "imu": {
+        "yaw_rad": 1.2400000000000004,
+        "yaw_deg": 71.0467665962221,
+        "gyro_z_rad_s": 1.1997,
+        "accel_x_m_s2": 0.009,
+        "accel_y_m_s2": -0.0277
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.198,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 258,
+      "time_s": 8.6,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 75.63,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        831,
+        -1877,
+        2464
+      ],
+      "imu": {
+        "yaw_rad": 1.2800000000000005,
+        "yaw_deg": 73.3385977767454,
+        "gyro_z_rad_s": 1.1826,
+        "accel_x_m_s2": -0.0127,
+        "accel_y_m_s2": -0.0098
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.191,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 259,
+      "time_s": 8.633,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 77.92,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        845,
+        -1863,
+        2479
+      ],
+      "imu": {
+        "yaw_rad": 1.3200000000000005,
+        "yaw_deg": 75.63042895726869,
+        "gyro_z_rad_s": 1.2115,
+        "accel_x_m_s2": 0.0353,
+        "accel_y_m_s2": 0.0173
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.197,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 260,
+      "time_s": 8.667,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 80.21,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        859,
+        -1849,
+        2493
+      ],
+      "imu": {
+        "yaw_rad": 1.3600000000000005,
+        "yaw_deg": 77.922260137792,
+        "gyro_z_rad_s": 1.2057,
+        "accel_x_m_s2": -0.0113,
+        "accel_y_m_s2": 0.0045
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.206,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 261,
+      "time_s": 8.7,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 82.51,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        874,
+        -1834,
+        2507
+      ],
+      "imu": {
+        "yaw_rad": 1.4000000000000006,
+        "yaw_deg": 80.21409131831528,
+        "gyro_z_rad_s": 1.2032,
+        "accel_x_m_s2": -0.0153,
+        "accel_y_m_s2": -0.0212
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.217,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 262,
+      "time_s": 8.733,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 84.8,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        888,
+        -1820,
+        2522
+      ],
+      "imu": {
+        "yaw_rad": 1.4400000000000006,
+        "yaw_deg": 82.50592249883859,
+        "gyro_z_rad_s": 1.1903,
+        "accel_x_m_s2": -0.0143,
+        "accel_y_m_s2": -0.0143
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.218,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 263,
+      "time_s": 8.767,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 87.09,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        902,
+        -1806,
+        2536
+      ],
+      "imu": {
+        "yaw_rad": 1.4800000000000006,
+        "yaw_deg": 84.79775367936188,
+        "gyro_z_rad_s": 1.2021,
+        "accel_x_m_s2": 0.0053,
+        "accel_y_m_s2": 0.0044
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.23,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 264,
+      "time_s": 8.8,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 89.38,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        917,
+        -1791,
+        2550
+      ],
+      "imu": {
+        "yaw_rad": 1.5200000000000007,
+        "yaw_deg": 87.08958485988516,
+        "gyro_z_rad_s": 1.1991,
+        "accel_x_m_s2": 0.0049,
+        "accel_y_m_s2": 0.0205
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.238,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 265,
+      "time_s": 8.833,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 91.67,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        931,
+        -1777,
+        2565
+      ],
+      "imu": {
+        "yaw_rad": 1.5600000000000007,
+        "yaw_deg": 89.38141604040847,
+        "gyro_z_rad_s": 1.2034,
+        "accel_x_m_s2": -0.0253,
+        "accel_y_m_s2": 0.0028
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.257,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 266,
+      "time_s": 8.867,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 93.97,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        945,
+        -1763,
+        2579
+      ],
+      "imu": {
+        "yaw_rad": 1.6000000000000008,
+        "yaw_deg": 91.67324722093176,
+        "gyro_z_rad_s": 1.2038,
+        "accel_x_m_s2": 0.0008,
+        "accel_y_m_s2": 0.0121
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.288,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 267,
+      "time_s": 8.9,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 96.26,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        960,
+        -1748,
+        2593
+      ],
+      "imu": {
+        "yaw_rad": 1.6400000000000008,
+        "yaw_deg": 93.96507840145506,
+        "gyro_z_rad_s": 1.1821,
+        "accel_x_m_s2": 0.0007,
+        "accel_y_m_s2": 0.0019
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.306,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 268,
+      "time_s": 8.933,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 98.55,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        974,
+        -1734,
+        2608
+      ],
+      "imu": {
+        "yaw_rad": 1.6800000000000008,
+        "yaw_deg": 96.25690958197835,
+        "gyro_z_rad_s": 1.1991,
+        "accel_x_m_s2": 0.0076,
+        "accel_y_m_s2": -0.0177
+      },
+      "ultrasonic": {
+        "front_m": 1.587,
+        "left_m": 2.5,
+        "right_m": 0.36,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 269,
+      "time_s": 8.967,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 100.84,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        988,
+        -1720,
+        2622
+      ],
+      "imu": {
+        "yaw_rad": 1.7200000000000009,
+        "yaw_deg": 98.54874076250165,
+        "gyro_z_rad_s": 1.2132,
+        "accel_x_m_s2": 0.0147,
+        "accel_y_m_s2": -0.004
+      },
+      "ultrasonic": {
+        "front_m": 1.129,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 270,
+      "time_s": 9.0,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 103.13,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        1003,
+        -1705,
+        2636
+      ],
+      "imu": {
+        "yaw_rad": 1.760000000000001,
+        "yaw_deg": 100.84057194302494,
+        "gyro_z_rad_s": 1.2122,
+        "accel_x_m_s2": -0.0315,
+        "accel_y_m_s2": -0.006
+      },
+      "ultrasonic": {
+        "front_m": 1.129,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 271,
+      "time_s": 9.033,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 105.42,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        1017,
+        -1691,
+        2651
+      ],
+      "imu": {
+        "yaw_rad": 1.800000000000001,
+        "yaw_deg": 103.13240312354823,
+        "gyro_z_rad_s": 1.2123,
+        "accel_x_m_s2": 0.0166,
+        "accel_y_m_s2": 0.0234
+      },
+      "ultrasonic": {
+        "front_m": 1.142,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 272,
+      "time_s": 9.067,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 107.72,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        1031,
+        -1677,
+        2665
+      ],
+      "imu": {
+        "yaw_rad": 1.840000000000001,
+        "yaw_deg": 105.42423430407153,
+        "gyro_z_rad_s": 1.2083,
+        "accel_x_m_s2": -0.0226,
+        "accel_y_m_s2": -0.0198
+      },
+      "ultrasonic": {
+        "front_m": 1.155,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 273,
+      "time_s": 9.1,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 110.01,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        1046,
+        -1662,
+        2679
+      ],
+      "imu": {
+        "yaw_rad": 1.880000000000001,
+        "yaw_deg": 107.71606548459482,
+        "gyro_z_rad_s": 1.2133,
+        "accel_x_m_s2": -0.0078,
+        "accel_y_m_s2": 0.0068
+      },
+      "ultrasonic": {
+        "front_m": 1.169,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 274,
+      "time_s": 9.133,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 112.3,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        1060,
+        -1648,
+        2694
+      ],
+      "imu": {
+        "yaw_rad": 1.920000000000001,
+        "yaw_deg": 110.00789666511812,
+        "gyro_z_rad_s": 1.2085,
+        "accel_x_m_s2": -0.0217,
+        "accel_y_m_s2": -0.0123
+      },
+      "ultrasonic": {
+        "front_m": 1.197,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 275,
+      "time_s": 9.167,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 114.59,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        1074,
+        -1634,
+        2708
+      ],
+      "imu": {
+        "yaw_rad": 1.960000000000001,
+        "yaw_deg": 112.29972784564141,
+        "gyro_z_rad_s": 1.2003,
+        "accel_x_m_s2": 0.0055,
+        "accel_y_m_s2": 0.0304
+      },
+      "ultrasonic": {
+        "front_m": 1.22,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 276,
+      "time_s": 9.2,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 116.88,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        1089,
+        -1619,
+        2722
+      ],
+      "imu": {
+        "yaw_rad": 2.000000000000001,
+        "yaw_deg": 114.5915590261647,
+        "gyro_z_rad_s": 1.2039,
+        "accel_x_m_s2": -0.0097,
+        "accel_y_m_s2": 0.0135
+      },
+      "ultrasonic": {
+        "front_m": 1.239,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 277,
+      "time_s": 9.233,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 119.18,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        1103,
+        -1605,
+        2737
+      ],
+      "imu": {
+        "yaw_rad": 2.040000000000001,
+        "yaw_deg": 116.88339020668799,
+        "gyro_z_rad_s": 1.2041,
+        "accel_x_m_s2": 0.0078,
+        "accel_y_m_s2": -0.0244
+      },
+      "ultrasonic": {
+        "front_m": 1.274,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 278,
+      "time_s": 9.267,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 121.47,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        1117,
+        -1591,
+        2751
+      ],
+      "imu": {
+        "yaw_rad": 2.080000000000001,
+        "yaw_deg": 119.17522138721128,
+        "gyro_z_rad_s": 1.209,
+        "accel_x_m_s2": 0.0178,
+        "accel_y_m_s2": -0.0016
+      },
+      "ultrasonic": {
+        "front_m": 1.305,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 279,
+      "time_s": 9.3,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 123.76,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        1132,
+        -1576,
+        2765
+      ],
+      "imu": {
+        "yaw_rad": 2.120000000000001,
+        "yaw_deg": 121.46705256773458,
+        "gyro_z_rad_s": 1.1995,
+        "accel_x_m_s2": 0.0297,
+        "accel_y_m_s2": -0.0019
+      },
+      "ultrasonic": {
+        "front_m": 1.339,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 280,
+      "time_s": 9.333,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 126.05,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        1146,
+        -1562,
+        2780
+      ],
+      "imu": {
+        "yaw_rad": 2.160000000000001,
+        "yaw_deg": 123.75888374825787,
+        "gyro_z_rad_s": 1.2123,
+        "accel_x_m_s2": 0.0192,
+        "accel_y_m_s2": -0.0084
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 281,
+      "time_s": 9.367,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 128.34,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        1160,
+        -1548,
+        2794
+      ],
+      "imu": {
+        "yaw_rad": 2.200000000000001,
+        "yaw_deg": 126.05071492878118,
+        "gyro_z_rad_s": 1.2019,
+        "accel_x_m_s2": -0.0107,
+        "accel_y_m_s2": -0.0082
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 282,
+      "time_s": 9.4,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 130.63,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        1175,
+        -1533,
+        2808
+      ],
+      "imu": {
+        "yaw_rad": 2.240000000000001,
+        "yaw_deg": 128.34254610930446,
+        "gyro_z_rad_s": 1.2097,
+        "accel_x_m_s2": 0.003,
+        "accel_y_m_s2": 0.007
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 283,
+      "time_s": 9.433,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 132.93,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        1189,
+        -1519,
+        2823
+      ],
+      "imu": {
+        "yaw_rad": 2.280000000000001,
+        "yaw_deg": 130.63437728982777,
+        "gyro_z_rad_s": 1.2111,
+        "accel_x_m_s2": -0.0003,
+        "accel_y_m_s2": -0.0023
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 284,
+      "time_s": 9.467,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 135.22,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        1203,
+        -1505,
+        2837
+      ],
+      "imu": {
+        "yaw_rad": 2.320000000000001,
+        "yaw_deg": 132.92620847035104,
+        "gyro_z_rad_s": 1.2124,
+        "accel_x_m_s2": 0.0009,
+        "accel_y_m_s2": -0.0061
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 285,
+      "time_s": 9.5,
+      "phase": "Phase 4: Pure In-Place Rotation",
+      "robot_x": 1.75,
+      "robot_y": 0.25,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.0,
+      "omega_cmd": 1.2,
+      "wheel_speeds_mps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "wheel_rpms": [
+        71.6,
+        71.6,
+        71.6
+      ],
+      "encoder_ticks": [
+        1218,
+        -1490,
+        2851
+      ],
+      "imu": {
+        "yaw_rad": 2.360000000000001,
+        "yaw_deg": 135.21803965087435,
+        "gyro_z_rad_s": 1.2149,
+        "accel_x_m_s2": -0.0086,
+        "accel_y_m_s2": -0.0261
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 286,
+      "time_s": 9.533,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.7414,
+      "robot_y": 0.2579,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1505,
+        2866
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0077,
+        "accel_x_m_s2": 10.4873,
+        "accel_y_m_s2": -0.0003
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 287,
+      "time_s": 9.567,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.7328,
+      "robot_y": 0.2658,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1519,
+        2880
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0089,
+        "accel_x_m_s2": -0.0111,
+        "accel_y_m_s2": -0.0016
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 288,
+      "time_s": 9.6,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.7242,
+      "robot_y": 0.2736,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1534,
+        2895
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0064,
+        "accel_x_m_s2": -0.0173,
+        "accel_y_m_s2": -0.0147
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 289,
+      "time_s": 9.633,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.7156,
+      "robot_y": 0.2815,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1548,
+        2909
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.009,
+        "accel_x_m_s2": -0.0165,
+        "accel_y_m_s2": -0.014
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 290,
+      "time_s": 9.667,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.707,
+      "robot_y": 0.2894,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1563,
+        2924
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0016,
+        "accel_x_m_s2": -0.0043,
+        "accel_y_m_s2": 0.0019
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 291,
+      "time_s": 9.7,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.6984,
+      "robot_y": 0.2973,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1577,
+        2938
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0031,
+        "accel_x_m_s2": 0.0064,
+        "accel_y_m_s2": -0.0264
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 292,
+      "time_s": 9.733,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.6898,
+      "robot_y": 0.3052,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1592,
+        2953
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0113,
+        "accel_x_m_s2": -0.0138,
+        "accel_y_m_s2": -0.0147
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 293,
+      "time_s": 9.767,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.6812,
+      "robot_y": 0.313,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1606,
+        2967
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0036,
+        "accel_x_m_s2": 0.012,
+        "accel_y_m_s2": -0.0343
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 294,
+      "time_s": 9.8,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.6726,
+      "robot_y": 0.3209,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1621,
+        2981
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0081,
+        "accel_x_m_s2": 0.0025,
+        "accel_y_m_s2": -0.0189
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 295,
+      "time_s": 9.833,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.664,
+      "robot_y": 0.3288,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1635,
+        2996
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0047,
+        "accel_x_m_s2": 0.0034,
+        "accel_y_m_s2": 0.0188
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 296,
+      "time_s": 9.867,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.6554,
+      "robot_y": 0.3367,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1650,
+        3010
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0036,
+        "accel_x_m_s2": 0.0219,
+        "accel_y_m_s2": 0.0062
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 297,
+      "time_s": 9.9,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.6468,
+      "robot_y": 0.3446,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1664,
+        3025
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0014,
+        "accel_x_m_s2": 0.0078,
+        "accel_y_m_s2": -0.0069
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 298,
+      "time_s": 9.933,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.6382,
+      "robot_y": 0.3524,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1679,
+        3039
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0101,
+        "accel_x_m_s2": -0.0105,
+        "accel_y_m_s2": -0.0134
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 299,
+      "time_s": 9.967,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.6296,
+      "robot_y": 0.3603,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1693,
+        3054
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0105,
+        "accel_x_m_s2": 0.0096,
+        "accel_y_m_s2": 0.0008
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 300,
+      "time_s": 10.0,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.621,
+      "robot_y": 0.3682,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1708,
+        3068
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0017,
+        "accel_x_m_s2": -0.0051,
+        "accel_y_m_s2": -0.009
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 301,
+      "time_s": 10.033,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.6124,
+      "robot_y": 0.3761,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1722,
+        3083
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0112,
+        "accel_x_m_s2": -0.0145,
+        "accel_y_m_s2": 0.0154
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 302,
+      "time_s": 10.067,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.6038,
+      "robot_y": 0.384,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1737,
+        3097
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0012,
+        "accel_x_m_s2": -0.0067,
+        "accel_y_m_s2": -0.0007
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 303,
+      "time_s": 10.1,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.5951,
+      "robot_y": 0.3918,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1751,
+        3112
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0149,
+        "accel_x_m_s2": 0.0198,
+        "accel_y_m_s2": 0.0104
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 304,
+      "time_s": 10.133,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.5865,
+      "robot_y": 0.3997,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1765,
+        3126
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0047,
+        "accel_x_m_s2": 0.0111,
+        "accel_y_m_s2": -0.0148
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 305,
+      "time_s": 10.167,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.5779,
+      "robot_y": 0.4076,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1780,
+        3141
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0026,
+        "accel_x_m_s2": -0.0058,
+        "accel_y_m_s2": 0.0033
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 306,
+      "time_s": 10.2,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.5693,
+      "robot_y": 0.4155,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1794,
+        3155
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0193,
+        "accel_x_m_s2": -0.0138,
+        "accel_y_m_s2": -0.0122
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 307,
+      "time_s": 10.233,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.5607,
+      "robot_y": 0.4234,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1809,
+        3170
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0021,
+        "accel_x_m_s2": 0.0105,
+        "accel_y_m_s2": -0.0034
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 308,
+      "time_s": 10.267,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.5521,
+      "robot_y": 0.4312,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1823,
+        3184
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0052,
+        "accel_x_m_s2": 0.0098,
+        "accel_y_m_s2": 0.0045
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 309,
+      "time_s": 10.3,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.5435,
+      "robot_y": 0.4391,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1838,
+        3199
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0019,
+        "accel_x_m_s2": 0.01,
+        "accel_y_m_s2": 0.0068
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 310,
+      "time_s": 10.333,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.5349,
+      "robot_y": 0.447,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1852,
+        3213
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0059,
+        "accel_x_m_s2": 0.0082,
+        "accel_y_m_s2": -0.015
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 311,
+      "time_s": 10.367,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.5263,
+      "robot_y": 0.4549,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1867,
+        3228
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0037,
+        "accel_x_m_s2": 0.0043,
+        "accel_y_m_s2": -0.0155
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 312,
+      "time_s": 10.4,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.5177,
+      "robot_y": 0.4628,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1881,
+        3242
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0039,
+        "accel_x_m_s2": -0.0253,
+        "accel_y_m_s2": 0.0105
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 313,
+      "time_s": 10.433,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.5091,
+      "robot_y": 0.4707,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1896,
+        3256
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0048,
+        "accel_x_m_s2": 0.0176,
+        "accel_y_m_s2": 0.0011
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 314,
+      "time_s": 10.467,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.5005,
+      "robot_y": 0.4785,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1910,
+        3271
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0075,
+        "accel_x_m_s2": 0.0149,
+        "accel_y_m_s2": 0.0086
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 315,
+      "time_s": 10.5,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.4919,
+      "robot_y": 0.4864,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1925,
+        3285
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0054,
+        "accel_x_m_s2": 0.0083,
+        "accel_y_m_s2": 0.0022
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 316,
+      "time_s": 10.533,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.4833,
+      "robot_y": 0.4943,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1939,
+        3300
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0076,
+        "accel_x_m_s2": -0.0095,
+        "accel_y_m_s2": -0.0069
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 317,
+      "time_s": 10.567,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.4747,
+      "robot_y": 0.5022,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1954,
+        3314
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0005,
+        "accel_x_m_s2": -0.0116,
+        "accel_y_m_s2": -0.0023
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 318,
+      "time_s": 10.6,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.4661,
+      "robot_y": 0.5101,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1968,
+        3329
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.005,
+        "accel_x_m_s2": -0.0172,
+        "accel_y_m_s2": -0.0125
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 319,
+      "time_s": 10.633,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.4575,
+      "robot_y": 0.5179,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1983,
+        3343
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0086,
+        "accel_x_m_s2": -0.0137,
+        "accel_y_m_s2": 0.0126
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 320,
+      "time_s": 10.667,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.4489,
+      "robot_y": 0.5258,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -1997,
+        3358
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0099,
+        "accel_x_m_s2": 0.0042,
+        "accel_y_m_s2": 0.011
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 321,
+      "time_s": 10.7,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.4403,
+      "robot_y": 0.5337,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2011,
+        3372
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0018,
+        "accel_x_m_s2": 0.0041,
+        "accel_y_m_s2": -0.0032
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 322,
+      "time_s": 10.733,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.4317,
+      "robot_y": 0.5416,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2026,
+        3387
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0026,
+        "accel_x_m_s2": -0.0274,
+        "accel_y_m_s2": -0.0012
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 323,
+      "time_s": 10.767,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.4231,
+      "robot_y": 0.5495,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2040,
+        3401
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0146,
+        "accel_x_m_s2": 0.0037,
+        "accel_y_m_s2": 0.0025
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 324,
+      "time_s": 10.8,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.4145,
+      "robot_y": 0.5573,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2055,
+        3416
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0013,
+        "accel_x_m_s2": 0.0004,
+        "accel_y_m_s2": 0.005
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 325,
+      "time_s": 10.833,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.4059,
+      "robot_y": 0.5652,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2069,
+        3430
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0009,
+        "accel_x_m_s2": 0.0032,
+        "accel_y_m_s2": -0.0054
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 326,
+      "time_s": 10.867,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.3973,
+      "robot_y": 0.5731,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2084,
+        3445
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0005,
+        "accel_x_m_s2": 0.0093,
+        "accel_y_m_s2": -0.0106
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 327,
+      "time_s": 10.9,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.3887,
+      "robot_y": 0.581,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2098,
+        3459
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0017,
+        "accel_x_m_s2": 0.0152,
+        "accel_y_m_s2": -0.006
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 328,
+      "time_s": 10.933,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.3801,
+      "robot_y": 0.5889,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2113,
+        3474
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0007,
+        "accel_x_m_s2": -0.0176,
+        "accel_y_m_s2": -0.0004
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 329,
+      "time_s": 10.967,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.3715,
+      "robot_y": 0.5967,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2127,
+        3488
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0115,
+        "accel_x_m_s2": -0.0137,
+        "accel_y_m_s2": -0.0309
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 330,
+      "time_s": 11.0,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.3629,
+      "robot_y": 0.6046,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2142,
+        3503
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0,
+        "accel_x_m_s2": 0.0025,
+        "accel_y_m_s2": 0.016
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 331,
+      "time_s": 11.033,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.3543,
+      "robot_y": 0.6125,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2156,
+        3517
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0092,
+        "accel_x_m_s2": -0.0165,
+        "accel_y_m_s2": 0.0089
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 332,
+      "time_s": 11.067,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.3457,
+      "robot_y": 0.6204,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2171,
+        3531
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0114,
+        "accel_x_m_s2": 0.004,
+        "accel_y_m_s2": 0.0331
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 333,
+      "time_s": 11.1,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.3371,
+      "robot_y": 0.6283,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2185,
+        3546
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0107,
+        "accel_x_m_s2": 0.005,
+        "accel_y_m_s2": -0.0087
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 334,
+      "time_s": 11.133,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.3285,
+      "robot_y": 0.6361,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2200,
+        3560
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0059,
+        "accel_x_m_s2": 0.0177,
+        "accel_y_m_s2": -0.0103
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 335,
+      "time_s": 11.167,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.3199,
+      "robot_y": 0.644,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2214,
+        3575
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.001,
+        "accel_x_m_s2": -0.0021,
+        "accel_y_m_s2": -0.0133
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 336,
+      "time_s": 11.2,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.3113,
+      "robot_y": 0.6519,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2229,
+        3589
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0106,
+        "accel_x_m_s2": 0.004,
+        "accel_y_m_s2": -0.0176
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 337,
+      "time_s": 11.233,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.3026,
+      "robot_y": 0.6598,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2243,
+        3604
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0043,
+        "accel_x_m_s2": 0.0187,
+        "accel_y_m_s2": 0.0096
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 338,
+      "time_s": 11.267,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.294,
+      "robot_y": 0.6677,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2258,
+        3618
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0066,
+        "accel_x_m_s2": 0.009,
+        "accel_y_m_s2": 0.0006
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 339,
+      "time_s": 11.3,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.2854,
+      "robot_y": 0.6755,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2272,
+        3633
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.023,
+        "accel_x_m_s2": -0.0244,
+        "accel_y_m_s2": 0.0183
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 340,
+      "time_s": 11.333,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.2768,
+      "robot_y": 0.6834,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2286,
+        3647
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0061,
+        "accel_x_m_s2": 0.0224,
+        "accel_y_m_s2": 0.006
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 341,
+      "time_s": 11.367,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.2682,
+      "robot_y": 0.6913,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2301,
+        3662
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0057,
+        "accel_x_m_s2": -0.0015,
+        "accel_y_m_s2": 0.0073
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 342,
+      "time_s": 11.4,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.2596,
+      "robot_y": 0.6992,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2315,
+        3676
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0115,
+        "accel_x_m_s2": 0.0004,
+        "accel_y_m_s2": -0.0062
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 343,
+      "time_s": 11.433,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.251,
+      "robot_y": 0.7071,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2330,
+        3691
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0058,
+        "accel_x_m_s2": -0.0147,
+        "accel_y_m_s2": -0.006
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 344,
+      "time_s": 11.467,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.2424,
+      "robot_y": 0.7149,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2344,
+        3705
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0008,
+        "accel_x_m_s2": 0.0026,
+        "accel_y_m_s2": 0.029
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 345,
+      "time_s": 11.5,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.2338,
+      "robot_y": 0.7228,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2359,
+        3720
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0014,
+        "accel_x_m_s2": -0.0145,
+        "accel_y_m_s2": -0.0029
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 346,
+      "time_s": 11.533,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.2252,
+      "robot_y": 0.7307,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2373,
+        3734
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0121,
+        "accel_x_m_s2": 0.0008,
+        "accel_y_m_s2": -0.025
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 347,
+      "time_s": 11.567,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.2166,
+      "robot_y": 0.7386,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2388,
+        3749
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0088,
+        "accel_x_m_s2": 0.0035,
+        "accel_y_m_s2": 0.0093
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 348,
+      "time_s": 11.6,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.208,
+      "robot_y": 0.7465,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2402,
+        3763
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0028,
+        "accel_x_m_s2": 0.003,
+        "accel_y_m_s2": 0.017
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 349,
+      "time_s": 11.633,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.1994,
+      "robot_y": 0.7543,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2417,
+        3777
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0025,
+        "accel_x_m_s2": 0.0227,
+        "accel_y_m_s2": -0.004
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 350,
+      "time_s": 11.667,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.1908,
+      "robot_y": 0.7622,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2431,
+        3792
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0052,
+        "accel_x_m_s2": -0.0029,
+        "accel_y_m_s2": -0.0059
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 351,
+      "time_s": 11.7,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.1822,
+      "robot_y": 0.7701,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2446,
+        3806
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0076,
+        "accel_x_m_s2": 0.0011,
+        "accel_y_m_s2": 0.0029
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 352,
+      "time_s": 11.733,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.1736,
+      "robot_y": 0.778,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2460,
+        3821
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0103,
+        "accel_x_m_s2": -0.0057,
+        "accel_y_m_s2": 0.0034
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 353,
+      "time_s": 11.767,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.165,
+      "robot_y": 0.7859,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2475,
+        3835
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0103,
+        "accel_x_m_s2": 0.0114,
+        "accel_y_m_s2": -0.0248
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 354,
+      "time_s": 11.8,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.1564,
+      "robot_y": 0.7937,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2489,
+        3850
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0027,
+        "accel_x_m_s2": -0.0272,
+        "accel_y_m_s2": 0.0111
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 355,
+      "time_s": 11.833,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.1478,
+      "robot_y": 0.8016,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2504,
+        3864
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0082,
+        "accel_x_m_s2": 0.022,
+        "accel_y_m_s2": 0.005
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 356,
+      "time_s": 11.867,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.1392,
+      "robot_y": 0.8095,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2518,
+        3879
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0091,
+        "accel_x_m_s2": 0.0019,
+        "accel_y_m_s2": -0.0035
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 357,
+      "time_s": 11.9,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.1306,
+      "robot_y": 0.8174,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2532,
+        3893
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0002,
+        "accel_x_m_s2": 0.0006,
+        "accel_y_m_s2": -0.012
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 358,
+      "time_s": 11.933,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.122,
+      "robot_y": 0.8253,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2547,
+        3908
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0013,
+        "accel_x_m_s2": -0.0033,
+        "accel_y_m_s2": -0.017
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 359,
+      "time_s": 11.967,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.1134,
+      "robot_y": 0.8331,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2561,
+        3922
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0008,
+        "accel_x_m_s2": -0.0098,
+        "accel_y_m_s2": 0.0227
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 360,
+      "time_s": 12.0,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.1048,
+      "robot_y": 0.841,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2576,
+        3937
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0151,
+        "accel_x_m_s2": 0.0242,
+        "accel_y_m_s2": -0.0027
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 361,
+      "time_s": 12.033,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.0962,
+      "robot_y": 0.8489,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2590,
+        3951
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0219,
+        "accel_x_m_s2": -0.0146,
+        "accel_y_m_s2": -0.0034
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 362,
+      "time_s": 12.067,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.0876,
+      "robot_y": 0.8568,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2605,
+        3966
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0138,
+        "accel_x_m_s2": 0.005,
+        "accel_y_m_s2": -0.0005
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 363,
+      "time_s": 12.1,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.079,
+      "robot_y": 0.8647,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2619,
+        3980
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.016,
+        "accel_x_m_s2": 0.0018,
+        "accel_y_m_s2": 0.0046
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 364,
+      "time_s": 12.133,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.0704,
+      "robot_y": 0.8726,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2634,
+        3995
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0055,
+        "accel_x_m_s2": 0.0173,
+        "accel_y_m_s2": 0.0154
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 365,
+      "time_s": 12.167,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.0618,
+      "robot_y": 0.8804,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2648,
+        4009
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0127,
+        "accel_x_m_s2": -0.0214,
+        "accel_y_m_s2": -0.0098
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 366,
+      "time_s": 12.2,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.0532,
+      "robot_y": 0.8883,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2663,
+        4024
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0021,
+        "accel_x_m_s2": -0.0163,
+        "accel_y_m_s2": 0.0029
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 367,
+      "time_s": 12.233,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.0446,
+      "robot_y": 0.8962,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2677,
+        4038
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0001,
+        "accel_x_m_s2": -0.0014,
+        "accel_y_m_s2": -0.0208
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 368,
+      "time_s": 12.267,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.036,
+      "robot_y": 0.9041,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2692,
+        4052
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0142,
+        "accel_x_m_s2": -0.0265,
+        "accel_y_m_s2": -0.0178
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 369,
+      "time_s": 12.3,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.0274,
+      "robot_y": 0.912,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2706,
+        4067
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0115,
+        "accel_x_m_s2": -0.0154,
+        "accel_y_m_s2": -0.0026
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 370,
+      "time_s": 12.333,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.0188,
+      "robot_y": 0.9198,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2721,
+        4081
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0013,
+        "accel_x_m_s2": 0.0137,
+        "accel_y_m_s2": 0.0037
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 371,
+      "time_s": 12.367,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.0101,
+      "robot_y": 0.9277,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2735,
+        4096
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": -0.0044,
+        "accel_x_m_s2": -0.0046,
+        "accel_y_m_s2": -0.0066
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 372,
+      "time_s": 12.4,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 1.0015,
+      "robot_y": 0.9356,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2750,
+        4110
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.001,
+        "accel_x_m_s2": -0.0018,
+        "accel_y_m_s2": 0.0151
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 373,
+      "time_s": 12.433,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 0.9929,
+      "robot_y": 0.9435,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2764,
+        4125
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0094,
+        "accel_x_m_s2": 0.0163,
+        "accel_y_m_s2": -0.0025
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 374,
+      "time_s": 12.467,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 0.9843,
+      "robot_y": 0.9514,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2779,
+        4139
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0108,
+        "accel_x_m_s2": 0.0029,
+        "accel_y_m_s2": 0.0029
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 375,
+      "time_s": 12.5,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 0.9757,
+      "robot_y": 0.9592,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2793,
+        4154
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.0023,
+        "accel_x_m_s2": -0.0233,
+        "accel_y_m_s2": 0.0041
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 376,
+      "time_s": 12.533,
+      "phase": "Phase 5: Approaching Obstacle",
+      "robot_x": 0.9671,
+      "robot_y": 0.9671,
+      "heading_deg": 137.51,
+      "vx_cmd": 0.35,
+      "vy_cmd": 0.0,
+      "omega_cmd": 0.0,
+      "wheel_speeds_mps": [
+        0.0,
+        -0.3031,
+        0.3031
+      ],
+      "wheel_rpms": [
+        0.0,
+        -72.4,
+        72.4
+      ],
+      "encoder_ticks": [
+        1218,
+        -2807,
+        4168
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.009,
+        "accel_x_m_s2": 0.0164,
+        "accel_y_m_s2": -0.011
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 377,
+      "time_s": 12.567,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.9593,
+      "robot_y": 0.9585,
+      "heading_deg": 138.27,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1239,
+        -2811,
+        4165
+      ],
+      "imu": {
+        "yaw_rad": 2.4000000000000012,
+        "yaw_deg": 137.50987083139765,
+        "gyro_z_rad_s": 0.4094,
+        "accel_x_m_s2": -10.646,
+        "accel_y_m_s2": 10.52
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.615,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 378,
+      "time_s": 12.6,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.9515,
+      "robot_y": 0.9498,
+      "heading_deg": 139.04,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1261,
+        -2815,
+        4161
+      ],
+      "imu": {
+        "yaw_rad": 2.4133333333333344,
+        "yaw_deg": 138.27381455823874,
+        "gyro_z_rad_s": 0.4081,
+        "accel_x_m_s2": -0.1368,
+        "accel_y_m_s2": 0.0195
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.614,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 379,
+      "time_s": 12.633,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.9438,
+      "robot_y": 0.941,
+      "heading_deg": 139.8,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1282,
+        -2818,
+        4157
+      ],
+      "imu": {
+        "yaw_rad": 2.4266666666666676,
+        "yaw_deg": 139.03775828507983,
+        "gyro_z_rad_s": 0.4036,
+        "accel_x_m_s2": -0.1368,
+        "accel_y_m_s2": 0.0002
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.619,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 380,
+      "time_s": 12.667,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.9363,
+      "robot_y": 0.9321,
+      "heading_deg": 140.57,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1303,
+        -2822,
+        4154
+      ],
+      "imu": {
+        "yaw_rad": 2.440000000000001,
+        "yaw_deg": 139.80170201192092,
+        "gyro_z_rad_s": 0.4161,
+        "accel_x_m_s2": -0.1453,
+        "accel_y_m_s2": 0.0174
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.615,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 381,
+      "time_s": 12.7,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.9289,
+      "robot_y": 0.9231,
+      "heading_deg": 141.33,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1325,
+        -2825,
+        4150
+      ],
+      "imu": {
+        "yaw_rad": 2.453333333333334,
+        "yaw_deg": 140.56564573876202,
+        "gyro_z_rad_s": 0.4011,
+        "accel_x_m_s2": -0.1448,
+        "accel_y_m_s2": -0.0152
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.613,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 382,
+      "time_s": 12.733,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.9216,
+      "robot_y": 0.914,
+      "heading_deg": 142.09,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1346,
+        -2829,
+        4147
+      ],
+      "imu": {
+        "yaw_rad": 2.4666666666666672,
+        "yaw_deg": 141.3295894656031,
+        "gyro_z_rad_s": 0.4033,
+        "accel_x_m_s2": -0.1302,
+        "accel_y_m_s2": -0.0111
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.621,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 383,
+      "time_s": 12.767,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.9144,
+      "robot_y": 0.9048,
+      "heading_deg": 142.86,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1368,
+        -2833,
+        4143
+      ],
+      "imu": {
+        "yaw_rad": 2.4800000000000004,
+        "yaw_deg": 142.0935331924442,
+        "gyro_z_rad_s": 0.3922,
+        "accel_x_m_s2": -0.1549,
+        "accel_y_m_s2": 0.0044
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.627,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 384,
+      "time_s": 12.8,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.9074,
+      "robot_y": 0.8955,
+      "heading_deg": 143.62,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1389,
+        -2836,
+        4140
+      ],
+      "imu": {
+        "yaw_rad": 2.4933333333333336,
+        "yaw_deg": 142.85747691928526,
+        "gyro_z_rad_s": 0.4149,
+        "accel_x_m_s2": -0.1508,
+        "accel_y_m_s2": 0.0203
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.626,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 385,
+      "time_s": 12.833,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.9005,
+      "robot_y": 0.8861,
+      "heading_deg": 144.39,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1411,
+        -2840,
+        4136
+      ],
+      "imu": {
+        "yaw_rad": 2.506666666666667,
+        "yaw_deg": 143.62142064612635,
+        "gyro_z_rad_s": 0.3903,
+        "accel_x_m_s2": -0.1095,
+        "accel_y_m_s2": 0.0015
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.628,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 386,
+      "time_s": 12.867,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8937,
+      "robot_y": 0.8766,
+      "heading_deg": 145.15,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1432,
+        -2843,
+        4132
+      ],
+      "imu": {
+        "yaw_rad": 2.52,
+        "yaw_deg": 144.38536437296744,
+        "gyro_z_rad_s": 0.4017,
+        "accel_x_m_s2": -0.1503,
+        "accel_y_m_s2": 0.0127
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.633,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 387,
+      "time_s": 12.9,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.887,
+      "robot_y": 0.867,
+      "heading_deg": 145.91,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1454,
+        -2847,
+        4129
+      ],
+      "imu": {
+        "yaw_rad": 2.533333333333333,
+        "yaw_deg": 145.14930809980854,
+        "gyro_z_rad_s": 0.4041,
+        "accel_x_m_s2": -0.1538,
+        "accel_y_m_s2": 0.0067
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.636,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 388,
+      "time_s": 12.933,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8805,
+      "robot_y": 0.8573,
+      "heading_deg": 146.68,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1475,
+        -2850,
+        4125
+      ],
+      "imu": {
+        "yaw_rad": 2.5466666666666664,
+        "yaw_deg": 145.91325182664963,
+        "gyro_z_rad_s": 0.3913,
+        "accel_x_m_s2": -0.1628,
+        "accel_y_m_s2": 0.004
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.635,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 389,
+      "time_s": 12.967,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8741,
+      "robot_y": 0.8476,
+      "heading_deg": 147.44,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1497,
+        -2854,
+        4122
+      ],
+      "imu": {
+        "yaw_rad": 2.5599999999999996,
+        "yaw_deg": 146.67719555349072,
+        "gyro_z_rad_s": 0.3996,
+        "accel_x_m_s2": -0.1638,
+        "accel_y_m_s2": 0.0027
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.647,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 390,
+      "time_s": 13.0,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8678,
+      "robot_y": 0.8378,
+      "heading_deg": 148.21,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1518,
+        -2858,
+        4118
+      ],
+      "imu": {
+        "yaw_rad": 2.573333333333333,
+        "yaw_deg": 147.4411392803318,
+        "gyro_z_rad_s": 0.4135,
+        "accel_x_m_s2": -0.1387,
+        "accel_y_m_s2": -0.0207
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.649,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 391,
+      "time_s": 13.033,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8616,
+      "robot_y": 0.8278,
+      "heading_deg": 148.97,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1540,
+        -2861,
+        4115
+      ],
+      "imu": {
+        "yaw_rad": 2.586666666666666,
+        "yaw_deg": 148.2050830071729,
+        "gyro_z_rad_s": 0.4113,
+        "accel_x_m_s2": -0.1289,
+        "accel_y_m_s2": 0.019
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.655,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 392,
+      "time_s": 13.067,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8556,
+      "robot_y": 0.8179,
+      "heading_deg": 149.73,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1561,
+        -2865,
+        4111
+      ],
+      "imu": {
+        "yaw_rad": 2.599999999999999,
+        "yaw_deg": 148.969026734014,
+        "gyro_z_rad_s": 0.4055,
+        "accel_x_m_s2": -0.1272,
+        "accel_y_m_s2": -0.0045
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.655,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 393,
+      "time_s": 13.1,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8497,
+      "robot_y": 0.8078,
+      "heading_deg": 150.5,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1583,
+        -2868,
+        4107
+      ],
+      "imu": {
+        "yaw_rad": 2.6133333333333324,
+        "yaw_deg": 149.73297046085509,
+        "gyro_z_rad_s": 0.3979,
+        "accel_x_m_s2": -0.1508,
+        "accel_y_m_s2": 0.0171
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.669,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 394,
+      "time_s": 13.133,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.844,
+      "robot_y": 0.7976,
+      "heading_deg": 151.26,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1604,
+        -2872,
+        4104
+      ],
+      "imu": {
+        "yaw_rad": 2.6266666666666656,
+        "yaw_deg": 150.49691418769618,
+        "gyro_z_rad_s": 0.4103,
+        "accel_x_m_s2": -0.1379,
+        "accel_y_m_s2": -0.0105
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.662,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 395,
+      "time_s": 13.167,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8384,
+      "robot_y": 0.7874,
+      "heading_deg": 152.02,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1626,
+        -2875,
+        4100
+      ],
+      "imu": {
+        "yaw_rad": 2.639999999999999,
+        "yaw_deg": 151.26085791453727,
+        "gyro_z_rad_s": 0.4043,
+        "accel_x_m_s2": -0.1276,
+        "accel_y_m_s2": -0.0013
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.671,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 396,
+      "time_s": 13.2,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8329,
+      "robot_y": 0.7771,
+      "heading_deg": 152.79,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1647,
+        -2879,
+        4097
+      ],
+      "imu": {
+        "yaw_rad": 2.653333333333332,
+        "yaw_deg": 152.02480164137836,
+        "gyro_z_rad_s": 0.3974,
+        "accel_x_m_s2": -0.1702,
+        "accel_y_m_s2": -0.0005
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.682,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 397,
+      "time_s": 13.233,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8276,
+      "robot_y": 0.7667,
+      "heading_deg": 153.55,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1669,
+        -2883,
+        4093
+      ],
+      "imu": {
+        "yaw_rad": 2.666666666666665,
+        "yaw_deg": 152.78874536821945,
+        "gyro_z_rad_s": 0.3888,
+        "accel_x_m_s2": -0.1214,
+        "accel_y_m_s2": 0.02
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.677,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 398,
+      "time_s": 13.267,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8224,
+      "robot_y": 0.7563,
+      "heading_deg": 154.32,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1690,
+        -2886,
+        4089
+      ],
+      "imu": {
+        "yaw_rad": 2.6799999999999984,
+        "yaw_deg": 153.55268909506054,
+        "gyro_z_rad_s": 0.4013,
+        "accel_x_m_s2": -0.1601,
+        "accel_y_m_s2": 0.0101
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.689,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 399,
+      "time_s": 13.3,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8173,
+      "robot_y": 0.7458,
+      "heading_deg": 155.08,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1712,
+        -2890,
+        4086
+      ],
+      "imu": {
+        "yaw_rad": 2.6933333333333316,
+        "yaw_deg": 154.31663282190163,
+        "gyro_z_rad_s": 0.3954,
+        "accel_x_m_s2": -0.1508,
+        "accel_y_m_s2": 0.0011
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.687,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 400,
+      "time_s": 13.333,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8124,
+      "robot_y": 0.7352,
+      "heading_deg": 155.84,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1733,
+        -2893,
+        4082
+      ],
+      "imu": {
+        "yaw_rad": 2.7066666666666648,
+        "yaw_deg": 155.0805765487427,
+        "gyro_z_rad_s": 0.4018,
+        "accel_x_m_s2": -0.1389,
+        "accel_y_m_s2": -0.0079
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.704,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 401,
+      "time_s": 13.367,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8076,
+      "robot_y": 0.7245,
+      "heading_deg": 156.61,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1755,
+        -2897,
+        4079
+      ],
+      "imu": {
+        "yaw_rad": 2.719999999999998,
+        "yaw_deg": 155.8445202755838,
+        "gyro_z_rad_s": 0.4115,
+        "accel_x_m_s2": -0.1181,
+        "accel_y_m_s2": -0.0237
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.702,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 402,
+      "time_s": 13.4,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.803,
+      "robot_y": 0.7138,
+      "heading_deg": 157.37,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1776,
+        -2901,
+        4075
+      ],
+      "imu": {
+        "yaw_rad": 2.733333333333331,
+        "yaw_deg": 156.60846400242488,
+        "gyro_z_rad_s": 0.4151,
+        "accel_x_m_s2": -0.1487,
+        "accel_y_m_s2": 0.035
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.704,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 403,
+      "time_s": 13.433,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7985,
+      "robot_y": 0.7031,
+      "heading_deg": 158.14,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1798,
+        -2904,
+        4072
+      ],
+      "imu": {
+        "yaw_rad": 2.7466666666666644,
+        "yaw_deg": 157.37240772926597,
+        "gyro_z_rad_s": 0.4082,
+        "accel_x_m_s2": -0.1416,
+        "accel_y_m_s2": -0.0377
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.716,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 404,
+      "time_s": 13.467,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7942,
+      "robot_y": 0.6922,
+      "heading_deg": 158.9,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1819,
+        -2908,
+        4068
+      ],
+      "imu": {
+        "yaw_rad": 2.7599999999999976,
+        "yaw_deg": 158.13635145610706,
+        "gyro_z_rad_s": 0.4161,
+        "accel_x_m_s2": -0.1624,
+        "accel_y_m_s2": 0.0047
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.722,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 405,
+      "time_s": 13.5,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.79,
+      "robot_y": 0.6813,
+      "heading_deg": 159.66,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1841,
+        -2911,
+        4064
+      ],
+      "imu": {
+        "yaw_rad": 2.7733333333333308,
+        "yaw_deg": 158.90029518294816,
+        "gyro_z_rad_s": 0.3937,
+        "accel_x_m_s2": -0.1083,
+        "accel_y_m_s2": -0.017
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.728,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 406,
+      "time_s": 13.533,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7859,
+      "robot_y": 0.6704,
+      "heading_deg": 160.43,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1862,
+        -2915,
+        4061
+      ],
+      "imu": {
+        "yaw_rad": 2.786666666666664,
+        "yaw_deg": 159.66423890978925,
+        "gyro_z_rad_s": 0.3897,
+        "accel_x_m_s2": -0.1613,
+        "accel_y_m_s2": -0.0014
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.737,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 407,
+      "time_s": 13.567,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.782,
+      "robot_y": 0.6594,
+      "heading_deg": 161.19,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1884,
+        -2918,
+        4057
+      ],
+      "imu": {
+        "yaw_rad": 2.799999999999997,
+        "yaw_deg": 160.42818263663034,
+        "gyro_z_rad_s": 0.4087,
+        "accel_x_m_s2": -0.1443,
+        "accel_y_m_s2": -0.0047
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.738,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 408,
+      "time_s": 13.6,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7783,
+      "robot_y": 0.6484,
+      "heading_deg": 161.96,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1905,
+        -2922,
+        4054
+      ],
+      "imu": {
+        "yaw_rad": 2.8133333333333304,
+        "yaw_deg": 161.19212636347143,
+        "gyro_z_rad_s": 0.3996,
+        "accel_x_m_s2": -0.137,
+        "accel_y_m_s2": 0.0085
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.749,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 409,
+      "time_s": 13.633,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7746,
+      "robot_y": 0.6373,
+      "heading_deg": 162.72,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1927,
+        -2926,
+        4050
+      ],
+      "imu": {
+        "yaw_rad": 2.8266666666666636,
+        "yaw_deg": 161.95607009031252,
+        "gyro_z_rad_s": 0.4196,
+        "accel_x_m_s2": -0.1184,
+        "accel_y_m_s2": -0.0226
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.756,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 410,
+      "time_s": 13.667,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7712,
+      "robot_y": 0.6261,
+      "heading_deg": 163.48,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1948,
+        -2929,
+        4046
+      ],
+      "imu": {
+        "yaw_rad": 2.8399999999999967,
+        "yaw_deg": 162.7200138171536,
+        "gyro_z_rad_s": 0.3975,
+        "accel_x_m_s2": -0.1477,
+        "accel_y_m_s2": 0.0095
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.762,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 411,
+      "time_s": 13.7,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7679,
+      "robot_y": 0.6149,
+      "heading_deg": 164.25,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1970,
+        -2933,
+        4043
+      ],
+      "imu": {
+        "yaw_rad": 2.85333333333333,
+        "yaw_deg": 163.4839575439947,
+        "gyro_z_rad_s": 0.4053,
+        "accel_x_m_s2": -0.1423,
+        "accel_y_m_s2": -0.004
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.768,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 412,
+      "time_s": 13.733,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7647,
+      "robot_y": 0.6037,
+      "heading_deg": 165.01,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        1991,
+        -2936,
+        4039
+      ],
+      "imu": {
+        "yaw_rad": 2.866666666666663,
+        "yaw_deg": 164.2479012708358,
+        "gyro_z_rad_s": 0.394,
+        "accel_x_m_s2": -0.1617,
+        "accel_y_m_s2": -0.0366
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.774,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 413,
+      "time_s": 13.767,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7617,
+      "robot_y": 0.5924,
+      "heading_deg": 165.78,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2013,
+        -2940,
+        4036
+      ],
+      "imu": {
+        "yaw_rad": 2.8799999999999963,
+        "yaw_deg": 165.0118449976769,
+        "gyro_z_rad_s": 0.4073,
+        "accel_x_m_s2": -0.1417,
+        "accel_y_m_s2": -0.014
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.782,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 414,
+      "time_s": 13.8,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7588,
+      "robot_y": 0.5811,
+      "heading_deg": 166.54,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2034,
+        -2944,
+        4032
+      ],
+      "imu": {
+        "yaw_rad": 2.8933333333333295,
+        "yaw_deg": 165.77578872451798,
+        "gyro_z_rad_s": 0.4097,
+        "accel_x_m_s2": -0.1088,
+        "accel_y_m_s2": -0.0002
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.798,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 415,
+      "time_s": 13.833,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7561,
+      "robot_y": 0.5698,
+      "heading_deg": 167.3,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2055,
+        -2947,
+        4029
+      ],
+      "imu": {
+        "yaw_rad": 2.9066666666666627,
+        "yaw_deg": 166.53973245135907,
+        "gyro_z_rad_s": 0.4043,
+        "accel_x_m_s2": -0.1291,
+        "accel_y_m_s2": -0.0044
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.802,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 416,
+      "time_s": 13.867,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7535,
+      "robot_y": 0.5584,
+      "heading_deg": 168.07,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2077,
+        -2951,
+        4025
+      ],
+      "imu": {
+        "yaw_rad": 2.919999999999996,
+        "yaw_deg": 167.30367617820016,
+        "gyro_z_rad_s": 0.4088,
+        "accel_x_m_s2": -0.1069,
+        "accel_y_m_s2": -0.0137
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.813,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 417,
+      "time_s": 13.9,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7511,
+      "robot_y": 0.547,
+      "heading_deg": 168.83,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2098,
+        -2954,
+        4021
+      ],
+      "imu": {
+        "yaw_rad": 2.933333333333329,
+        "yaw_deg": 168.06761990504123,
+        "gyro_z_rad_s": 0.402,
+        "accel_x_m_s2": -0.1524,
+        "accel_y_m_s2": 0.0093
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.823,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 418,
+      "time_s": 13.933,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7489,
+      "robot_y": 0.5356,
+      "heading_deg": 169.6,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2120,
+        -2958,
+        4018
+      ],
+      "imu": {
+        "yaw_rad": 2.9466666666666623,
+        "yaw_deg": 168.83156363188232,
+        "gyro_z_rad_s": 0.4055,
+        "accel_x_m_s2": -0.1313,
+        "accel_y_m_s2": 0.003
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.828,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 419,
+      "time_s": 13.967,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7468,
+      "robot_y": 0.5241,
+      "heading_deg": 170.36,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2141,
+        -2961,
+        4014
+      ],
+      "imu": {
+        "yaw_rad": 2.9599999999999955,
+        "yaw_deg": 169.5955073587234,
+        "gyro_z_rad_s": 0.3918,
+        "accel_x_m_s2": -0.1459,
+        "accel_y_m_s2": 0.0015
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.837,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 420,
+      "time_s": 14.0,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7448,
+      "robot_y": 0.5126,
+      "heading_deg": 171.12,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2163,
+        -2965,
+        4011
+      ],
+      "imu": {
+        "yaw_rad": 2.9733333333333287,
+        "yaw_deg": 170.3594510855645,
+        "gyro_z_rad_s": 0.4043,
+        "accel_x_m_s2": -0.1874,
+        "accel_y_m_s2": -0.0034
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.844,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 421,
+      "time_s": 14.033,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.743,
+      "robot_y": 0.501,
+      "heading_deg": 171.89,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2184,
+        -2969,
+        4007
+      ],
+      "imu": {
+        "yaw_rad": 2.986666666666662,
+        "yaw_deg": 171.1233948124056,
+        "gyro_z_rad_s": 0.403,
+        "accel_x_m_s2": -0.1172,
+        "accel_y_m_s2": 0.0083
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.851,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 422,
+      "time_s": 14.067,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7413,
+      "robot_y": 0.4895,
+      "heading_deg": 172.65,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2206,
+        -2972,
+        4004
+      ],
+      "imu": {
+        "yaw_rad": 2.999999999999995,
+        "yaw_deg": 171.88733853924668,
+        "gyro_z_rad_s": 0.3879,
+        "accel_x_m_s2": -0.1356,
+        "accel_y_m_s2": -0.0023
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.866,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 423,
+      "time_s": 14.1,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7399,
+      "robot_y": 0.4779,
+      "heading_deg": 173.42,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2227,
+        -2976,
+        4000
+      ],
+      "imu": {
+        "yaw_rad": 3.0133333333333283,
+        "yaw_deg": 172.65128226608778,
+        "gyro_z_rad_s": 0.3956,
+        "accel_x_m_s2": -0.1389,
+        "accel_y_m_s2": 0.0057
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.875,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 424,
+      "time_s": 14.133,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7385,
+      "robot_y": 0.4663,
+      "heading_deg": 174.18,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2249,
+        -2979,
+        3996
+      ],
+      "imu": {
+        "yaw_rad": 3.0266666666666615,
+        "yaw_deg": 173.41522599292887,
+        "gyro_z_rad_s": 0.3851,
+        "accel_x_m_s2": -0.1664,
+        "accel_y_m_s2": 0.0041
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.887,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 425,
+      "time_s": 14.167,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7373,
+      "robot_y": 0.4547,
+      "heading_deg": 174.94,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2270,
+        -2983,
+        3993
+      ],
+      "imu": {
+        "yaw_rad": 3.0399999999999947,
+        "yaw_deg": 174.17916971976996,
+        "gyro_z_rad_s": 0.404,
+        "accel_x_m_s2": -0.156,
+        "accel_y_m_s2": 0.0073
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 0.889,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 426,
+      "time_s": 14.2,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7363,
+      "robot_y": 0.4431,
+      "heading_deg": 175.71,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2292,
+        -2987,
+        3989
+      ],
+      "imu": {
+        "yaw_rad": 3.053333333333328,
+        "yaw_deg": 174.94311344661105,
+        "gyro_z_rad_s": 0.3999,
+        "accel_x_m_s2": -0.1333,
+        "accel_y_m_s2": -0.0013
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 1.025,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 427,
+      "time_s": 14.233,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7354,
+      "robot_y": 0.4315,
+      "heading_deg": 176.47,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2313,
+        -2990,
+        3986
+      ],
+      "imu": {
+        "yaw_rad": 3.066666666666661,
+        "yaw_deg": 175.70705717345214,
+        "gyro_z_rad_s": 0.397,
+        "accel_x_m_s2": -0.1218,
+        "accel_y_m_s2": 0.0028
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 1.27,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 428,
+      "time_s": 14.267,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7347,
+      "robot_y": 0.4198,
+      "heading_deg": 177.23,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2335,
+        -2994,
+        3982
+      ],
+      "imu": {
+        "yaw_rad": 3.0799999999999943,
+        "yaw_deg": 176.47100090029323,
+        "gyro_z_rad_s": 0.3996,
+        "accel_x_m_s2": -0.1075,
+        "accel_y_m_s2": 0.003
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 1.618,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 429,
+      "time_s": 14.3,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7342,
+      "robot_y": 0.4082,
+      "heading_deg": 178.0,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2356,
+        -2997,
+        3978
+      ],
+      "imu": {
+        "yaw_rad": 3.0933333333333275,
+        "yaw_deg": 177.23494462713433,
+        "gyro_z_rad_s": 0.4015,
+        "accel_x_m_s2": -0.123,
+        "accel_y_m_s2": 0.0184
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 430,
+      "time_s": 14.333,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7337,
+      "robot_y": 0.3965,
+      "heading_deg": 178.76,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2378,
+        -3001,
+        3975
+      ],
+      "imu": {
+        "yaw_rad": 3.1066666666666607,
+        "yaw_deg": 177.99888835397542,
+        "gyro_z_rad_s": 0.4006,
+        "accel_x_m_s2": -0.1554,
+        "accel_y_m_s2": -0.0364
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 431,
+      "time_s": 14.367,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7335,
+      "robot_y": 0.3849,
+      "heading_deg": 179.53,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2399,
+        -3004,
+        3971
+      ],
+      "imu": {
+        "yaw_rad": 3.119999999999994,
+        "yaw_deg": 178.7628320808165,
+        "gyro_z_rad_s": 0.4098,
+        "accel_x_m_s2": -0.1267,
+        "accel_y_m_s2": 0.0039
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 432,
+      "time_s": 14.4,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7334,
+      "robot_y": 0.3732,
+      "heading_deg": 180.29,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2421,
+        -3008,
+        3968
+      ],
+      "imu": {
+        "yaw_rad": 3.133333333333327,
+        "yaw_deg": 179.5267758076576,
+        "gyro_z_rad_s": 0.3956,
+        "accel_x_m_s2": -0.1418,
+        "accel_y_m_s2": -0.0132
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 433,
+      "time_s": 14.433,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7335,
+      "robot_y": 0.3615,
+      "heading_deg": 181.05,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2442,
+        -3012,
+        3964
+      ],
+      "imu": {
+        "yaw_rad": 3.1466666666666603,
+        "yaw_deg": 180.29071953449866,
+        "gyro_z_rad_s": 0.4118,
+        "accel_x_m_s2": -0.1547,
+        "accel_y_m_s2": 0.0324
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 434,
+      "time_s": 14.467,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7337,
+      "robot_y": 0.3499,
+      "heading_deg": 181.82,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2464,
+        -3015,
+        3961
+      ],
+      "imu": {
+        "yaw_rad": 3.1599999999999935,
+        "yaw_deg": 181.05466326133975,
+        "gyro_z_rad_s": 0.404,
+        "accel_x_m_s2": -0.1266,
+        "accel_y_m_s2": 0.0406
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 435,
+      "time_s": 14.5,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.734,
+      "robot_y": 0.3382,
+      "heading_deg": 182.58,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2485,
+        -3019,
+        3957
+      ],
+      "imu": {
+        "yaw_rad": 3.1733333333333267,
+        "yaw_deg": 181.81860698818085,
+        "gyro_z_rad_s": 0.3967,
+        "accel_x_m_s2": -0.1525,
+        "accel_y_m_s2": 0.0041
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 436,
+      "time_s": 14.533,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7346,
+      "robot_y": 0.3265,
+      "heading_deg": 183.35,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2507,
+        -3022,
+        3953
+      ],
+      "imu": {
+        "yaw_rad": 3.18666666666666,
+        "yaw_deg": 182.58255071502194,
+        "gyro_z_rad_s": 0.4065,
+        "accel_x_m_s2": -0.1409,
+        "accel_y_m_s2": 0.0308
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 437,
+      "time_s": 14.567,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7352,
+      "robot_y": 0.3149,
+      "heading_deg": 184.11,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2528,
+        -3026,
+        3950
+      ],
+      "imu": {
+        "yaw_rad": 3.199999999999993,
+        "yaw_deg": 183.34649444186303,
+        "gyro_z_rad_s": 0.4026,
+        "accel_x_m_s2": -0.1294,
+        "accel_y_m_s2": -0.009
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 438,
+      "time_s": 14.6,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7361,
+      "robot_y": 0.3033,
+      "heading_deg": 184.87,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2550,
+        -3029,
+        3946
+      ],
+      "imu": {
+        "yaw_rad": 3.2133333333333263,
+        "yaw_deg": 184.11043816870412,
+        "gyro_z_rad_s": 0.3971,
+        "accel_x_m_s2": -0.1099,
+        "accel_y_m_s2": 0.0087
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 439,
+      "time_s": 14.633,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7371,
+      "robot_y": 0.2916,
+      "heading_deg": 185.64,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2571,
+        -3033,
+        3943
+      ],
+      "imu": {
+        "yaw_rad": 3.2266666666666595,
+        "yaw_deg": 184.8743818955452,
+        "gyro_z_rad_s": 0.4081,
+        "accel_x_m_s2": -0.1522,
+        "accel_y_m_s2": 0.0313
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 440,
+      "time_s": 14.667,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7382,
+      "robot_y": 0.28,
+      "heading_deg": 186.4,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2593,
+        -3037,
+        3939
+      ],
+      "imu": {
+        "yaw_rad": 3.2399999999999927,
+        "yaw_deg": 185.6383256223863,
+        "gyro_z_rad_s": 0.3926,
+        "accel_x_m_s2": -0.1094,
+        "accel_y_m_s2": 0.0247
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 441,
+      "time_s": 14.7,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7395,
+      "robot_y": 0.2684,
+      "heading_deg": 187.17,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2614,
+        -3040,
+        3935
+      ],
+      "imu": {
+        "yaw_rad": 3.253333333333326,
+        "yaw_deg": 186.4022693492274,
+        "gyro_z_rad_s": 0.4118,
+        "accel_x_m_s2": -0.1108,
+        "accel_y_m_s2": -0.0097
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 442,
+      "time_s": 14.733,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.741,
+      "robot_y": 0.2569,
+      "heading_deg": 187.93,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2636,
+        -3044,
+        3932
+      ],
+      "imu": {
+        "yaw_rad": 3.266666666666659,
+        "yaw_deg": 187.1662130760685,
+        "gyro_z_rad_s": 0.4129,
+        "accel_x_m_s2": -0.1326,
+        "accel_y_m_s2": 0.0233
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 443,
+      "time_s": 14.767,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7426,
+      "robot_y": 0.2453,
+      "heading_deg": 188.69,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2657,
+        -3047,
+        3928
+      ],
+      "imu": {
+        "yaw_rad": 3.2799999999999923,
+        "yaw_deg": 187.93015680290958,
+        "gyro_z_rad_s": 0.4121,
+        "accel_x_m_s2": -0.1496,
+        "accel_y_m_s2": 0.0184
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 444,
+      "time_s": 14.8,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7444,
+      "robot_y": 0.2338,
+      "heading_deg": 189.46,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2679,
+        -3051,
+        3925
+      ],
+      "imu": {
+        "yaw_rad": 3.2933333333333255,
+        "yaw_deg": 188.69410052975067,
+        "gyro_z_rad_s": 0.404,
+        "accel_x_m_s2": -0.166,
+        "accel_y_m_s2": 0.0036
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 445,
+      "time_s": 14.833,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7463,
+      "robot_y": 0.2223,
+      "heading_deg": 190.22,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2700,
+        -3055,
+        3921
+      ],
+      "imu": {
+        "yaw_rad": 3.3066666666666586,
+        "yaw_deg": 189.45804425659176,
+        "gyro_z_rad_s": 0.3951,
+        "accel_x_m_s2": -0.1193,
+        "accel_y_m_s2": -0.0026
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 446,
+      "time_s": 14.867,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7483,
+      "robot_y": 0.2108,
+      "heading_deg": 190.99,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2722,
+        -3058,
+        3918
+      ],
+      "imu": {
+        "yaw_rad": 3.319999999999992,
+        "yaw_deg": 190.22198798343285,
+        "gyro_z_rad_s": 0.3992,
+        "accel_x_m_s2": -0.1484,
+        "accel_y_m_s2": -0.0099
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 447,
+      "time_s": 14.9,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7506,
+      "robot_y": 0.1993,
+      "heading_deg": 191.75,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2743,
+        -3062,
+        3914
+      ],
+      "imu": {
+        "yaw_rad": 3.333333333333325,
+        "yaw_deg": 190.98593171027395,
+        "gyro_z_rad_s": 0.3925,
+        "accel_x_m_s2": -0.1267,
+        "accel_y_m_s2": 0.0066
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 448,
+      "time_s": 14.933,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7529,
+      "robot_y": 0.1879,
+      "heading_deg": 192.51,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2765,
+        -3065,
+        3910
+      ],
+      "imu": {
+        "yaw_rad": 3.3466666666666582,
+        "yaw_deg": 191.74987543711504,
+        "gyro_z_rad_s": 0.4122,
+        "accel_x_m_s2": -0.1387,
+        "accel_y_m_s2": 0.0058
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 449,
+      "time_s": 14.967,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7555,
+      "robot_y": 0.1765,
+      "heading_deg": 193.28,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2786,
+        -3069,
+        3907
+      ],
+      "imu": {
+        "yaw_rad": 3.3599999999999914,
+        "yaw_deg": 192.5138191639561,
+        "gyro_z_rad_s": 0.4109,
+        "accel_x_m_s2": -0.129,
+        "accel_y_m_s2": 0.0134
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 450,
+      "time_s": 15.0,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7581,
+      "robot_y": 0.1652,
+      "heading_deg": 194.04,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2807,
+        -3072,
+        3903
+      ],
+      "imu": {
+        "yaw_rad": 3.3733333333333246,
+        "yaw_deg": 193.2777628907972,
+        "gyro_z_rad_s": 0.4053,
+        "accel_x_m_s2": -0.1359,
+        "accel_y_m_s2": -0.0158
+      },
+      "ultrasonic": {
+        "front_m": 0.525,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": true
+      }
+    },
+    {
+      "frame": 451,
+      "time_s": 15.033,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.761,
+      "robot_y": 0.1538,
+      "heading_deg": 194.81,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2829,
+        -3076,
+        3900
+      ],
+      "imu": {
+        "yaw_rad": 3.386666666666658,
+        "yaw_deg": 194.04170661763828,
+        "gyro_z_rad_s": 0.4147,
+        "accel_x_m_s2": -0.1427,
+        "accel_y_m_s2": -0.0186
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 452,
+      "time_s": 15.067,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.764,
+      "robot_y": 0.1426,
+      "heading_deg": 195.57,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2850,
+        -3080,
+        3896
+      ],
+      "imu": {
+        "yaw_rad": 3.399999999999991,
+        "yaw_deg": 194.80565034447937,
+        "gyro_z_rad_s": 0.3991,
+        "accel_x_m_s2": -0.1561,
+        "accel_y_m_s2": -0.0241
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 453,
+      "time_s": 15.1,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7671,
+      "robot_y": 0.1313,
+      "heading_deg": 196.33,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2872,
+        -3083,
+        3892
+      ],
+      "imu": {
+        "yaw_rad": 3.4133333333333242,
+        "yaw_deg": 195.56959407132047,
+        "gyro_z_rad_s": 0.3974,
+        "accel_x_m_s2": -0.1626,
+        "accel_y_m_s2": 0.0076
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 454,
+      "time_s": 15.133,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7704,
+      "robot_y": 0.1201,
+      "heading_deg": 197.1,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2893,
+        -3087,
+        3889
+      ],
+      "imu": {
+        "yaw_rad": 3.4266666666666574,
+        "yaw_deg": 196.33353779816156,
+        "gyro_z_rad_s": 0.4074,
+        "accel_x_m_s2": -0.1428,
+        "accel_y_m_s2": -0.0158
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 455,
+      "time_s": 15.167,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7738,
+      "robot_y": 0.109,
+      "heading_deg": 197.86,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2915,
+        -3090,
+        3885
+      ],
+      "imu": {
+        "yaw_rad": 3.4399999999999906,
+        "yaw_deg": 197.09748152500265,
+        "gyro_z_rad_s": 0.407,
+        "accel_x_m_s2": -0.1521,
+        "accel_y_m_s2": 0.0015
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 456,
+      "time_s": 15.2,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7774,
+      "robot_y": 0.0979,
+      "heading_deg": 198.63,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2936,
+        -3094,
+        3882
+      ],
+      "imu": {
+        "yaw_rad": 3.453333333333324,
+        "yaw_deg": 197.86142525184374,
+        "gyro_z_rad_s": 0.3936,
+        "accel_x_m_s2": -0.1332,
+        "accel_y_m_s2": -0.0228
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 457,
+      "time_s": 15.233,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7811,
+      "robot_y": 0.0868,
+      "heading_deg": 199.39,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2958,
+        -3098,
+        3878
+      ],
+      "imu": {
+        "yaw_rad": 3.466666666666657,
+        "yaw_deg": 198.62536897868483,
+        "gyro_z_rad_s": 0.3933,
+        "accel_x_m_s2": -0.1518,
+        "accel_y_m_s2": 0.0082
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 458,
+      "time_s": 15.267,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.785,
+      "robot_y": 0.0758,
+      "heading_deg": 200.15,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        2979,
+        -3101,
+        3875
+      ],
+      "imu": {
+        "yaw_rad": 3.47999999999999,
+        "yaw_deg": 199.38931270552592,
+        "gyro_z_rad_s": 0.392,
+        "accel_x_m_s2": -0.1445,
+        "accel_y_m_s2": 0.0315
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 459,
+      "time_s": 15.3,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.789,
+      "robot_y": 0.0649,
+      "heading_deg": 200.92,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        3001,
+        -3105,
+        3871
+      ],
+      "imu": {
+        "yaw_rad": 3.4933333333333234,
+        "yaw_deg": 200.15325643236702,
+        "gyro_z_rad_s": 0.4132,
+        "accel_x_m_s2": -0.1676,
+        "accel_y_m_s2": -0.0134
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 460,
+      "time_s": 15.333,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7932,
+      "robot_y": 0.054,
+      "heading_deg": 201.68,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        3022,
+        -3108,
+        3867
+      ],
+      "imu": {
+        "yaw_rad": 3.5066666666666566,
+        "yaw_deg": 200.9172001592081,
+        "gyro_z_rad_s": 0.3944,
+        "accel_x_m_s2": -0.1437,
+        "accel_y_m_s2": 0.0062
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 461,
+      "time_s": 15.367,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.7975,
+      "robot_y": 0.0431,
+      "heading_deg": 202.45,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        3044,
+        -3112,
+        3864
+      ],
+      "imu": {
+        "yaw_rad": 3.51999999999999,
+        "yaw_deg": 201.6811438860492,
+        "gyro_z_rad_s": 0.3951,
+        "accel_x_m_s2": -0.1347,
+        "accel_y_m_s2": 0.0178
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 462,
+      "time_s": 15.4,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8019,
+      "robot_y": 0.0323,
+      "heading_deg": 203.21,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        3065,
+        -3115,
+        3860
+      ],
+      "imu": {
+        "yaw_rad": 3.533333333333323,
+        "yaw_deg": 202.4450876128903,
+        "gyro_z_rad_s": 0.4091,
+        "accel_x_m_s2": -0.1557,
+        "accel_y_m_s2": 0.008
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 463,
+      "time_s": 15.433,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8065,
+      "robot_y": 0.0216,
+      "heading_deg": 203.97,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        3087,
+        -3119,
+        3857
+      ],
+      "imu": {
+        "yaw_rad": 3.546666666666656,
+        "yaw_deg": 203.20903133973138,
+        "gyro_z_rad_s": 0.3988,
+        "accel_x_m_s2": -0.157,
+        "accel_y_m_s2": 0.0042
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 464,
+      "time_s": 15.467,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8113,
+      "robot_y": 0.011,
+      "heading_deg": 204.74,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        3108,
+        -3123,
+        3853
+      ],
+      "imu": {
+        "yaw_rad": 3.5599999999999894,
+        "yaw_deg": 203.97297506657247,
+        "gyro_z_rad_s": 0.4073,
+        "accel_x_m_s2": -0.1364,
+        "accel_y_m_s2": 0.0137
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 465,
+      "time_s": 15.5,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8161,
+      "robot_y": 0.0004,
+      "heading_deg": 205.5,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        3130,
+        -3126,
+        3850
+      ],
+      "imu": {
+        "yaw_rad": 3.5733333333333226,
+        "yaw_deg": 204.73691879341357,
+        "gyro_z_rad_s": 0.3924,
+        "accel_x_m_s2": -0.1301,
+        "accel_y_m_s2": -0.0018
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 466,
+      "time_s": 15.533,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8212,
+      "robot_y": -0.0102,
+      "heading_deg": 206.26,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        3151,
+        -3130,
+        3846
+      ],
+      "imu": {
+        "yaw_rad": 3.586666666666656,
+        "yaw_deg": 205.50086252025463,
+        "gyro_z_rad_s": 0.4005,
+        "accel_x_m_s2": -0.1436,
+        "accel_y_m_s2": 0.0154
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 467,
+      "time_s": 15.567,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8263,
+      "robot_y": -0.0206,
+      "heading_deg": 207.03,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        3173,
+        -3133,
+        3842
+      ],
+      "imu": {
+        "yaw_rad": 3.599999999999989,
+        "yaw_deg": 206.26480624709572,
+        "gyro_z_rad_s": 0.3998,
+        "accel_x_m_s2": -0.1328,
+        "accel_y_m_s2": -0.0149
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 468,
+      "time_s": 15.6,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8316,
+      "robot_y": -0.031,
+      "heading_deg": 207.79,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        3194,
+        -3137,
+        3839
+      ],
+      "imu": {
+        "yaw_rad": 3.613333333333322,
+        "yaw_deg": 207.0287499739368,
+        "gyro_z_rad_s": 0.4069,
+        "accel_x_m_s2": -0.1479,
+        "accel_y_m_s2": 0.0013
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 469,
+      "time_s": 15.633,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8371,
+      "robot_y": -0.0414,
+      "heading_deg": 208.56,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        3216,
+        -3140,
+        3835
+      ],
+      "imu": {
+        "yaw_rad": 3.6266666666666554,
+        "yaw_deg": 207.7926937007779,
+        "gyro_z_rad_s": 0.4154,
+        "accel_x_m_s2": -0.1192,
+        "accel_y_m_s2": 0.0214
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 470,
+      "time_s": 15.667,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8427,
+      "robot_y": -0.0516,
+      "heading_deg": 209.32,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        3237,
+        -3144,
+        3832
+      ],
+      "imu": {
+        "yaw_rad": 3.6399999999999886,
+        "yaw_deg": 208.556637427619,
+        "gyro_z_rad_s": 0.4018,
+        "accel_x_m_s2": -0.1471,
+        "accel_y_m_s2": -0.0002
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 471,
+      "time_s": 15.7,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8484,
+      "robot_y": -0.0618,
+      "heading_deg": 210.08,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        3259,
+        -3148,
+        3828
+      ],
+      "imu": {
+        "yaw_rad": 3.6533333333333218,
+        "yaw_deg": 209.3205811544601,
+        "gyro_z_rad_s": 0.4012,
+        "accel_x_m_s2": -0.1517,
+        "accel_y_m_s2": -0.0149
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 472,
+      "time_s": 15.733,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8542,
+      "robot_y": -0.0719,
+      "heading_deg": 210.85,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        3280,
+        -3151,
+        3824
+      ],
+      "imu": {
+        "yaw_rad": 3.666666666666655,
+        "yaw_deg": 210.08452488130118,
+        "gyro_z_rad_s": 0.389,
+        "accel_x_m_s2": -0.131,
+        "accel_y_m_s2": -0.0089
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 473,
+      "time_s": 15.767,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8602,
+      "robot_y": -0.0819,
+      "heading_deg": 211.61,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        3302,
+        -3155,
+        3821
+      ],
+      "imu": {
+        "yaw_rad": 3.679999999999988,
+        "yaw_deg": 210.84846860814227,
+        "gyro_z_rad_s": 0.4062,
+        "accel_x_m_s2": -0.1271,
+        "accel_y_m_s2": -0.0023
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 474,
+      "time_s": 15.8,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8663,
+      "robot_y": -0.0918,
+      "heading_deg": 212.38,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        3323,
+        -3158,
+        3817
+      ],
+      "imu": {
+        "yaw_rad": 3.6933333333333214,
+        "yaw_deg": 211.61241233498336,
+        "gyro_z_rad_s": 0.3949,
+        "accel_x_m_s2": -0.1077,
+        "accel_y_m_s2": -0.0001
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 475,
+      "time_s": 15.833,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8726,
+      "robot_y": -0.1017,
+      "heading_deg": 213.14,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        3345,
+        -3162,
+        3814
+      ],
+      "imu": {
+        "yaw_rad": 3.7066666666666546,
+        "yaw_deg": 212.37635606182445,
+        "gyro_z_rad_s": 0.4037,
+        "accel_x_m_s2": -0.1399,
+        "accel_y_m_s2": -0.013
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 476,
+      "time_s": 15.867,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8789,
+      "robot_y": -0.1114,
+      "heading_deg": 213.9,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        3366,
+        -3166,
+        3810
+      ],
+      "imu": {
+        "yaw_rad": 3.7199999999999878,
+        "yaw_deg": 213.14029978866554,
+        "gyro_z_rad_s": 0.4025,
+        "accel_x_m_s2": -0.134,
+        "accel_y_m_s2": -0.0064
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 477,
+      "time_s": 15.9,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8854,
+      "robot_y": -0.1211,
+      "heading_deg": 214.67,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        3388,
+        -3169,
+        3807
+      ],
+      "imu": {
+        "yaw_rad": 3.733333333333321,
+        "yaw_deg": 213.90424351550664,
+        "gyro_z_rad_s": 0.4022,
+        "accel_x_m_s2": -0.1324,
+        "accel_y_m_s2": 0.0049
+      },
+      "ultrasonic": {
+        "front_m": 2.5,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 478,
+      "time_s": 15.933,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8921,
+      "robot_y": -0.1307,
+      "heading_deg": 215.43,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        3409,
+        -3173,
+        3803
+      ],
+      "imu": {
+        "yaw_rad": 3.746666666666654,
+        "yaw_deg": 214.66818724234773,
+        "gyro_z_rad_s": 0.4042,
+        "accel_x_m_s2": -0.1131,
+        "accel_y_m_s2": -0.019
+      },
+      "ultrasonic": {
+        "front_m": 2.441,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 479,
+      "time_s": 15.967,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.8988,
+      "robot_y": -0.1402,
+      "heading_deg": 216.2,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        3431,
+        -3176,
+        3799
+      ],
+      "imu": {
+        "yaw_rad": 3.7599999999999874,
+        "yaw_deg": 215.43213096918882,
+        "gyro_z_rad_s": 0.4066,
+        "accel_x_m_s2": -0.1381,
+        "accel_y_m_s2": -0.0106
+      },
+      "ultrasonic": {
+        "front_m": 2.372,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    },
+    {
+      "frame": 480,
+      "time_s": 16.0,
+      "phase": "Phase 6: Obstacle Avoidance Holonomic Escape",
+      "robot_x": 0.9057,
+      "robot_y": -0.1496,
+      "heading_deg": 216.96,
+      "vx_cmd": 0.0,
+      "vy_cmd": 0.35,
+      "omega_cmd": 0.4,
+      "wheel_speeds_mps": [
+        0.45,
+        -0.075,
+        -0.075
+      ],
+      "wheel_rpms": [
+        107.4,
+        -17.9,
+        -17.9
+      ],
+      "encoder_ticks": [
+        3452,
+        -3180,
+        3796
+      ],
+      "imu": {
+        "yaw_rad": 3.7733333333333205,
+        "yaw_deg": 216.1960746960299,
+        "gyro_z_rad_s": 0.3918,
+        "accel_x_m_s2": -0.1415,
+        "accel_y_m_s2": -0.0019
+      },
+      "ultrasonic": {
+        "front_m": 2.304,
+        "left_m": 2.5,
+        "right_m": 2.5,
+        "hazard_detected": false
+      }
+    }
+  ]
+};

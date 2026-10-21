@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Group 7 — Three-Wheel Omni Robot Telemetry & Kinematics Dashboard</title>
+  <style>
+    :root {
+      --bg-dark: #0a0d14;
+      --bg-panel: #111726;
+      --bg-card: #182238;
+      --border-color: #243452;
+      --primary: #00e5ff;
+      --primary-glow: rgba(0, 229, 255, 0.35);
+      --success: #00e676;
+      --danger: #ff1744;
+      --warning: #ffab00;
+      --text-main: #f0f4fc;
+      --text-dim: #8fa0c0;
+      --font-mono: 'Consolas', 'Fira Code', monospace;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      overflow-x: hidden;
+      padding: 16px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-panel);
+      padding: 16px 24px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      margin-bottom: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+    .header-left h1 {
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .badge {
+      font-size: 0.72rem;
+      background: linear-gradient(135deg, #00b0ff, #00e5ff);
+      color: #001020;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .header-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      margin-top: 4px;
+    }
+    .header-status {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+    }
+    .status-indicator {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: var(--bg-card);
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+    .pulse-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 10px var(--success);
+      animation: pulse 1.5s infinite;
+    }
+    .pulse-dot.alert {
+      background: var(--danger);
+      box-shadow: 0 0 10px var(--danger);
+    }
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.7; }
+      50% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.7; }
+    }
+    
+    /* Layout */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 1200px) {
+      .dashboard-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .panel {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .panel-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    /* 2D Arena Canvas */
+    .canvas-container {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      background: #06090e;
+      border-radius: 8px;
+      border: 1px solid #1a2538;
+      overflow: hidden;
+    }
+    canvas#arenaCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .canvas-overlay-legend {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(10, 15, 25, 0.85);
+      border: 1px solid var(--border-color);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      display: flex;
+      gap: 12px;
+      backdrop-filter: blur(4px);
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .legend-color {
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+    }
+    
+    /* Telemetry cards */
+    .telemetry-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .telemetry-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 10px 14px;
+      text-align: center;
+    }
+    .card-label {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .card-value {
+      font-size: 1.15rem;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: #ffffff;
+    }
+    .card-unit {
+      font-size: 0.75rem;
+      color: var(--primary);
+      margin-left: 2px;
+    }
+    
+    /* Gauges Grid */
+    .gauges-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .gauge-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+    }
+    .gauge-box h4 {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+    .gauge-svg {
+      width: 100px;
+      height: 60px;
+      margin: 0 auto;
+    }
+    .gauge-num {
+      font-size: 1.25rem;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: #00e5ff;
+    }
+    
+    /* Sensor cards */
+    .sensor-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .sensor-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    .sensor-card.alert {
+      border-color: var(--danger);
+      background: rgba(255, 23, 68, 0.15);
+      box-shadow: 0 0 12px rgba(255, 23, 68, 0.3);
+    }
+    
+    /* Timeline & Controls */
+    .timeline-panel {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      margin-bottom: 16px;
+    }
+    .controls-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    button.btn {
+      background: var(--bg-card);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    button.btn:hover {
+      background: var(--primary);
+      color: #001020;
+      border-color: var(--primary);
+      box-shadow: 0 0 12px var(--primary-glow);
+    }
+    button.btn.active {
+      background: var(--primary);
+      color: #001020;
+    }
+    .scrubber-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-grow: 1;
+    }
+    input[type=range] {
+      flex-grow: 1;
+      height: 6px;
+      background: #1a2538;
+      border-radius: 3px;
+      outline: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 8px var(--primary);
+      cursor: pointer;
+    }
+    .time-display {
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      color: var(--primary);
+      min-width: 140px;
+      text-align: right;
+    }
+    
+    /* Charts */
+    .chart-panel {
+      height: 180px;
+      width: 100%;
+      background: #080c14;
+      border-radius: 8px;
+      border: 1px solid #1a2538;
+      position: relative;
+    }
+    canvas#chartCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-left">
+      <h1>
+        GROUP 7 — THREE-WHEEL OMNIDIRECTIONAL ROBOT
+        <span class="badge">SIMULATION TELEMETRY</span>
+      </h1>
+      <div class="header-subtitle">
+        Holonomic Kinematics • Wheel Encoders • IMU • HC-SR04 Ultrasonic Distance Sensing • Obstacle Avoidance
+      </div>
+    </div>
+    <div class="header-status">
+      <div class="status-indicator">
+        <span class="pulse-dot" id="hazardDot"></span>
+        <span id="hazardText">ALL SENSORS CLEAR</span>
+      </div>
+      <div class="status-indicator">
+        <span style="color:var(--text-dim);">STAGE:</span>
+        <strong id="phaseText" style="color:var(--primary);">Initializing...</strong>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Grid -->
+  <div class="dashboard-grid">
+    
+    <!-- Left: 2D Arena Canvas -->
+    <div class="panel">
+      <div class="panel-title">
+        <span>Indoor Arena 2D Kinematics View</span>
+        <span style="font-size: 0.75rem; color: var(--text-dim);">10m x 10m ARENA</span>
+      </div>
+      <div class="canvas-container">
+        <canvas id="arenaCanvas"></canvas>
+        <div class="canvas-overlay-legend">
+          <div class="legend-item"><div class="legend-color" style="background:#00e5ff;"></div> Robot</div>
+          <div class="legend-item"><div class="legend-color" style="background:#ff1744;"></div> Wheel 1 (Front)</div>
+          <div class="legend-item"><div class="legend-color" style="background:#00e676;"></div> Ultrasonic Beam</div>
+          <div class="legend-item"><div class="legend-color" style="background:#ff9100;"></div> Obstacle</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Telemetry Readouts & Gauges -->
+    <div class="panel">
+      <div class="panel-title">
+        <span>Live Telemetry & Sensor Output</span>
+        <span style="font-size: 0.75rem; color: var(--text-dim);" id="frameLabel">Frame 1 / 480</span>
+      </div>
+
+      <!-- Pose & Velocity Row -->
+      <div class="telemetry-row">
+        <div class="telemetry-card">
+          <div class="card-label">Position X</div>
+          <div class="card-value" id="valX">0.00<span class="card-unit">m</span></div>
+        </div>
+        <div class="telemetry-card">
+          <div class="card-label">Position Y</div>
+          <div class="card-value" id="valY">0.00<span class="card-unit">m</span></div>
+        </div>
+        <div class="telemetry-card">
+          <div class="card-label">Heading &theta;</div>
+          <div class="card-value" id="valYaw">0.0<span class="card-unit">&deg;</span></div>
+        </div>
+        <div class="telemetry-card">
+          <div class="card-label">Body Speed</div>
+          <div class="card-value" id="valSpeed">0.00<span class="card-unit">m/s</span></div>
+        </div>
+      </div>
+
+      <!-- Drive Motors (Speed & RPM) -->
+      <div class="gauges-grid">
+        <div class="gauge-box">
+          <h4>MOTOR 1 (0&deg;)</h4>
+          <div class="gauge-num" id="valW1Rpm">0.0</div>
+          <div style="font-size:0.75rem; color:var(--text-dim);" id="valW1Spd">0.000 m/s</div>
+          <div style="font-size:0.75rem; color:#ffab00; margin-top:4px;" id="valEnc1">0 ticks</div>
+        </div>
+        <div class="gauge-box">
+          <h4>MOTOR 2 (120&deg;)</h4>
+          <div class="gauge-num" id="valW2Rpm">0.0</div>
+          <div style="font-size:0.75rem; color:var(--text-dim);" id="valW2Spd">0.000 m/s</div>
+          <div style="font-size:0.75rem; color:#ffab00; margin-top:4px;" id="valEnc2">0 ticks</div>
+        </div>
+        <div class="gauge-box">
+          <h4>MOTOR 3 (240&deg;)</h4>
+          <div class="gauge-num" id="valW3Rpm">0.0</div>
+          <div style="font-size:0.75rem; color:var(--text-dim);" id="valW3Spd">0.000 m/s</div>
+          <div style="font-size:0.75rem; color:#ffab00; margin-top:4px;" id="valEnc3">0 ticks</div>
+        </div>
+      </div>
+
+      <!-- IMU Sensors -->
+      <div class="telemetry-row">
+        <div class="telemetry-card">
+          <div class="card-label">IMU Gyro Z</div>
+          <div class="card-value" id="valGyro">0.00<span class="card-unit">rad/s</span></div>
+        </div>
+        <div class="telemetry-card">
+          <div class="card-label">IMU Accel X</div>
+          <div class="card-value" id="valAx">0.00<span class="card-unit">m/s&sup2;</span></div>
+        </div>
+        <div class="telemetry-card">
+          <div class="card-label">IMU Accel Y</div>
+          <div class="card-value" id="valAy">0.00<span class="card-unit">m/s&sup2;</span></div>
+        </div>
+        <div class="telemetry-card">
+          <div class="card-label">Turn Rate</div>
+          <div class="card-value" id="valOmega">0.00<span class="card-unit">rad/s</span></div>
+        </div>
+      </div>
+
+      <!-- Ultrasonic Sensors -->
+      <div class="panel-title" style="margin-top: 14px; margin-bottom: 6px;">
+        <span>Ultrasonic Rangefinders (HC-SR04)</span>
+      </div>
+      <div class="sensor-grid">
+        <div class="sensor-card" id="cardUsLeft">
+          <div class="card-label">Left Sensor (+90&deg;)</div>
+          <div class="card-value" id="valUsLeft">2.50<span class="card-unit">m</span></div>
+        </div>
+        <div class="sensor-card" id="cardUsFront">
+          <div class="card-label">Front Sensor (0&deg;)</div>
+          <div class="card-value" id="valUsFront">2.50<span class="card-unit">m</span></div>
+        </div>
+        <div class="sensor-card" id="cardUsRight">
+          <div class="card-label">Right Sensor (-90&deg;)</div>
+          <div class="card-value" id="valUsRight">2.50<span class="card-unit">m</span></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Timeline & Controls Panel -->
+  <div class="timeline-panel">
+    <div class="controls-row">
+      <button class="btn" id="btnPlayPause">&#9654; Play</button>
+      <button class="btn" id="btnPrev">&#9664;&#9664; -10</button>
+      <button class="btn" id="btnNext">+10 &#9654;&#9654;</button>
+      <button class="btn" id="btnReset">&#8634; Reset</button>
+      
+      <div class="scrubber-container">
+        <input type="range" id="timeScrubber" min="1" max="480" value="1">
+      </div>
+      <div class="time-display" id="timeDisplay">T: 0.00s / 16.00s</div>
+    </div>
+
+    <!-- Live Multi-Channel Chart -->
+    <div class="chart-panel">
+      <canvas id="chartCanvas"></canvas>
+    </div>
+  </div>
+
+  <!-- External/Fallback Telemetry Data -->
+  <script src="telemetry_data.js"></script>
+  <script>
+    // Embedded Fallback Simulator if telemetry_data.js is absent
+    if (!window.TELEMETRY_DATA) {
+      console.warn("telemetry_data.js not detected; generating live simulation data fallback...");
+      const totalFrames = 480;
+      const fps = 30;
+      const R = 0.25;
+      const r = 0.04;
+      const records = [];
+      let x = 0, y = 0, yaw = 0;
+      
+      for (let f = 1; f <= totalFrames; f++) {
+        let t = f / fps;
+        let vx = 0, vy = 0, omega = 0, phase = "";
+        if (t <= 2.5) { vx = 0.40; phase = "Phase 1: Pure Forward Translation"; }
+        else if (t <= 5.0) { vy = 0.40; phase = "Phase 2: Pure Lateral (Sideways) Translation"; }
+        else if (t <= 7.5) { vx = 0.30; vy = -0.30; phase = "Phase 3: Diagonal Translation"; }
+        else if (t <= 9.5) { omega = 1.20; phase = "Phase 4: Pure In-Place Rotation"; }
+        else if (t <= 12.0) { vx = 0.35; phase = "Phase 5: Approaching Obstacle"; }
+        else { vy = 0.35; omega = 0.40; phase = "Phase 6: Obstacle Avoidance Holonomic Escape"; }
+        
+        let cosY = Math.cos(yaw), sinY = Math.sin(yaw);
+        x += (vx * cosY - vy * sinY) / fps;
+        y += (vx * sinY + vy * cosY) / fps;
+        yaw += omega / fps;
+        
+        // Inverse kinematics
+        const angles = [0, 2*Math.PI/3, 4*Math.PI/3];
+        let w_speeds = angles.map(phi => -vx*Math.sin(phi) + vy*Math.cos(phi) + R*omega);
+        let rpms = w_speeds.map(v => (v / r * 60) / (2 * Math.PI));
+        let frontDist = Math.max(0.45, 2.5 - Math.hypot(x - 2.5, y));
+        
+        records.push({
+          frame: f,
+          time_s: parseFloat(t.toFixed(2)),
+          phase: phase,
+          robot_x: x, robot_y: y,
+          heading_deg: ((yaw * 180 / Math.PI) % 360 + 360) % 360,
+          vx_cmd: vx, vy_cmd: vy, omega_cmd: omega,
+          wheel_speeds_mps: w_speeds,
+          wheel_rpms: rpms,
+          encoder_ticks: rpms.map(rpm => Math.round(rpm * t * 6)),
+          imu: {
+            gyro_z_rad_s: omega,
+            accel_x_m_s2: (Math.random()-0.5)*0.05,
+            accel_y_m_s2: (Math.random()-0.5)*0.05
+          },
+          ultrasonic: {
+            front_m: frontDist,
+            left_m: 2.5,
+            right_m: 2.5,
+            hazard_detected: frontDist <= 0.55
+          }
+        });
+      }
+      window.TELEMETRY_DATA = { metadata: { total_frames: totalFrames, fps: fps }, telemetry: records };
+    }
+
+    // -------------------------------------------------------------
+    // Dashboard Logic & Render Engine
+    // -------------------------------------------------------------
+    const data = window.TELEMETRY_DATA.telemetry;
+    const totalFrames = data.length;
+    let currentFrameIndex = 0;
+    let isPlaying = true;
+    let playTimer = null;
+
+    // Elements
+    const arenaCanvas = document.getElementById('arenaCanvas');
+    const ctxArena = arenaCanvas.getContext('2d');
+    const chartCanvas = document.getElementById('chartCanvas');
+    const ctxChart = chartCanvas.getContext('2d');
+    
+    const scrubber = document.getElementById('timeScrubber');
+    const timeDisplay = document.getElementById('timeDisplay');
+    const btnPlayPause = document.getElementById('btnPlayPause');
+    const phaseText = document.getElementById('phaseText');
+    const hazardDot = document.getElementById('hazardDot');
+    const hazardText = document.getElementById('hazardText');
+    const frameLabel = document.getElementById('frameLabel');
+
+    scrubber.max = totalFrames;
+
+    // Resize Canvas cleanly for HiDPI
+    function resizeCanvases() {
+      const rectA = arenaCanvas.parentElement.getBoundingClientRect();
+      arenaCanvas.width = rectA.width * window.devicePixelRatio;
+      arenaCanvas.height = rectA.height * window.devicePixelRatio;
+      ctxArena.scale(window.devicePixelRatio, window.devicePixelRatio);
+      
+      const rectC = chartCanvas.parentElement.getBoundingClientRect();
+      chartCanvas.width = rectC.width * window.devicePixelRatio;
+      chartCanvas.height = rectC.height * window.devicePixelRatio;
+      ctxChart.scale(window.devicePixelRatio, window.devicePixelRatio);
+    }
+    window.addEventListener('resize', resizeCanvases);
+    resizeCanvases();
+
+    // World to Screen Conversion
+    // Arena is 10m x 10m centered at (0,0)
+    function worldToScreen(wx, wy) {
+      const w = arenaCanvas.parentElement.clientWidth;
+      const h = arenaCanvas.parentElement.clientHeight;
+      const scale = Math.min(w, h) / 10.5; // pixels per meter
+      const cx = w / 2;
+      const cy = h / 2;
+      return {
+        x: cx + wx * scale,
+        y: cy - wy * scale,
+        scale: scale
+      };
+    }
+
+    // Draw Arena
+    function drawArena(frameData) {
+      const w = arenaCanvas.parentElement.clientWidth;
+      const h = arenaCanvas.parentElement.clientHeight;
+      ctxArena.clearRect(0, 0, w, h);
+
+      // 1. Grid lines (every 1m)
+      ctxArena.strokeStyle = '#152033';
+      ctxArena.lineWidth = 1;
+      for (let m = -5; m <= 5; m++) {
+        let p1 = worldToScreen(m, -5);
+        let p2 = worldToScreen(m, 5);
+        ctxArena.beginPath();
+        ctxArena.moveTo(p1.x, p1.y);
+        ctxArena.lineTo(p2.x, p2.y);
+        ctxArena.stroke();
+
+        let q1 = worldToScreen(-5, m);
+        let q2 = worldToScreen(5, m);
+        ctxArena.beginPath();
+        ctxArena.moveTo(q1.x, q1.y);
+        ctxArena.lineTo(q2.x, q2.y);
+        ctxArena.stroke();
+      }
+
+      // 2. Arena Boundary Wall
+      let tl = worldToScreen(-5, 5);
+      let br = worldToScreen(5, -5);
+      ctxArena.strokeStyle = '#283c5e';
+      ctxArena.lineWidth = 3;
+      ctxArena.strokeRect(tl.x, tl.y, br.x - tl.x, br.y - tl.y);
+
+      // 3. Launch Pad at (0, 0)
+      let pad = worldToScreen(0, 0);
+      let padR = 0.6 * pad.scale;
+      ctxArena.fillStyle = 'rgba(0, 229, 255, 0.08)';
+      ctxArena.strokeStyle = 'rgba(0, 229, 255, 0.3)';
+      ctxArena.lineWidth = 1.5;
+      ctxArena.beginPath();
+      ctxArena.arc(pad.x, pad.y, padR, 0, 2*Math.PI);
+      ctxArena.fill();
+      ctxArena.stroke();
+
+      // 4. Obstacles
+      // Obstacle 1: Pillar at (2.5, 0.0), R=0.35m
+      let obs1 = worldToScreen(2.5, 0.0);
+      ctxArena.fillStyle = '#ff6d00';
+      ctxArena.beginPath();
+      ctxArena.arc(obs1.x, obs1.y, 0.35 * obs1.scale, 0, 2*Math.PI);
+      ctxArena.fill();
+      ctxArena.strokeStyle = '#ffa040';
+      ctxArena.stroke();
+
+      // Obstacle 2: Crate at (1.2, 2.2), 0.7m x 1.2m
+      let obs2 = worldToScreen(1.2 - 0.35, 2.2 + 0.6);
+      ctxArena.fillStyle = '#00b4d8';
+      ctxArena.fillRect(obs2.x, obs2.y, 0.7 * obs1.scale, 1.2 * obs1.scale);
+
+      // Obstacle 3: Partition Wall at (-1.5, -1.8), 1.8m x 0.3m
+      let obs3 = worldToScreen(-1.5 - 0.9, -1.8 + 0.15);
+      ctxArena.fillStyle = '#64748b';
+      ctxArena.fillRect(obs3.x, obs3.y, 1.8 * obs1.scale, 0.3 * obs1.scale);
+
+      // 5. Trajectory Trail
+      ctxArena.strokeStyle = 'rgba(0, 229, 255, 0.35)';
+      ctxArena.lineWidth = 2;
+      ctxArena.setLineDash([4, 4]);
+      ctxArena.beginPath();
+      for (let i = 0; i <= currentFrameIndex; i++) {
+        let p = worldToScreen(data[i].robot_x, data[i].robot_y);
+        if (i === 0) ctxArena.moveTo(p.x, p.y);
+        else ctxArena.lineTo(p.x, p.y);
+      }
+      ctxArena.stroke();
+      ctxArena.setLineDash([]);
+
+      // 6. Robot Footprint
+      const rx = frameData.robot_x;
+      const ry = frameData.robot_y;
+      const yaw = frameData.heading_deg * Math.PI / 180.0;
+      const rp = worldToScreen(rx, ry);
+      const chR = 0.28 * rp.scale;
+
+      ctxArena.save();
+      ctxArena.translate(rp.x, rp.y);
+      ctxArena.rotate(-yaw);
+
+      // Draw Ultrasonic sensor rays
+      const usSensors = [
+        { name: "Front", angle: 0, dist: frameData.ultrasonic.front_m },
+        { name: "Left", angle: Math.PI/2, dist: frameData.ultrasonic.left_m },
+        { name: "Right", angle: -Math.PI/2, dist: frameData.ultrasonic.right_m }
+      ];
+
+      usSensors.forEach(s => {
+        const sx = chR * Math.cos(s.angle);
+        const sy = -chR * Math.sin(s.angle);
+        const rayLen = s.dist * rp.scale;
+        const ex = sx + rayLen * Math.cos(s.angle);
+        const ey = sy - rayLen * Math.sin(s.angle);
+
+        ctxArena.strokeStyle = s.dist <= 0.55 ? '#ff1744' : '#00e676';
+        ctxArena.lineWidth = s.dist <= 0.55 ? 3 : 1.5;
+        ctxArena.beginPath();
+        ctxArena.moveTo(sx, sy);
+        ctxArena.lineTo(ex, ey);
+        ctxArena.stroke();
+
+        if (s.dist <= 0.55) {
+          ctxArena.fillStyle = '#ff1744';
+          ctxArena.beginPath();
+          ctxArena.arc(ex, ey, 5, 0, 2*Math.PI);
+          ctxArena.fill();
+        }
+      });
+
+      // Triangular Chassis Plate
+      ctxArena.fillStyle = 'rgba(20, 30, 48, 0.95)';
+      ctxArena.strokeStyle = '#00e5ff';
+      ctxArena.lineWidth = 2.5;
+      ctxArena.beginPath();
+      for (let i = 0; i < 3; i++) {
+        let a = i * 2 * Math.PI / 3;
+        let px = chR * Math.cos(a);
+        let py = -chR * Math.sin(a);
+        if (i === 0) ctxArena.moveTo(px, py);
+        else ctxArena.lineTo(px, py);
+      }
+      ctxArena.closePath();
+      ctxArena.fill();
+      ctxArena.stroke();
+
+      // Forward Direction Indicator Arrow (Red)
+      ctxArena.strokeStyle = '#ff1744';
+      ctxArena.lineWidth = 3;
+      ctxArena.beginPath();
+      ctxArena.moveTo(0, 0);
+      ctxArena.lineTo(chR * 1.3, 0);
+      ctxArena.stroke();
+
+      // 3 Omni Wheels
+      const wheelAngles = [0, 2*Math.PI/3, 4*Math.PI/3];
+      wheelAngles.forEach((a, idx) => {
+        let wx = (chR * 0.9) * Math.cos(a);
+        let wy = -(chR * 0.9) * Math.sin(a);
+        ctxArena.save();
+        ctxArena.translate(wx, wy);
+        ctxArena.rotate(-a);
+        ctxArena.fillStyle = '#ff1744';
+        ctxArena.fillRect(-12, -4, 24, 8); // Wheel footprint
+        ctxArena.restore();
+      });
+
+      ctxArena.restore();
+    }
+
+    // Draw Multi-Channel Chart
+    function drawCharts() {
+      const w = chartCanvas.parentElement.clientWidth;
+      const h = chartCanvas.parentElement.clientHeight;
+      ctxChart.clearRect(0, 0, w, h);
+
+      // Background grid
+      ctxChart.strokeStyle = '#162238';
+      ctxChart.lineWidth = 1;
+      ctxChart.beginPath();
+      for (let y = 30; y < h; y += 40) {
+        ctxChart.moveTo(0, y);
+        ctxChart.lineTo(w, y);
+      }
+      ctxChart.stroke();
+
+      // Plot Wheel 1, Wheel 2, Wheel 3 speeds
+      const colors = ['#ff1744', '#00e5ff', '#ffab00'];
+      const maxSpeed = 0.6; // m/s scale
+
+      for (let wheelIdx = 0; wheelIdx < 3; wheelIdx++) {
+        ctxChart.strokeStyle = colors[wheelIdx];
+        ctxChart.lineWidth = 2;
+        ctxChart.beginPath();
+        for (let i = 0; i < totalFrames; i++) {
+          let x = (i / totalFrames) * w;
+          let spd = data[i].wheel_speeds_mps[wheelIdx];
+          let y = (h / 2) - (spd / maxSpeed) * (h / 2.4);
+          if (i === 0) ctxChart.moveTo(x, y);
+          else ctxChart.lineTo(x, y);
+        }
+        ctxChart.stroke();
+      }
+
+      // Current playhead vertical line
+      let playX = (currentFrameIndex / totalFrames) * w;
+      ctxChart.strokeStyle = '#ffffff';
+      ctxChart.lineWidth = 2;
+      ctxChart.setLineDash([4, 4]);
+      ctxChart.beginPath();
+      ctxChart.moveTo(playX, 0);
+      ctxChart.lineTo(playX, h);
+      ctxChart.stroke();
+      ctxChart.setLineDash([]);
+
+      // Legend in top-left
+      ctxChart.font = '11px sans-serif';
+      ctxChart.fillStyle = '#ff1744';
+      ctxChart.fillText('Wheel 1 (mps)', 10, 18);
+      ctxChart.fillStyle = '#00e5ff';
+      ctxChart.fillText('Wheel 2 (mps)', 110, 18);
+      ctxChart.fillStyle = '#ffab00';
+      ctxChart.fillText('Wheel 3 (mps)', 210, 18);
+    }
+
+    // Update Dashboard UI Values
+    function updateUI(fData) {
+      document.getElementById('valX').innerHTML = fData.robot_x.toFixed(2) + '<span class="card-unit">m</span>';
+      document.getElementById('valY').innerHTML = fData.robot_y.toFixed(2) + '<span class="card-unit">m</span>';
+      document.getElementById('valYaw').innerHTML = fData.heading_deg.toFixed(1) + '<span class="card-unit">&deg;</span>';
+      
+      let speed = Math.hypot(fData.vx_cmd, fData.vy_cmd);
+      document.getElementById('valSpeed').innerHTML = speed.toFixed(2) + '<span class="card-unit">m/s</span>';
+      
+      document.getElementById('valW1Rpm').textContent = fData.wheel_rpms[0].toFixed(1);
+      document.getElementById('valW2Rpm').textContent = fData.wheel_rpms[1].toFixed(1);
+      document.getElementById('valW3Rpm').textContent = fData.wheel_rpms[2].toFixed(1);
+
+      document.getElementById('valW1Spd').textContent = fData.wheel_speeds_mps[0].toFixed(3) + ' m/s';
+      document.getElementById('valW2Spd').textContent = fData.wheel_speeds_mps[1].toFixed(3) + ' m/s';
+      document.getElementById('valW3Spd').textContent = fData.wheel_speeds_mps[2].toFixed(3) + ' m/s';
+
+      document.getElementById('valEnc1').textContent = fData.encoder_ticks[0] + ' ticks';
+      document.getElementById('valEnc2').textContent = fData.encoder_ticks[1] + ' ticks';
+      document.getElementById('valEnc3').textContent = fData.encoder_ticks[2] + ' ticks';
+
+      document.getElementById('valGyro').innerHTML = fData.imu.gyro_z_rad_s.toFixed(2) + '<span class="card-unit">rad/s</span>';
+      document.getElementById('valAx').innerHTML = fData.imu.accel_x_m_s2.toFixed(2) + '<span class="card-unit">m/s&sup2;</span>';
+      document.getElementById('valAy').innerHTML = fData.imu.accel_y_m_s2.toFixed(2) + '<span class="card-unit">m/s&sup2;</span>';
+      document.getElementById('valOmega').innerHTML = fData.omega_cmd.toFixed(2) + '<span class="card-unit">rad/s</span>';
+
+      document.getElementById('valUsFront').innerHTML = fData.ultrasonic.front_m.toFixed(2) + '<span class="card-unit">m</span>';
+      document.getElementById('valUsLeft').innerHTML = fData.ultrasonic.left_m.toFixed(2) + '<span class="card-unit">m</span>';
+      document.getElementById('valUsRight').innerHTML = fData.ultrasonic.right_m.toFixed(2) + '<span class="card-unit">m</span>';
+
+      const cardFront = document.getElementById('cardUsFront');
+      if (fData.ultrasonic.front_m <= 0.55) {
+        cardFront.classList.add('alert');
+        hazardDot.classList.add('alert');
+        hazardText.textContent = 'OBSTACLE HAZARD DETECTED (<0.55m)';
+        hazardText.style.color = 'var(--danger)';
+      } else {
+        cardFront.classList.remove('alert');
+        hazardDot.classList.remove('alert');
+        hazardText.textContent = 'ALL SENSORS CLEAR';
+        hazardText.style.color = 'var(--text-main)';
+      }
+
+      phaseText.textContent = fData.phase;
+      frameLabel.textContent = `Frame ${fData.frame} / ${totalFrames}`;
+      timeDisplay.textContent = `T: ${fData.time_s.toFixed(2)}s / ${(totalFrames/30).toFixed(2)}s`;
+      scrubber.value = fData.frame;
+    }
+
+    // Main animation step
+    function renderStep() {
+      const frameData = data[currentFrameIndex];
+      drawArena(frameData);
+      drawCharts();
+      updateUI(frameData);
+    }
+
+    // Playback Loop
+    function startPlayback() {
+      if (playTimer) clearInterval(playTimer);
+      playTimer = setInterval(() => {
+        if (isPlaying) {
+          currentFrameIndex = (currentFrameIndex + 1) % totalFrames;
+          renderStep();
+        }
+      }, 1000 / 30);
+    }
+
+    btnPlayPause.addEventListener('click', () => {
+      isPlaying = !isPlaying;
+      btnPlayPause.innerHTML = isPlaying ? '&#10074;&#10074; Pause' : '&#9654; Play';
+    });
+
+    btnPrev.addEventListener('click', () => {
+      currentFrameIndex = Math.max(0, currentFrameIndex - 10);
+      renderStep();
+    });
+
+    btnNext.addEventListener('click', () => {
+      currentFrameIndex = Math.min(totalFrames - 1, currentFrameIndex + 10);
+      renderStep();
+    });
+
+    btnReset.addEventListener('click', () => {
+      currentFrameIndex = 0;
+      renderStep();
+    });
+
+    scrubber.addEventListener('input', (e) => {
+      currentFrameIndex = parseInt(e.target.value) - 1;
+      renderStep();
+    });
+
+    // Start
+    renderStep();
+    startPlayback();
+  </script>
+</body>
+</html>
