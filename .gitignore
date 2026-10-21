@@ -2,6 +2,7 @@
 *.blend1
 *.blend2
 *.blend@
+*backup*.blend
 
 # Python cache
 __pycache__/

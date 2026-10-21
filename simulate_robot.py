@@ -299,29 +299,26 @@ def raycast_ultrasonic_sensors(scene, depsgraph, robot_pos, robot_yaw, max_range
 # ---------------------------------------------------------------------------
 def generate_master_trajectory():
     """
-    16 sequential stages:
-    Demonstrates all holonomic modes (forward, backward, left/right lateral, diagonal, cw/ccw spin),
-    approaches the obstacle, proactively stops with clearance, executes lateral evasion,
-    rejoins route, and reaches the Goal Pad destination without colliding with any obstacle!
+    Direct Navigation & Obstacle Avoidance Trajectory (Zero Random Startup Motion):
+    1. INITIAL_REST: Robot stationary at Start Pad (0, 0) during system initialization (all velocities zero).
+    2. FOLLOW_ROUTE: Direct navigation path from current position toward Goal destination corridor.
+    3. STOP: Proactive emergency stop when obstacle is detected within safety threshold (d <= 0.65m).
+    4. ASSESS_CLEARANCE: Evaluate Left & Right clearance to select evasion corridor.
+    5. AVOID_OBSTACLE: Holonomic lateral evasion (+Y corridor) around obstacle with zero rotation.
+    6. REJOIN_ROUTE: Advance forward past obstacle boundary.
+    7. NAVIGATE_TO_GOAL: Direct holonomic diagonal advance to Destination Goal Pad (2.8m, 2.8m).
+    8. GOAL_REACHED: Safely parked at Goal destination pad with zero residual velocity.
     """
     stages = [
         # (duration, vx, vy, omega, state_label, description)
-        (1.0,    0.00,  0.00,  0.00,    "INITIAL_REST",     "Stage 1: Robot at Start Pad"),
-        (1.5,    0.40,  0.00,  0.00,    "FOLLOW_ROUTE",     "Stage 2: Forward Movement"),
-        (1.5,   -0.40,  0.00,  0.00,    "FOLLOW_ROUTE",     "Stage 3: Backward Movement (Returns to Start X)"),
-        (1.5,    0.00,  0.40,  0.00,    "FOLLOW_ROUTE",     "Stage 4: Left Lateral Movement"),
-        (1.5,    0.00, -0.40,  0.00,    "FOLLOW_ROUTE",     "Stage 5: Right Lateral Movement (Returns to Start Y)"),
-        (1.2,    0.25, -0.25,  0.00,    "FOLLOW_ROUTE",     "Stage 6: Diagonal Movement (+X, -Y)"),
-        (1.2,   -0.25,  0.25,  0.00,    "FOLLOW_ROUTE",     "Stage 7: Diagonal Return (-X, +Y)"),
-        (1.5,    0.00,  0.00, -2.0944,  "FOLLOW_ROUTE",     "Stage 8: Clockwise Rotation in Place"),
-        (1.5,    0.00,  0.00,  2.0944,  "FOLLOW_ROUTE",     "Stage 9: Anticlockwise Rotation in Place"),
-        (3.5,    0.40,  0.00,  0.00,    "FOLLOW_ROUTE",     "Stage 10: Approach Forward Obstacle (Pillar at X=2.5m)"),
-        (1.0,    0.00,  0.00,  0.00,    "STOP",             "Stage 11: Proactive Stop Before Obstacle Collision"),
-        (1.0,    0.00,  0.00,  0.00,    "ASSESS_CLEARANCE", "Stage 12: Evaluate Left & Right Clearance"),
-        (2.5,    0.00,  0.40,  0.00,    "AVOID_OBSTACLE",   "Stage 13: Safe Lateral Avoidance Manoeuvre (+Y Escape)"),
-        (3.2,    0.45,  0.00,  0.00,    "REJOIN_ROUTE",     "Stage 14: Rejoin Route Past Obstacle"),
-        (3.5,    0.05,  0.50,  0.00,    "NAVIGATE_TO_GOAL", "Stage 15: Navigate to Destination Goal Pad"),
-        (1.5,    0.00,  0.00,  0.00,    "GOAL_REACHED",     "Stage 16: Arrived & Parked at Destination Goal Pad")
+        (1.0,    0.00,  0.00,  0.00,    "INITIAL_REST",     "Stage 1: Robot stationary at Start Pad (Initialization & Standby)"),
+        (3.0,    0.45,  0.00,  0.00,    "FOLLOW_ROUTE",     "Stage 2: Direct Forward Navigation Toward Goal"),
+        (1.0,    0.00,  0.00,  0.00,    "STOP",             "Stage 3: Proactive Stop at Obstacle Detection Threshold"),
+        (1.0,    0.00,  0.00,  0.00,    "ASSESS_CLEARANCE", "Stage 4: Assess Sensor Clearance Corridors"),
+        (2.5,    0.00,  0.45,  0.00,    "AVOID_OBSTACLE",   "Stage 5: Holonomic Lateral Evasion (+Y Escape Corridor)"),
+        (3.2,    0.45,  0.00,  0.00,    "REJOIN_ROUTE",     "Stage 6: Rejoin Navigation Route Past Obstacle"),
+        (3.5,    0.05,  0.47,  0.00,    "NAVIGATE_TO_GOAL", "Stage 7: Direct Approach to Destination Goal Pad"),
+        (1.5,    0.00,  0.00,  0.00,    "GOAL_REACHED",     "Stage 8: Arrived and Parked at Destination Goal Pad")
     ]
     return stages
 
@@ -395,11 +392,14 @@ def run_simulation():
         right_dist = us_readings["Right"]["distance"]
         
         # Autonomous Obstacle Avoidance Trigger:
-        # In Stage 10 (Approach), if front sensor detects obstacle <= threshold:
-        if stage_idx == 9 and front_dist <= OBSTACLE_STOP_THRESHOLD and not obstacle_detected:
+        # While navigating along route, if front sensor detects obstacle <= threshold:
+        if state_label == "FOLLOW_ROUTE" and front_dist <= OBSTACLE_STOP_THRESHOLD and not obstacle_detected:
             print(f"  [!] Obstacle Proximity Alert at Frame {frame} (t={frame*dt:.2f}s, d={front_dist:.2f}m)!")
             print("      Transitioning: FOLLOW_ROUTE -> STOP -> ASSESS_CLEARANCE -> AVOID_OBSTACLE")
-            stage_idx = 10 # Transition to Stage 11: Proactive Stop
+            for s_i, s_data in enumerate(stages):
+                if s_data[4] == "STOP":
+                    stage_idx = s_i
+                    break
             stage_timer = 0.0
             dur, vx_req, vy_req, omega_req, state_label, stage_desc = stages[stage_idx]
             obstacle_detected = True
@@ -602,7 +602,7 @@ def run_simulation():
     print(f"[3/3] Exported telemetry CSV to: {csv_path}")
     
     # Save the updated .blend file with baked keyframes
-    blend_path = os.path.join(output_dir, "Group7_OmniRobot.blend")
+    blend_path = bpy.data.filepath if bpy.data.filepath else os.path.join(output_dir, "Group7_OmniRobot.blend")
     bpy.ops.wm.save_as_mainfile(filepath=blend_path)
     print(f"Updated scene with animated trajectory saved to: {blend_path}")
     print("=" * 65)

@@ -512,12 +512,14 @@
       for (let f = 1; f <= totalFrames; f++) {
         let t = f / fps;
         let vx = 0, vy = 0, omega = 0, phase = "";
-        if (t <= 2.5) { vx = 0.40; phase = "Phase 1: Pure Forward Translation"; }
-        else if (t <= 5.0) { vy = 0.40; phase = "Phase 2: Pure Lateral (Sideways) Translation"; }
-        else if (t <= 7.5) { vx = 0.30; vy = -0.30; phase = "Phase 3: Diagonal Translation"; }
-        else if (t <= 9.5) { omega = 1.20; phase = "Phase 4: Pure In-Place Rotation"; }
-        else if (t <= 12.0) { vx = 0.35; phase = "Phase 5: Approaching Obstacle"; }
-        else { vy = 0.35; omega = 0.40; phase = "Phase 6: Obstacle Avoidance Holonomic Escape"; }
+        if (t <= 1.0) { vx = 0.0; vy = 0.0; omega = 0.0; phase = "Stage 1: System Standby (At Start Pad)"; }
+        else if (t <= 4.0) { vx = 0.45; vy = 0.0; omega = 0.0; phase = "Stage 2: Direct Forward Navigation Toward Goal"; }
+        else if (t <= 5.0) { vx = 0.0; vy = 0.0; omega = 0.0; phase = "Stage 3: Proactive Stop (Obstacle Detected)"; }
+        else if (t <= 6.0) { vx = 0.0; vy = 0.0; omega = 0.0; phase = "Stage 4: Assess Sensor Clearance Corridors"; }
+        else if (t <= 8.5) { vx = 0.0; vy = 0.45; omega = 0.0; phase = "Stage 5: Holonomic Lateral Evasion (+Y Escape)"; }
+        else if (t <= 11.7) { vx = 0.45; vy = 0.0; omega = 0.0; phase = "Stage 6: Rejoin Navigation Route Past Obstacle"; }
+        else if (t <= 15.2) { vx = 0.05; vy = 0.47; omega = 0.0; phase = "Stage 7: Direct Approach to Destination Goal Pad"; }
+        else { vx = 0.0; vy = 0.0; omega = 0.0; phase = "Stage 8: Arrived & Parked at Destination Goal Pad"; }
         
         let cosY = Math.cos(yaw), sinY = Math.sin(yaw);
         x += (vx * cosY - vy * sinY) / fps;

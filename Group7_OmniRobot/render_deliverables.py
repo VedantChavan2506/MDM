@@ -16,8 +16,8 @@ import bpy
 import os
 import math
 
-def render_screenshot(scene, camera_name, frame, filename, output_dir, samples=16):
-    """Render a single high-quality screenshot with Cycles CPU."""
+def render_screenshot(scene, camera_name, frame, filename, output_dir, samples=48):
+    """Render a single high-quality screenshot with Cycles CPU + OpenImageDenoise."""
     cam = bpy.data.objects.get(camera_name)
     if not cam:
         print(f"Warning: Camera {camera_name} not found!")
@@ -28,7 +28,8 @@ def render_screenshot(scene, camera_name, frame, filename, output_dir, samples=1
     scene.render.engine = 'CYCLES'
     scene.cycles.device = 'CPU'
     scene.cycles.samples = samples
-    scene.cycles.use_denoising = False
+    scene.cycles.use_denoising = True
+    scene.cycles.denoiser = 'OPENIMAGEDENOISE'
     scene.render.resolution_x = 1280
     scene.render.resolution_y = 720
     scene.render.resolution_percentage = 100
@@ -87,15 +88,18 @@ def main():
     
     # 1. Macro Closeup Hero Shot (Frame 1): Chassis, Labelled IMU, Motors, Encoders, Wheels
     render_screenshot(scene, "Camera_Closeup", 1, "screenshot_robot_closeup.png", output_dir)
+    render_screenshot(scene, "Camera_Closeup", 1, "render_closeup.png", output_dir)
     
     # 2. 3D Arena Presentation Shot (Frame 45, forward translation)
     render_screenshot(scene, "Camera_Presentation", 45, "screenshot_arena_presentation.png", output_dir)
+    render_screenshot(scene, "Camera_Presentation", 45, "render_presentation.png", output_dir)
     
     # 3. Top-Down Orthographic Kinematics View (Frame 150, sideways lateral translation)
     render_screenshot(scene, "Camera_TopDown", 150, "screenshot_topdown_kinematics.png", output_dir)
+    render_screenshot(scene, "Camera_TopDown", 150, "render_topdown.png", output_dir)
     
-    # 4. Obstacle Detection & Proximity Alert (Frame 460, approach & reactive beam alert)
-    render_screenshot(scene, "Camera_Presentation", 460, "screenshot_obstacle_detection.png", output_dir)
+    # 4. Obstacle Detection & Proximity Alert (Frame 108, approach & reactive beam alert)
+    render_screenshot(scene, "Camera_Presentation", 108, "screenshot_obstacle_detection.png", output_dir)
     
     # 5. Render Demonstration Video MP4
     render_animation_video(scene, output_dir)
