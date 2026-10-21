@@ -94,8 +94,8 @@ def main():
     # 3. Top-Down Orthographic Kinematics View (Frame 150, sideways lateral translation)
     render_screenshot(scene, "Camera_TopDown", 150, "screenshot_topdown_kinematics.png", output_dir)
     
-    # 4. Obstacle Detection & Proximity Alert (Frame 346, approach & reactive beam alert)
-    render_screenshot(scene, "Camera_Presentation", 346, "screenshot_obstacle_detection.png", output_dir)
+    # 4. Obstacle Detection & Proximity Alert (Frame 460, approach & reactive beam alert)
+    render_screenshot(scene, "Camera_Presentation", 460, "screenshot_obstacle_detection.png", output_dir)
     
     # 5. Render Demonstration Video MP4
     render_animation_video(scene, output_dir)

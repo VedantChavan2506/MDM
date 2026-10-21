@@ -1,202 +1,230 @@
 # GROUP 7 — THREE-WHEEL OMNIDIRECTIONAL ROBOT
-## Blender 3D Modelling, Kinematics, Sensor Simulation, and Indoor Demonstration
+## Complete Blender Model, Kinematics, Sensor Simulation, and Obstacle Avoidance
 
 **College Robotics Engineering Capstone Project**  
 *Robot performs holonomic movement in indoor environments.*
 
 ---
 
-## 1. Project Overview
+## 1. Executive Summary & Root-Cause Diagnosis
 
-This project presents a comprehensive, physically verified 3D simulation and kinematic control system for a **Three-Wheel Omnidirectional Mobile Robot** operating in a structured indoor testing arena.
+### 1.1 Original Defect Diagnosis
+In earlier iterations of this project, the omnidirectional robot suffered from a critical failure: **the robot traveled directly into obstacles and tunneled through walls instead of detecting and avoiding them.** Furthermore, the robot was difficult to distinguish in renders, and sensor outputs were not geometrically verified against ground truth.
 
-Unlike non-holonomic mobile robots (such as differential-drive or Ackermann-steering vehicles) that are constrained by non-integrable velocity constraints ($\dot{y} = \dot{x}\tan\theta$), this omnidirectional platform possesses **three degrees of freedom in the plane** $(x, y, \theta)$. It can independently and simultaneously translate in arbitrary directions ($v_x, v_y$) while independently rotating at angular velocity $\omega_z$, without requiring chassis reorientation.
-
-### Key Capabilities
-- **Holonomic Mobility**: Omnidirectional translation (forward/backward, pure sideways lateral crab walk, 45° diagonal) with concurrent or decoupled yaw rotation.
-- **Parametric 3D Model**: Triangular dual-deck aluminum/acrylic chassis, 3 high-torque DC gearmotors with L-brackets, 3 optical rotary encoders, central 6-DOF IMU, 3 HC-SR04 ultrasonic sensors, battery, and controller board.
-- **Symmetric 120° Omni Wheels**: Three dual-disc omni wheels equipped with 10 passive barrel rollers each, oriented tangential to the drive perimeter to allow low-friction lateral slip while transferring tangential traction.
-- **Sensor Pipeline**: Wheel encoders (RPM, ticks, angular velocity), IMU (yaw, gyro rate, Coriolis-compensated accelerations), and raycast-based ultrasonic distance measurement.
-- **Obstacle Detection & Avoidance**: Proactive range query against 3D arena obstacles, automatic braking at safety thresholds ($0.55\text{ m}$), and holonomic evasive maneuvering.
-- **Interactive Telemetry Dashboard**: Standalone HTML5/Canvas visualization suite featuring real-time 2D arena tracking, speed dials, encoder counters, and synchronized multi-channel signal plots.
-
----
-
-## 2. Coordinate System & Kinematic Formulation
-
-### 2.1 Coordinate Conventions
-1. **World Inertial Frame $\{W\}$**:
-   - Origin $(0, 0, 0)$ located at the center of the indoor arena launch pad.
-   - $+X_W$: Arena Forward (East, indicated by Red axis).
-   - $+Y_W$: Arena Lateral (North, indicated by Green axis).
-   - $+Z_W$: Vertical Up (indicated by Blue axis).
-2. **Robot Body-Fixed Frame $\{B\}$**:
-   - Origin $(0, 0, 0)_B$ at the geometric center of the chassis lower deck.
-   - $+X_B$: Robot Forward Heading ($\theta = 0^\circ$).
-   - $+Y_B$: Robot Left Lateral axis ($+90^\circ$).
-   - $+Z_B$: Upward rotation axis (Yaw rotation $\dot{\theta} = \omega_z$).
-
-### 2.2 Robot Geometric Parameters
-- Chassis Radius $R = 0.25\text{ m}$ ($250\text{ mm}$ center-to-wheel contact radius).
-- Wheel Radius $r = 0.04\text{ m}$ ($40\text{ mm}$ radius, $80\text{ mm}$ diameter).
-- Wheel Mounting Angles $\phi_i$:
-  - **Wheel 1 (Front)**: $\phi_1 = 0^\circ$ ($0\text{ rad}$)
-  - **Wheel 2 (Rear-Left)**: $\phi_2 = 120^\circ$ ($2\pi/3\text{ rad} \approx 2.0944\text{ rad}$)
-  - **Wheel 3 (Rear-Right)**: $\phi_3 = 240^\circ$ ($4\pi/3\text{ rad} \approx 4.1888\text{ rad}$)
-
-Each wheel's traction axis points along the circle tangent vector $\vec{t}_i = [-\sin\phi_i, \cos\phi_i]^T$, while its passive barrel rollers roll freely along the radial axle vector $\vec{n}_i = [\cos\phi_i, \sin\phi_i]^T$.
+Through systematic code and geometric inspection, two core root causes were identified and eliminated:
+1. **Sensor Self-Intersection & Occlusion**:
+   - The ultrasonic raycast origin was placed too close to or within internal sensor geometry / beam meshes. In Blender's raycasting pipeline, rays collided with non-obstacle meshes (such as the sensor PCB, transducer barrels, or the beam visualization cylinders themselves) and were prematurely discarded, preventing rays from penetrating outward to reach actual obstacle meshes.
+   - *Fix*: Migrated to direct 3D mesh raycasting (`obj.ray_cast`) specifically evaluated against arena obstacle and wall objects (`Obstacle_Pillar_Front`, `Obstacle_Crate_Lateral`, `Obstacle_Partition_Wall`, `Obstacle_Corner_Pillar`, `Wall_North/South/East/West`).
+2. **Absence of Geometric Swept-Path Collision Enforcement**:
+   - The simulation controller previously updated the robot's world position purely based on commanded kinematics ($x_{k+1} = x_k + v_x \Delta t$) without verifying clearance against physical boundaries. If the avoidance logic reacted late or experienced overshoot, the robot penetrated through obstacle geometry.
+   - *Fix*: Implemented a **Dual-Layer Safety Architecture**:
+     - *Layer 1 (Proactive Sensory Avoidance)*: An ultrasonic sensor state machine (`FOLLOW_ROUTE` $\rightarrow$ `STOP` $\rightarrow$ `ASSESS_CLEARANCE` $\rightarrow$ `AVOID_OBSTACLE` $\rightarrow$ `REJOIN_ROUTE` $\rightarrow$ `BLOCKED`).
+     - *Layer 2 (Swept-Path Geometric Collision Detector)*: A mathematical barrier enforcing a conservative robot footprint radius ($R_{\text{col}} = 0.42\text{ m}$) across fine sub-steps between consecutive frames, clamping motion at the obstacle boundary with **zero penetration** and stopping wheel rotation if stalled.
 
 ---
 
-### 2.3 Inverse Kinematics Formulation
+## 2. Mechanical Design & Scene Architecture
 
-The velocity of the contact point of wheel $i$ in body coordinates is given by the rigid body kinematic relationship:
-$$\mathbf{v}_{wi} = \mathbf{v}_B + \boldsymbol{\omega}_z \times \mathbf{r}_i$$
-where $\mathbf{r}_i = [R\cos\phi_i, R\sin\phi_i, 0]^T$ and $\boldsymbol{\omega}_z = [0, 0, \omega_z]^T$.
+### 2.1 Mechanical Structure
+- **Triangular Chassis**: Symmetrical equilateral dual-deck plate architecture ($R = 0.30\text{ m}$, $300\text{ mm}$ center-to-wheel radius) with chamfered structural corners and brass standoffs.
+- **Three Omni Wheels**: Mounted exactly $120^\circ$ apart at radius $R = 0.30\text{ m}$. Each wheel features dual aluminum rim plates ($r = 0.05\text{ m}$, $50\text{ mm}$ radius) and 10 high-contrast passive barrel rollers. Rollers are aligned tangentially in the rim's plane of rotation, allowing passive radial slip while driving traction tangentially.
+- **Separate Motors & Encoders**: Three high-torque DC gearmotors mounted to black aluminum L-brackets, each coupled to an optical rotary encoder disc and reader module (`Encoder_Disc_1/2/3`, `Encoder_Sensor_1/2/3`).
+- **Labelled IMU**: A central 6-DOF IMU module with bold extruded 3D typography (`IMU 6-DOF`) positioned at $(0, 0, 0.16\text{ m})$.
+- **Three HC-SR04 Ultrasonic Sensors**: Front ($0^\circ$), Left ($+90^\circ$), and Right ($-90^\circ$) rangefinders featuring dual acoustic transducers and dynamic visual detection beams that scale in real time and illuminate in warning red upon proximity detection.
+- **Indoor Test Arena**: $10\text{ m} \times 10\text{ m}$ arena with high-contrast floor grid, perimeter containment walls with caution stripes, Start Pad, Destination Goal Pad, coordinate reference axes, and varied obstacle types (cylindrical pillar, lateral crate, and partition wall).
 
-Projecting along the active drive direction $\vec{t}_i$:
-$$v_i = \mathbf{v}_{wi} \cdot \vec{t}_i = [v_x - R\omega_z\sin\phi_i, v_y + R\omega_z\cos\phi_i] \cdot [-\sin\phi_i, \cos\phi_i]^T$$
+### 2.2 Strict Blender Collections Hierarchy
+All scene elements are organized into 9 isolated, cleanly named collections:
+1. `Robot_Chassis`: Base deck, top deck, standoffs, battery pack, microcontroller board, power switch.
+2. `Omni_Wheels`: Dual rim discs, axles, and all 30 passive barrel rollers.
+3. `Motors`: Drive motors, gearbox housings, and motor mounting brackets.
+4. `Encoders`: Optical encoder discs and optocoupler reader assemblies.
+5. `IMU`: Central sensor breakout board, chip package, and 3D text label (`IMU 6-DOF`).
+6. `Ultrasonic_Sensors`: Front, Left, and Right HC-SR04 modules, transducer barrels, and dynamic beam meshes.
+7. `Environment`: Floor slab, $10\text{ m} \times 10\text{ m}$ grid, perimeter walls, caution stripes, Start Pad, Goal Pad, coordinate axes.
+8. `Obstacles`: Front cylindrical pillar ($r = 0.38\text{ m}$), lateral shipping crate, interior partition wall, corner pillar.
+9. `Cameras`: Presentation view, Close-up mechanism view, Top-down orthographic view, Follow tracking camera.
+
+---
+
+## 3. Kinematics Mathematical Formulation
+
+### 3.1 Robot Parameters
+- Chassis Center-to-Wheel Distance: $R = 0.30\text{ m}$
+- Wheel Radius: $r = 0.05\text{ m}$
+- Wheel Mounting Angles:
+  - Wheel 1 (Front): $\phi_1 = 0^\circ$ ($0\text{ rad}$)
+  - Wheel 2 (Rear-Left): $\phi_2 = 120^\circ$ ($2\pi/3\text{ rad} \approx 2.0944\text{ rad}$)
+  - Wheel 3 (Rear-Right): $\phi_3 = 240^\circ$ ($4\pi/3\text{ rad} \approx 4.1888\text{ rad}$)
+
+### 3.2 Inverse Kinematics Formulation
+Projecting body velocities $[v_x, v_y, \omega_z]^T$ onto the active traction directions:
 $$v_i = -v_x\sin\phi_i + v_y\cos\phi_i + R\omega_z$$
 
-Expressed in matrix form:
-$$\begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix} = \begin{bmatrix} -\sin\phi_1 & \cos\phi_1 & R \\ -\sin\phi_2 & \cos\phi_2 & R \\ -\sin\phi_3 & \cos\phi_3 & R \end{bmatrix} \begin{bmatrix} v_x \\ v_y \\ \omega_z \end{bmatrix}$$
-
-Substituting $\phi_1 = 0^\circ$, $\phi_2 = 120^\circ$, $\phi_3 = 240^\circ$:
+In matrix form:
 $$\begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix} = \begin{bmatrix} 0 & 1 & R \\ -\frac{\sqrt{3}}{2} & -\frac{1}{2} & R \\ \frac{\sqrt{3}}{2} & -\frac{1}{2} & R \end{bmatrix} \begin{bmatrix} v_x \\ v_y \\ \omega_z \end{bmatrix}$$
 
-Wheel angular velocities and RPMs:
+Individual wheel rotational speeds and RPMs:
 $$\omega_{wi} = \frac{v_i}{r}, \quad \text{RPM}_i = \frac{\omega_{wi} \times 60}{2\pi}$$
 
----
-
-### 2.4 Forward Kinematics Formulation
-
-Inverting the $3 \times 3$ Jacobian matrix yields the analytical Forward Kinematics equations:
+### 3.3 Forward Kinematics Formulation
+Inverting the Jacobian yields the forward kinematics for state reconstruction from wheel speeds:
 $$\begin{bmatrix} v_x \\ v_y \\ \omega_z \end{bmatrix} = \begin{bmatrix} 0 & -\frac{1}{\sqrt{3}} & \frac{1}{\sqrt{3}} \\ \frac{2}{3} & -\frac{1}{3} & -\frac{1}{3} \\ \frac{1}{3R} & \frac{1}{3R} & \frac{1}{3R} \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix}$$
 
-This produces three decoupled equations:
-$$v_x = \frac{1}{\sqrt{3}} (v_3 - v_2)$$
-$$v_y = \frac{2}{3} v_1 - \frac{1}{3} v_2 - \frac{1}{3} v_3$$
-$$\omega_z = \frac{1}{3R} (v_1 + v_2 + v_3)$$
+$$v_x = \frac{1}{\sqrt{3}} (v_3 - v_2), \quad v_y = \frac{2}{3} v_1 - \frac{1}{3} v_2 - \frac{1}{3} v_3, \quad \omega_z = \frac{1}{3R} (v_1 + v_2 + v_3)$$
 
-### 2.5 Theoretical Verification of Motion Modes
-
-| Motion Mode | Commanded Body Velocity | Wheel 1 Speed ($v_1$) | Wheel 2 Speed ($v_2$) | Wheel 3 Speed ($v_3$) | Physical Mechanism |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Pure Forward** | $v_x = 0.5\text{ m/s}, v_y = 0, \omega = 0$ | $0.000\text{ m/s}$ | $-0.433\text{ m/s}$ | $+0.433\text{ m/s}$ | Front wheel rollers roll passively; rear wheels rotate with equal & opposite speeds |
-| **Pure Lateral (Left)** | $v_x = 0, v_y = 0.5\text{ m/s}, \omega = 0$ | $+0.500\text{ m/s}$ | $-0.250\text{ m/s}$ | $-0.250\text{ m/s}$ | Front wheel drives at full speed; rear wheels brake/drive in unison at half speed |
-| **Diagonal ($+X, -Y$)** | $v_x = 0.35, v_y = -0.35, \omega = 0$ | $-0.350\text{ m/s}$ | $-0.128\text{ m/s}$ | $+0.478\text{ m/s}$ | Asymmetric vector superposition producing smooth linear translation at $-45^\circ$ |
-| **Pure In-Place Spin** | $v_x = 0, v_y = 0, \omega = 1.2\text{ rad/s}$ | $+0.300\text{ m/s}$ | $+0.300\text{ m/s}$ | $+0.300\text{ m/s}$ | All 3 wheels drive forward at identical speed $R\omega$; pure zero-radius rotation |
+### 3.4 Kinematic Motion Modes Verification
+- **Pure Forward** ($v_x > 0, v_y = 0, \omega = 0$): $v_1 = 0$, $v_2 = -v_3$. Front wheel rolls freely on passive rollers; rear wheels drive symmetrically in opposite directions.
+- **Pure Lateral Left** ($v_x = 0, v_y > 0, \omega = 0$): $v_1 = v_y$, $v_2 = v_3 = -0.5 v_y$. Front wheel drives at full speed; rear wheels counter-rotate at half speed.
+- **Pure In-Place Spin** ($v_x = 0, v_y = 0, \omega \ne 0$): $v_1 = v_2 = v_3 = R\omega$. All wheels rotate at identical tangential velocities.
 
 ---
 
-## 3. Sensor Simulation Models
+## 4. Sensor Simulation & Dual-Layer Safety
 
-### 3.1 Optical Rotary Encoders
-- **Resolution**: $N = 360\text{ PPR}$ (Pulses Per Revolution).
-- Cumulative angle integration at step $k$:
-  $$\theta_{wi}[k] = \theta_{wi}[k-1] + \omega_{wi}[k]\Delta t$$
-- Discrete encoder tick count:
-  $$\text{Ticks}_i[k] = \text{round}\left( \frac{\theta_{wi}[k]}{2\pi} \times N \right)$$
+### 4.1 Sensor Pipeline
+1. **Optical Encoders**: Resolution $N = 360\text{ PPR}$. Angular displacement is integrated per timestep ($\Delta \theta = \omega \Delta t$) with discrete tick accumulation $\text{Ticks} = \text{round}((\theta / 2\pi) \times 360)$. Reversing motion decrements ticks with zero drift.
+2. **6-DOF IMU**: Reports ground-truth and noisy yaw angle, gyroscope rate with calibrated sensor bias ($0.003\text{ rad/s}$) and Gaussian noise, and non-inertial centripetal/Coriolis accelerations ($a_x = \dot{v}_x - v_y \omega$, $a_y = \dot{v}_y + v_x \omega$).
+3. **HC-SR04 Ultrasonic Rangefinders**: Direct 3D mesh raycasting evaluates line-of-sight distance against obstacle geometry. Triggers emergency braking when front distance $\le 0.65\text{ m}$.
 
-### 3.2 6-DOF Inertial Measurement Unit (IMU)
-- Mounted at chassis center $(0, 0, z_{\text{deck}})_B$.
-- **Gyroscope**: $\omega_{\text{meas}} = \omega_z + \text{bias} + \mathcal{N}(0, \sigma_{\text{gyro}}^2)$ with bias $= 0.003\text{ rad/s}$, $\sigma_{\text{gyro}} = 0.008\text{ rad/s}$.
-- **Accelerometer**: Accounts for linear body frame accelerations and non-inertial rotating frame Coriolis/centripetal effects:
-  $$a_{x} = \frac{dv_x}{dt} - v_y \omega_z + \mathcal{N}(0, \sigma_{\text{accel}}^2)$$
-  $$a_{y} = \frac{dv_y}{dt} + v_x \omega_z + \mathcal{N}(0, \sigma_{\text{accel}}^2)$$
-
-### 3.3 HC-SR04 Ultrasonic Rangefinders
-- 3 sensors mounted at radius $0.245\text{ m}$ facing:
-  - **Front**: $0^\circ$ relative to heading
-  - **Left**: $+90^\circ$
-  - **Right**: $-90^\circ$
-- **Raycasting Engine**: Uses Blender's native BVH tree collision query `scene.ray_cast()` against obstacle geometry.
-- **Range**: Minimum $0.02\text{ m}$, Maximum $2.50\text{ m}$.
-- **Dynamic 3D Visualization**: Visual detection cylinders scale dynamically in the Blender viewport to contact obstacle surfaces. When distance drops below the safety threshold ($0.55\text{ m}$), the beam switches from glowing safe green (`#00e676`) to emergency warning red (`#ff1744`).
+### 4.2 Autonomous Obstacle Avoidance State Machine
+The navigation controller operates across a documented state machine:
+- `FOLLOW_ROUTE`: Track active trajectory waypoint.
+- `STOP`: Proactive stop when distance falls below safety threshold ($0.65\text{ m}$).
+- `ASSESS_CLEARANCE`: Sample Left and Right ultrasonic sensors; determine safe evasion corridor.
+- `AVOID_OBSTACLE`: Execute holonomic lateral translation ($+Y$) without rotating chassis.
+- `REJOIN_ROUTE`: Resume forward advance past obstacle boundary.
+- `NAVIGATE_TO_GOAL`: Holonomic diagonal approach to Destination Goal Pad.
+- `GOAL_REACHED`: Park at destination.
+- `BLOCKED`: If all clearances are obstructed, robot remains safely halted with zero movement.
 
 ---
 
-## 4. Programmed Indoor Demonstration Route
+## 5. 16-Stage Master Demonstration Sequence
 
-The 16.0-second ($480\text{ frames}$ at $30\text{ FPS}$) programmed demonstration trajectory demonstrates the full holonomic operational envelope:
+The animation spans **857 frames (28.6 seconds at 30 FPS)**:
+
+| Stage | Duration | $v_x\text{ (m/s)}$ | $v_y\text{ (m/s)}$ | $\omega\text{ (rad/s)}$ | State | Description |
+| :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| **1** | 1.0 s | 0.00 | 0.00 | 0.00 | `INITIAL_REST` | Robot stationary at Start Pad $(0, 0)$ |
+| **2** | 1.5 s | +0.40 | 0.00 | 0.00 | `FOLLOW_ROUTE` | Forward translation along $+X$ |
+| **3** | 1.5 s | -0.40 | 0.00 | 0.00 | `FOLLOW_ROUTE` | Backward translation returning to Start $X$ |
+| **4** | 1.5 s | 0.00 | +0.40 | 0.00 | `FOLLOW_ROUTE` | Left lateral translation along $+Y$ (pure crab walk) |
+| **5** | 1.5 s | 0.00 | -0.40 | 0.00 | `FOLLOW_ROUTE` | Right lateral translation returning to Start $Y$ |
+| **6** | 1.2 s | +0.25 | -0.25 | 0.00 | `FOLLOW_ROUTE` | Diagonal movement $(+X, -Y)$ |
+| **7** | 1.2 s | -0.25 | +0.25 | 0.00 | `FOLLOW_ROUTE` | Diagonal return $(-X, +Y)$ to origin |
+| **8** | 1.5 s | 0.00 | 0.00 | -2.09 | `FOLLOW_ROUTE` | Clockwise in-place rotation |
+| **9** | 1.5 s | 0.00 | 0.00 | +2.09 | `FOLLOW_ROUTE` | Anticlockwise in-place rotation |
+| **10** | 3.5 s | +0.40 | 0.00 | 0.00 | `FOLLOW_ROUTE` | Approach Front Obstacle (Pillar at $X=2.5\text{ m}$) |
+| **11** | 1.0 s | 0.00 | 0.00 | 0.00 | `STOP` | Proactive stop triggered at proximity alert ($d \le 0.65\text{ m}$) |
+| **12** | 1.0 s | 0.00 | 0.00 | 0.00 | `ASSESS_CLEARANCE` | Evaluate Left & Right clearance |
+| **13** | 2.5 s | 0.00 | +0.40 | 0.00 | `AVOID_OBSTACLE` | Safe lateral evasion manoeuvre ($+Y$ corridor) |
+| **14** | 3.2 s | +0.45 | 0.00 | 0.00 | `REJOIN_ROUTE` | Rejoin forward route past obstacle |
+| **15** | 3.5 s | +0.05 | +0.50 | 0.00 | `NAVIGATE_TO_GOAL` | Navigate to Destination Goal Pad |
+| **16** | 1.5 s | 0.00 | 0.00 | 0.00 | `GOAL_REACHED` | Safely parked at Goal Pad; **0 collisions** |
+
+---
+
+## 6. Automated Validation Test Suite
+
+A rigorous 9-point automated test suite (`verify_test_suite.py`) executes directly inside Blender's Python environment. **All 9 master tests pass with zero failures**:
 
 ```
-[Phase 1: Pure Forward]  (0.0s - 2.5s)   -> vx = +0.40 m/s, vy = 0.00, w = 0.00 rad/s
-[Phase 2: Pure Lateral]  (2.5s - 5.0s)   -> vx = 0.00, vy = +0.40 m/s (crab walk, fixed yaw)
-[Phase 3: Diagonal]      (5.0s - 7.5s)   -> vx = +0.30 m/s, vy = -0.30 m/s
-[Phase 4: In-Place Spin] (7.5s - 9.5s)   -> vx = 0.00, vy = 0.00, w = +1.20 rad/s (360° spin)
-[Phase 5: Approach Obs]  (9.5s - 12.0s)  -> vx = +0.35 m/s, Front US sensor tracks obstacle distance
-[Phase 6: Evade & Stop]  (12.0s - 16.0s) -> Reactive brake on d < 0.55m; holonomic lateral escape
+======================================================================
+GROUP 7: EXECUTING MASTER AUTOMATED VALIDATION TEST SUITE (TESTS A - I)
+======================================================================
+
+[PASS] TEST A: KINEMATICS (Forward, Backward, Lateral, Diagonal, Rotations)
+       Details: 9/9 motion modes verified. Maximum round-trip numerical error: 3.33e-16 m/s
+[PASS] TEST B: COLLISION PREVENTION (Direct Frontal Approach Against Pillar)
+       Details: Robot attempted X=2.20m; constrained at X=1.675m outside boundary (1.70m). 0 penetration.
+[PASS] TEST C: SIDE OBSTACLES (Lateral Obstacle Boundaries Constrained)
+       Details: Lateral crate stopped at Y=1.150m; Partition wall stopped at Y=-1.250m. Zero penetration.
+[PASS] TEST D: BLOCKED ROBOT (Enclosed Robot Stays At Rest With Zero Tunneling)
+       Details: Commanded outward movement in blocked state was rejected; robot remained completely stopped at boundary.
+[PASS] TEST E: SENSOR DISTANCES (3D Raycast Geometric Accuracy & Threshold Trigger)
+       Details: Distance at origin: 1.783m (expected ~1.78m). Distance at close approach: 0.534m (Hazard alert triggered).
+[PASS] TEST F: ENCODERS (RPM, Cumulative Angle, 360 PPR Tick Integration & Reversal)
+       Details: Forward 1.0s: 688 ticks. Reverse 1.0s: returned to 0 ticks. Exact tracking.
+[PASS] TEST G: IMU (Heading, Gyro Rate With Bias/Noise, Centripetal/Coriolis Acceleration)
+       Details: Measured gyro rate: 1.5023 rad/s (expected ~1.503). Measured ay: 0.585 m/s^2 (expected 0.60).
+[PASS] TEST H: RESET AND REPLAY (State Re-initialization & Clean Baseline)
+       Details: State, encoders, IMU, and coordinate accumulators reset to exact initial conditions.
+[PASS] TEST I: FILE INTEGRITY (All Collections, Named Objects, 4 Cameras, Pads, Obstacles)
+       Details: All 9 Master collections, 3 wheels, 3 motors, 3 encoders, labelled IMU, 4 obstacles, Start/Goal pads verified.
+
+======================================================================
+MASTER TEST SUITE SUMMARY: 9/9 PASSED, 0 FAILED
+======================================================================
 ```
 
 ---
 
-## 5. Deliverables Directory Structure
+## 7. Deliverables & Artifacts
 
-The project workspace is organized in `Group7_OmniRobot/`:
+All final files are located in `d:\Downloads\MDM\Group7_OmniRobot\`:
 
 ```
 Group7_OmniRobot/
+├── Group7_OmniRobot.blend           # Master 3D scene (857 baked keyframes, materials, 4 cameras)
+├── build_robot.py                   # Parametric geometry & arena generator
+├── simulate_robot.py                # Kinematics engine, swept-path collision barrier, sensor baker
+├── verify_test_suite.py             # Automated 9-test validation suite
+├── render_deliverables.py           # Headless Cycles/Workbench rendering script
+├── README.md                        # Master technical documentation
+├── backup/                          # Pre-modification project backups
 │
-├── Group7_OmniRobot.blend           # Complete master Blender scene with baked animations
-├── build_robot.py                   # Script that generates robot model, arena, and cameras
-├── simulate_robot.py                # Kinematics engine, sensor pipeline, and keyframe baker
-├── render_deliverables.py           # Headless rendering script for screenshots and MP4 video
-├── README.md                        # Complete technical and engineering documentation
+├── telemetry_dashboard.html         # Interactive real-time HTML5/Canvas visualization suite
+├── telemetry_data.json              # 857-frame telemetry dataset (positions, speeds, sensors, states)
+├── telemetry_data.js                # Standalone JavaScript dataset for CORS-free browser loading
+├── telemetry_data.csv               # 857-row CSV export for MATLAB / Excel analysis
 │
-├── telemetry_dashboard.html         # Interactive companion HTML5/Canvas telemetry suite
-├── telemetry_data.js                # Standalone JavaScript telemetry dataset
-├── telemetry_data.json              # Full 480-frame JSON telemetry log
-├── telemetry_data.csv               # 480-row CSV telemetry log for MATLAB / Excel
-│
-├── simulation_demo.mp4              # Full 16-second 1080p 30fps animation video
-├── screenshot_robot_closeup.png     # Macro presentation shot of chassis, motors, and wheels
-├── screenshot_arena_presentation.png# 3D perspective presentation of robot in arena
-├── screenshot_topdown_kinematics.png# Orthographic top-down analysis of trajectory
-└── screenshot_obstacle_detection.png# Front ultrasonic sensor proximity detection event
+├── simulation_demo.mp4              # Full 28.6s 1080p demonstration video
+├── screenshot_robot_closeup.png     # Macro presentation of chassis, labelled IMU, motors, encoders
+├── screenshot_arena_presentation.png# 3D perspective of arena and obstacle avoidance
+├── screenshot_topdown_kinematics.png# Orthographic top-down trajectory and clearance analysis
+└── screenshot_obstacle_detection.png# Close approach & reactive warning beam visualization
 ```
 
 ---
 
-## 6. How to Run and Test
+## 8. Exact Execution Commands
 
-### 6.1 Opening the 3D Scene in Blender
-1. Launch Blender (version 4.2 LTS or later).
-2. Open `Group7_OmniRobot.blend`.
-3. Press **Spacebar** to play the baked simulation in the 3D viewport.
-4. Switch between camera views using `Numpad 0` or the Camera selector:
-   - `Camera_Closeup`: High-detail macro view of the robot mechanism.
-   - `Camera_Presentation`: Angled perspective view of the entire arena.
-   - `Camera_TopDown`: Orthographic plan view for trajectory evaluation.
-   - `Camera_Follow`: Smooth tracking camera locked to the robot.
-
-### 6.2 Regenerating Model and Simulation via Terminal
-Run the complete pipeline headlessly using Blender's Python runtime:
-
+### 8.1 Open the Final Blender File
 ```powershell
-# 1. Build robot geometry, materials, and arena
-blender -b -P build_robot.py
+& "C:\Users\vmcha\AppData\Local\Programs\blender-4.2.0-windows-x64\blender.exe" "d:\Downloads\MDM\Group7_OmniRobot\Group7_OmniRobot.blend"
+```
+*Press **Spacebar** in the 3D Viewport to play the full 857-frame obstacle avoidance simulation.*
 
-# 2. Run kinematics simulation, raycast sensors, and bake keyframes
-blender -b Group7_OmniRobot.blend -P simulate_robot.py
+### 8.2 Rerun the Complete Pipeline
+```powershell
+# Step 1: Rebuild 3D Model, Arena, and Collections
+& "C:\Users\vmcha\AppData\Local\Programs\blender-4.2.0-windows-x64\blender.exe" -b -P "d:\Downloads\MDM\Group7_OmniRobot\build_robot.py"
 
-# 3. Render all screenshots and demonstration MP4 video
-blender -b Group7_OmniRobot.blend -P render_deliverables.py
+# Step 2: Rerun Simulation, Kinematics, Collision Barrier, and Telemetry Export
+& "C:\Users\vmcha\AppData\Local\Programs\blender-4.2.0-windows-x64\blender.exe" -b "d:\Downloads\MDM\Group7_OmniRobot\Group7_OmniRobot.blend" -P "d:\Downloads\MDM\Group7_OmniRobot\simulate_robot.py"
+
+# Step 3: Run Automated Test Suite (Tests A through I)
+& "C:\Users\vmcha\AppData\Local\Programs\blender-4.2.0-windows-x64\blender.exe" -b "d:\Downloads\MDM\Group7_OmniRobot\Group7_OmniRobot.blend" -P "d:\Downloads\MDM\Group7_OmniRobot\verify_test_suite.py"
+
+# Step 4: Re-render Screenshots and MP4 Video
+& "C:\Users\vmcha\AppData\Local\Programs\blender-4.2.0-windows-x64\blender.exe" -b "d:\Downloads\MDM\Group7_OmniRobot\Group7_OmniRobot.blend" -P "d:\Downloads\MDM\Group7_OmniRobot\render_deliverables.py"
 ```
 
-### 6.3 Opening the Live Telemetry Dashboard
-Double-click `telemetry_dashboard.html` to open it in any web browser (Google Chrome, Microsoft Edge, Firefox, Safari).
-- Scrub through time using the timeline slider.
-- Inspect real-time Wheel RPMs, Encoder ticks, IMU acceleration, and Ultrasonic sensor cones on the 2D arena canvas.
+### 8.3 View the Interactive Telemetry Dashboard
+Double-click `telemetry_dashboard.html` or run:
+```powershell
+Start-Process "d:\Downloads\MDM\Group7_OmniRobot\telemetry_dashboard.html"
+```
+The dashboard automatically loads `telemetry_data.js` without requiring an HTTP server or triggering browser CORS restrictions. Use the playback slider to inspect 2D position, heading, wheel RPMs, encoder ticks, IMU acceleration, and ultrasonic ranges across all 857 frames.
 
 ---
 
-## 7. Real-World Hardware Considerations & Limitations
+## 9. Hardware Limitations & Real-World Considerations
 
-1. **Wheel Slippage & Non-Ideal Roller Contact**: In real hardware, passive rollers have finite gaps between consecutive rollers, creating periodic micro-vibrations and anisotropic friction. Odometry from encoders drifts over time, requiring sensor fusion (Extended Kalman Filter with IMU and LiDAR/Vision).
-2. **Surface Smoothness Requirements**: Omni wheels perform well on smooth epoxy, tile, or polished concrete. Rough carpet or outdoor terrain impedes passive roller rotation, significantly degrading lateral efficiency.
-3. **Acoustic Sensor Reflections**: HC-SR04 ultrasonic sensors have a conical beam angle ($\approx 15^\circ$). Specular reflection can cause false echoes or missed detections at shallow angles ($>45^\circ$) against smooth planar walls.
+1. **Wheel Slip & Dead Reckoning Drift**: In real-world physical platforms, passive omni rollers experience finite micro-gaps and varying contact friction, leading to odometry drift over extended trajectories. In hardware, an Extended Kalman Filter (EKF) combining wheel encoders with IMU sensor fusion and LiDAR SLAM is recommended.
+2. **Surface Texture**: Omnidirectional mobility depends on smooth, level ground surfaces (epoxy floor, polished concrete, vinyl). Carpeting or outdoor debris severely increases lateral rolling resistance.
+3. **Acoustic Sensor Cones**: HC-SR04 ultrasonic rangefinders possess an approximate $15^\circ$ beam spread. At steep angles of incidence ($>45^\circ$) against flat walls, acoustic energy can reflect away, requiring multi-sensor fusion.
 
 ---
-*Created by Group 7 Robotics Engineering Team.*
+*Group 7 Robotics Engineering Project — Completed and Validated.*

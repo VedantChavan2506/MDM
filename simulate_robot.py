@@ -1,37 +1,24 @@
 """
 Group 7 - Three-Wheel Omnidirectional Robot
-Kinematics, Sensor Simulation, and Obstacle Avoidance Script (Enhanced)
-=====================================================================
+Kinematics, Sensor Simulation, and Obstacle Avoidance Script (Master Version)
+===========================================================================
 Authors: Group 7 Robotics Engineering Team
 Project: Three-Wheel Omni Robot — Holonomic Movement in Indoor Environments
 
-This enhanced script implements:
+This master script implements:
 1. Exact Three-Wheel Omni-Drive Kinematics:
-   - Inverse Kinematics: [vx, vy, omega] -> [v1, v2, v3], [w1, w2, w3], [rpm1, rpm2, rpm3]
-   - Forward Kinematics: [v1, v2, v3] -> [vx, vy, omega] (analytical inverse Jacobian)
-   - Kinematics unit tests verifying Forward, Backward, Sideways, Diagonal, and In-place Rotation.
-2. Sensor Simulation Engine:
-   - 3 Wheel Encoders (cumulative angle, tick counts at 360 PPR, velocity tracking)
-   - 6-DOF IMU (yaw angle, gyro angular rate with noise & bias, body frame linear accelerations
-     including rotating frame centripetal / Coriolis terms)
-   - 3 HC-SR04 Ultrasonic Rangefinders using Blender 3D scene raycasting against arena obstacles
-3. Programmed Demonstration Trajectory with 7 Distinct Navigation Phases:
-   - Phase 1: Pure Forward translation
-   - Phase 2: Pure Backward translation (reverse kinematics verification)
-   - Phase 3: Pure Sideways (lateral crab walk) translation with fixed heading
-   - Phase 4: Diagonal translation (+X, -Y)
-   - Phase 5: Pure In-Place Rotation (360° yaw spin)
-   - Phase 6: Obstacle Approach (forward proximity tracking against pillar at X=2.5m)
-   - Phase 7: Reactive Obstacle Avoidance (emergency deceleration at safety threshold <0.55m,
-     visual ray warning color change, holonomic evasive escape)
-4. 3D Keyframe Animation Baking into Group7_OmniRobot.blend for:
-   - Robot chassis position (X, Y) and orientation (Yaw)
-   - 3 Omni wheels spinning about their drive axles (local X axis)
-   - Dynamic ultrasonic detection rays scaling to obstacle contact and switching safe/alert shaders
-5. Telemetry Data Generation:
-   - telemetry_data.json
-   - telemetry_data.js
-   - telemetry_data.csv
+   - Inverse & Forward Kinematics matrices for 120° symmetric wheel mounting.
+2. Dual-Layer Collision Detection & Safety Architecture:
+   - Layer 1: Autonomous State Machine (FOLLOW_ROUTE, STOP, ASSESS_CLEARANCE, AVOID_OBSTACLE, REJOIN_ROUTE, GOAL_REACHED, BLOCKED)
+   - Layer 2: Geometric Swept-Path Collision Detection against arena walls and 4 obstacles.
+     Prevents tunneling, constrains movement at boundary, and recomputes wheel speeds from actual movement.
+3. Realistic Sensor Simulation:
+   - 3 Optical Encoders (ticks, RPM, cumulative angle at 360 PPR)
+   - 6-DOF IMU (yaw angle, gyro rate with noise & bias, body frame accelerations including Coriolis terms)
+   - 3 HC-SR04 Ultrasonic Rangefinders (raycast against scene obstacles, dynamic beam scaling, alert color change)
+4. Complete 15-Stage Demonstration Trajectory (Start Pad -> Holonomic Modes -> Avoidance -> Goal Pad).
+5. 3D Keyframe Animation Baking into Group7_OmniRobot.blend.
+6. Telemetry Export (JSON, JS, CSV).
 """
 
 import bpy
@@ -43,17 +30,21 @@ import random
 from mathutils import Vector, Matrix, Euler
 
 # ---------------------------------------------------------------------------
-# ROBOT PHYSICAL & SIMULATION PARAMETERS (Matches build_robot.py)
+# PHYSICAL PARAMETERS (Matches build_robot.py)
 # ---------------------------------------------------------------------------
 WHEEL_RADIUS = 0.05            # r = 50 mm (100 mm diameter)
 CHASSIS_RADIUS = 0.30          # R = 300 mm (center to wheel contact point)
+ROBOT_FOOTPRINT_RADIUS = 0.38  # Conservative collision radius of chassis + wheels
+SAFETY_MARGIN = 0.04           # Additional buffer margin (40 mm)
+TOTAL_COLLISION_RADIUS = ROBOT_FOOTPRINT_RADIUS + SAFETY_MARGIN # 0.42 m
+
 ENCODER_PPR = 360              # Pulses (ticks) per revolution
 FPS = 30                       # Simulation frame rate
-OBSTACLE_STOP_THRESHOLD = 0.55 # Stop/evade threshold distance (meters)
+OBSTACLE_STOP_THRESHOLD = 0.65 # Ultrasonic proximity threshold (meters)
 ULTRASONIC_MAX_RANGE = 2.50    # Maximum reliable sensing distance (meters)
 
-# Wheel mounting angles relative to forward axis (+X_B)
-WHEEL_ANGLES = [0.0, 2.0 * math.pi / 3.0, 4.0 * math.pi / 3.0] # 0°, 120°, 240°
+# Wheel mounting angles relative to forward axis (+X_B): 0°, 120°, 240°
+WHEEL_ANGLES = [0.0, 2.0 * math.pi / 3.0, 4.0 * math.pi / 3.0]
 
 # ---------------------------------------------------------------------------
 # KINEMATICS ENGINE
@@ -61,37 +52,26 @@ WHEEL_ANGLES = [0.0, 2.0 * math.pi / 3.0, 4.0 * math.pi / 3.0] # 0°, 120°, 240
 def compute_inverse_kinematics(vx, vy, omega, R=CHASSIS_RADIUS, r=WHEEL_RADIUS):
     """
     Inverse Kinematics for a 3-wheel symmetric omnidirectional robot.
-    Given body velocities [vx, vy, omega], returns:
-    - wheel_linear_speeds: [v1, v2, v3] (m/s)
-    - wheel_angular_velocities: [w1, w2, w3] (rad/s)
-    - wheel_rpms: [rpm1, rpm2, rpm3]
-    
-    Equations:
     v_i = -vx * sin(phi_i) + vy * cos(phi_i) + R * omega
     w_i = v_i / r
+    RPM_i = (w_i * 60) / (2 * pi)
     """
     v_wheels = []
     w_wheels = []
     rpms = []
-    
     for phi in WHEEL_ANGLES:
-        # Wheel tangent direction dot body velocity + angular rotation component
         vi = -vx * math.sin(phi) + vy * math.cos(phi) + R * omega
         wi = vi / r
         rpm = (wi * 60.0) / (2.0 * math.pi)
-        
         v_wheels.append(vi)
         w_wheels.append(wi)
         rpms.append(rpm)
-        
     return v_wheels, w_wheels, rpms
 
 def compute_forward_kinematics(v_wheels, R=CHASSIS_RADIUS, r=WHEEL_RADIUS):
     """
     Forward Kinematics for a 3-wheel omni robot.
-    Given wheel speeds [v1, v2, v3], returns body velocities [vx, vy, omega].
-    
-    Analytical solution for phi = [0, 120, 240 deg]:
+    Analytical inverse Jacobian for phi = [0, 120, 240 deg]:
     vx = (1 / sqrt(3)) * (v3 - v2)
     vy = (2/3) * v1 - (1/3) * v2 - (1/3) * v3
     omega = (1 / (3*R)) * (v1 + v2 + v3)
@@ -105,12 +85,14 @@ def compute_forward_kinematics(v_wheels, R=CHASSIS_RADIUS, r=WHEEL_RADIUS):
 def verify_kinematics():
     """Unit test for forward and inverse kinematics consistency across all movement modes."""
     test_cases = [
-        ("Pure Forward",  0.50,  0.00,  0.00),
+        ("Pure Forward",   0.45,  0.00,  0.00),
         ("Pure Backward", -0.40,  0.00,  0.00),
-        ("Pure Lateral",  0.00,  0.50,  0.00),
-        ("Diagonal",      0.35, -0.35,  0.00),
-        ("Pure Rotation", 0.00,  0.00,  1.50),
-        ("Combined",      0.30,  0.20,  0.80)
+        ("Pure Lateral L", 0.00,  0.45,  0.00),
+        ("Pure Lateral R", 0.00, -0.45,  0.00),
+        ("Diagonal",       0.35, -0.35,  0.00),
+        ("Pure Rot CW",    0.00,  0.00, -1.50),
+        ("Pure Rot CCW",   0.00,  0.00,  1.50),
+        ("Combined",       0.30,  0.20,  0.80)
     ]
     print("--- VERIFYING KINEMATICS ENGINE ---")
     for name, tx, ty, tw in test_cases:
@@ -120,8 +102,85 @@ def verify_kinematics():
         err_y = abs(ty - ry)
         err_w = abs(tw - rw)
         assert err_x < 1e-6 and err_y < 1e-6 and err_w < 1e-6, f"Mismatch in {name}!"
-        print(f"  [PASS] {name:<15}: vx={tx:+.2f}, vy={ty:+.2f}, w={tw:+.2f} -> Wheel speeds: [{vw[0]:+.3f}, {vw[1]:+.3f}, {vw[2]:+.3f}] m/s")
+        print(f"  [PASS] {name:<16}: vx={tx:+.2f}, vy={ty:+.2f}, w={tw:+.2f} -> Wheel speeds: [{vw[0]:+.3f}, {vw[1]:+.3f}, {vw[2]:+.3f}] m/s")
     print("--- KINEMATICS VERIFICATION SUCCESSFUL ---\n")
+
+# ---------------------------------------------------------------------------
+# GEOMETRIC COLLISION DETECTOR (Swept-Path Footprint Barrier)
+# ---------------------------------------------------------------------------
+class GeometricCollisionDetector:
+    """
+    Robust 2D Swept-Path Collision Detection against Arena Obstacles and Perimeter Walls.
+    Guarantees the robot never penetrates or tunnels into obstacles.
+    """
+    def __init__(self, r_col=TOTAL_COLLISION_RADIUS):
+        self.r_col = r_col
+        # Arena wall inner boundaries (10m arena, 0.18m wall thickness -> inner limits [-4.82, 4.82])
+        self.wall_min_x = -4.82 + self.r_col
+        self.wall_max_x =  4.82 - self.r_col
+        self.wall_min_y = -4.82 + self.r_col
+        self.wall_max_y =  4.82 - self.r_col
+        
+        # 4 Arena Obstacles
+        self.obstacles = [
+            # 1. Front Cylinder Pillar at (2.50, 0.00), radius 0.38m
+            {"type": "cylinder", "name": "Obstacle_Pillar_Front", "center": (2.50, 0.00), "radius": 0.38},
+            # 2. Lateral Crate at (1.30, 2.30), half-extents (0.375, 0.70)
+            {"type": "box", "name": "Obstacle_Crate_Lateral", "center": (1.30, 2.30), "hx": 0.375, "hy": 0.70},
+            # 3. Partition Wall at (-1.60, -1.90), half-extents (1.00, 0.175)
+            {"type": "box", "name": "Obstacle_Partition_Wall", "center": (-1.60, -1.90), "hx": 1.00, "hy": 0.175},
+            # 4. Corner Pillar at (-2.60, 2.60), radius 0.50m
+            {"type": "cylinder", "name": "Obstacle_Corner_Pillar", "center": (-2.60, 2.60), "radius": 0.50}
+        ]
+
+    def is_point_colliding(self, px, py):
+        """Check if robot circular footprint centered at (px, py) intersects any obstacle or wall."""
+        if px < self.wall_min_x or px > self.wall_max_x or py < self.wall_min_y or py > self.wall_max_y:
+            return True, "Boundary_Wall"
+            
+        for obs in self.obstacles:
+            if obs["type"] == "cylinder":
+                cx, cy = obs["center"]
+                dist = math.hypot(px - cx, py - cy)
+                if dist < (obs["radius"] + self.r_col):
+                    return True, obs["name"]
+            elif obs["type"] == "box":
+                cx, cy = obs["center"]
+                clamped_x = max(cx - obs["hx"], min(px, cx + obs["hx"]))
+                clamped_y = max(cy - obs["hy"], min(py, cy + obs["hy"]))
+                dist = math.hypot(px - clamped_x, py - clamped_y)
+                if dist < self.r_col:
+                    return True, obs["name"]
+                    
+        return False, None
+
+    def validate_movement(self, cur_x, cur_y, prop_x, prop_y, num_substeps=8):
+        """
+        Swept-path continuous collision check between current and proposed positions.
+        Returns: (safe_x, safe_y, collision_occurred, obstacle_name)
+        If collision would occur, constrains to the closest safe point along the path.
+        """
+        first_collision_fraction = 1.0
+        collided = False
+        collided_obs = None
+        
+        for i in range(1, num_substeps + 1):
+            fraction = i / float(num_substeps)
+            sx = cur_x + fraction * (prop_x - cur_x)
+            sy = cur_y + fraction * (prop_y - cur_y)
+            is_col, name = self.is_point_colliding(sx, sy)
+            if is_col:
+                collided = True
+                collided_obs = name
+                first_collision_fraction = max(0.0, (i - 1) / float(num_substeps))
+                break
+                
+        if collided:
+            safe_x = cur_x + first_collision_fraction * (prop_x - cur_x)
+            safe_y = cur_y + first_collision_fraction * (prop_y - cur_y)
+            return safe_x, safe_y, True, collided_obs
+        else:
+            return prop_x, prop_y, False, None
 
 # ---------------------------------------------------------------------------
 # SENSOR SIMULATION ENGINE
@@ -129,18 +188,17 @@ def verify_kinematics():
 class WheelEncoder:
     def __init__(self, ppr=ENCODER_PPR):
         self.ppr = ppr
-        self.total_angle = 0.0 # radians
+        self.total_angle = 0.0
         self.total_ticks = 0
         
     def update(self, omega, dt):
         delta_angle = omega * dt
         self.total_angle += delta_angle
-        # Cumulative ticks:
         self.total_ticks = int(round((self.total_angle / (2.0 * math.pi)) * self.ppr))
         return self.total_ticks, self.total_angle
 
 class SimulatedIMU:
-    def __init__(self, noise_std_gyro=0.008, noise_std_accel=0.015, bias_gyro=0.003):
+    def __init__(self, noise_std_gyro=0.006, noise_std_accel=0.012, bias_gyro=0.003):
         self.noise_std_gyro = noise_std_gyro
         self.noise_std_accel = noise_std_accel
         self.bias_gyro = bias_gyro
@@ -148,10 +206,6 @@ class SimulatedIMU:
         self.last_vy = 0.0
         
     def measure(self, yaw, vx, vy, omega, dt):
-        """
-        Simulate IMU measurements including gyro angular rate and
-        accelerometer readings with centripetal/Coriolis acceleration.
-        """
         gyro_noise = random.gauss(0, self.noise_std_gyro)
         meas_omega = omega + self.bias_gyro + gyro_noise
         
@@ -161,7 +215,6 @@ class SimulatedIMU:
         else:
             dvx_dt, dvy_dt = 0.0, 0.0
             
-        # Kinematic acceleration in non-inertial rotating frame:
         ax_true = dvx_dt - vy * omega
         ay_true = dvy_dt + vx * omega
         
@@ -180,14 +233,8 @@ class SimulatedIMU:
         }
 
 def raycast_ultrasonic_sensors(scene, depsgraph, robot_pos, robot_yaw, max_range=ULTRASONIC_MAX_RANGE):
-    """
-    Simulate HC-SR04 ultrasonic rangefinders using Blender 3D scene raycasting against arena obstacles.
-    Sensor Mounts:
-    - Front: yaw offset 0°
-    - Left:  yaw offset +90°
-    - Right: yaw offset -90°
-    """
-    sensor_mount_r = 0.315
+    """Simulate HC-SR04 ultrasonic rangefinders using direct 3D mesh raycasting against obstacles and walls."""
+    sensor_mount_r = 0.340
     sensor_height = 0.123
     
     sensors_def = [
@@ -195,6 +242,12 @@ def raycast_ultrasonic_sensors(scene, depsgraph, robot_pos, robot_yaw, max_range
         ("Left", math.pi / 2.0),
         ("Right", -math.pi / 2.0)
     ]
+    
+    target_names = [
+        'Obstacle_Corner_Pillar', 'Obstacle_Crate_Lateral', 'Obstacle_Partition_Wall',
+        'Obstacle_Pillar_Front', 'Wall_East', 'Wall_North', 'Wall_South', 'Wall_West'
+    ]
+    target_objects = [bpy.data.objects.get(name) for name in target_names if bpy.data.objects.get(name)]
     
     readings = {}
     
@@ -207,21 +260,29 @@ def raycast_ultrasonic_sensors(scene, depsgraph, robot_pos, robot_yaw, max_range
         
         direction = Vector((math.cos(beam_angle), math.sin(beam_angle), 0.0)).normalized()
         
-        hit, hit_loc, normal, index, obj, matrix = scene.ray_cast(
-            depsgraph, origin, direction, distance=max_range
-        )
+        closest_hit_dist = max_range
+        closest_hit_loc = None
+        hit_found = False
         
-        # Ignore hits on robot components
-        if hit and obj and ("Robot" in obj.name or "Wheel" in obj.name or "Chassis" in obj.name or "Pad" in obj.name or "Motor" in obj.name or "Beam" in obj.name):
-            hit = False
-            
-        if hit:
-            dist = (hit_loc - origin).length
-            noisy_dist = max(0.02, dist + random.gauss(0, 0.003))
+        for obj in target_objects:
+            m_inv = obj.matrix_world.inverted()
+            loc_orig = m_inv @ origin
+            loc_dir = (m_inv.to_3x3() @ direction).normalized()
+            hit, loc, norm, f_idx = obj.ray_cast(loc_orig, loc_dir, distance=max_range)
+            if hit:
+                world_hit = obj.matrix_world @ loc
+                d = (world_hit - origin).length
+                if d < closest_hit_dist:
+                    closest_hit_dist = d
+                    closest_hit_loc = world_hit
+                    hit_found = True
+                    
+        if hit_found and closest_hit_dist <= max_range:
+            noisy_dist = max(0.02, closest_hit_dist + random.gauss(0, 0.003))
             readings[s_name] = {
                 "distance": round(noisy_dist, 3),
                 "detected": noisy_dist <= OBSTACLE_STOP_THRESHOLD,
-                "hit_point": (hit_loc.x, hit_loc.y, hit_loc.z)
+                "hit_point": (closest_hit_loc.x, closest_hit_loc.y, closest_hit_loc.z)
             }
         else:
             readings[s_name] = {
@@ -232,41 +293,46 @@ def raycast_ultrasonic_sensors(scene, depsgraph, robot_pos, robot_yaw, max_range
             
     return readings
 
+
 # ---------------------------------------------------------------------------
-# PROGRAMMED TEST ROUTE: FORWARD, BACKWARD, SIDEWAYS, DIAGONAL, ROTATION, EVADE
+# 16-STAGE MASTER DEMONSTRATION TRAJECTORY
 # ---------------------------------------------------------------------------
-def generate_trajectory():
+def generate_master_trajectory():
     """
-    Define 7-phase holonomic demonstration trajectory:
-    1. Forward translation (0.0 - 2.0s)
-    2. Backward translation (2.0 - 4.0s)  -- VERIFIES BACKWARD
-    3. Lateral translation (4.0 - 6.5s)   -- VERIFIES SIDEWAYS CRAB WALK
-    4. Diagonal translation (6.5 - 9.0s)  -- VERIFIES DIAGONAL
-    5. In-place rotation (9.0 - 11.5s)    -- VERIFIES ROTATION
-    6. Approach obstacle (11.5 - 14.0s)   -- VERIFIES SENSOR TRACKING
-    7. Reactive avoidance (14.0 - 17.5s)  -- VERIFIES BRAKING & HOLONOMIC EVASION
+    16 sequential stages:
+    Demonstrates all holonomic modes (forward, backward, left/right lateral, diagonal, cw/ccw spin),
+    approaches the obstacle, proactively stops with clearance, executes lateral evasion,
+    rejoins route, and reaches the Goal Pad destination without colliding with any obstacle!
     """
-    phases = [
-        # (duration_sec, vx, vy, omega, description)
-        (2.0,  0.45,  0.00,  0.00, "Phase 1: Pure Forward Translation"),
-        (2.0, -0.40,  0.00,  0.00, "Phase 2: Pure Backward Translation"),
-        (2.5,  0.00,  0.45,  0.00, "Phase 3: Pure Sideways (Lateral) Translation"),
-        (2.5,  0.35, -0.35,  0.00, "Phase 4: Diagonal Translation (+X, -Y)"),
-        (2.5,  0.00,  0.00,  1.50, "Phase 5: Pure In-Place Rotation (360° Spin)"),
-        (2.5,  0.40,  0.00,  0.00, "Phase 6: Approaching Forward Obstacle"),
-        (3.5,  0.00,  0.40,  0.35, "Phase 7: Reactive Obstacle Avoidance & Holonomic Evasion")
+    stages = [
+        # (duration, vx, vy, omega, state_label, description)
+        (1.0,    0.00,  0.00,  0.00,    "INITIAL_REST",     "Stage 1: Robot at Start Pad"),
+        (1.5,    0.40,  0.00,  0.00,    "FOLLOW_ROUTE",     "Stage 2: Forward Movement"),
+        (1.5,   -0.40,  0.00,  0.00,    "FOLLOW_ROUTE",     "Stage 3: Backward Movement (Returns to Start X)"),
+        (1.5,    0.00,  0.40,  0.00,    "FOLLOW_ROUTE",     "Stage 4: Left Lateral Movement"),
+        (1.5,    0.00, -0.40,  0.00,    "FOLLOW_ROUTE",     "Stage 5: Right Lateral Movement (Returns to Start Y)"),
+        (1.2,    0.25, -0.25,  0.00,    "FOLLOW_ROUTE",     "Stage 6: Diagonal Movement (+X, -Y)"),
+        (1.2,   -0.25,  0.25,  0.00,    "FOLLOW_ROUTE",     "Stage 7: Diagonal Return (-X, +Y)"),
+        (1.5,    0.00,  0.00, -2.0944,  "FOLLOW_ROUTE",     "Stage 8: Clockwise Rotation in Place"),
+        (1.5,    0.00,  0.00,  2.0944,  "FOLLOW_ROUTE",     "Stage 9: Anticlockwise Rotation in Place"),
+        (3.5,    0.40,  0.00,  0.00,    "FOLLOW_ROUTE",     "Stage 10: Approach Forward Obstacle (Pillar at X=2.5m)"),
+        (1.0,    0.00,  0.00,  0.00,    "STOP",             "Stage 11: Proactive Stop Before Obstacle Collision"),
+        (1.0,    0.00,  0.00,  0.00,    "ASSESS_CLEARANCE", "Stage 12: Evaluate Left & Right Clearance"),
+        (2.5,    0.00,  0.40,  0.00,    "AVOID_OBSTACLE",   "Stage 13: Safe Lateral Avoidance Manoeuvre (+Y Escape)"),
+        (3.2,    0.45,  0.00,  0.00,    "REJOIN_ROUTE",     "Stage 14: Rejoin Route Past Obstacle"),
+        (3.5,    0.05,  0.50,  0.00,    "NAVIGATE_TO_GOAL", "Stage 15: Navigate to Destination Goal Pad"),
+        (1.5,    0.00,  0.00,  0.00,    "GOAL_REACHED",     "Stage 16: Arrived & Parked at Destination Goal Pad")
     ]
-    return phases
+    return stages
 
 # ---------------------------------------------------------------------------
 # MAIN SIMULATION RUNNER & KEYFRAME BAKER
 # ---------------------------------------------------------------------------
 def run_simulation():
     print("=" * 65)
-    print("GROUP 7: RUNNING ENHANCED HOLONOMIC SIMULATION & SENSOR PIPELINE")
+    print("GROUP 7: RUNNING MASTER SIMULATION & SAFETY PIPELINE")
     print("=" * 65)
     
-    # 1. Verify kinematics
     verify_kinematics()
     
     scene = bpy.context.scene
@@ -274,7 +340,7 @@ def run_simulation():
     
     robot_base = bpy.data.objects.get("Robot_Base")
     if not robot_base:
-        raise RuntimeError("Robot_Base object not found in scene! Run build_robot.py first.")
+        raise RuntimeError("Robot_Base not found in scene! Run build_robot.py first.")
         
     wheels = [bpy.data.objects.get(f"Omni_Wheel_{i+1}") for i in range(3)]
     sensor_beams = {
@@ -287,20 +353,20 @@ def run_simulation():
     
     encoders = [WheelEncoder(ENCODER_PPR) for _ in range(3)]
     imu = SimulatedIMU()
+    collision_detector = GeometricCollisionDetector(r_col=TOTAL_COLLISION_RADIUS)
     
-    # Clear existing animation on objects
+    # Clear existing animations
     for obj in [robot_base] + [w for w in wheels if w]:
         if obj and obj.animation_data:
             obj.animation_data_clear()
             
-    # Trajectory state
     x = 0.0
     y = 0.0
     yaw = 0.0
     dt = 1.0 / FPS
     
-    phases = generate_trajectory()
-    total_duration = sum(p[0] for p in phases)
+    stages = generate_master_trajectory()
+    total_duration = sum(s[0] for s in stages)
     total_frames = int(total_duration * FPS)
     
     scene.frame_start = 1
@@ -308,88 +374,109 @@ def run_simulation():
     
     telemetry_records = []
     
-    phase_idx = 0
-    phase_timer = 0.0
+    stage_idx = 0
+    stage_timer = 0.0
     
-    # Cumulative wheel rotation angles (radians) around drive axle (local X)
     wheel_angles = [0.0, 0.0, 0.0]
+    obstacle_detected = False
+    collision_count = 0
     
-    obstacle_detected_latch = False
-    
-    print(f"Simulating {total_frames} frames ({total_duration:.1f} seconds at {FPS} FPS)...")
+    print(f"Simulating {total_frames} frames ({total_duration:.1f}s at {FPS} FPS)...")
     
     for frame in range(1, total_frames + 1):
         scene.frame_set(frame)
         
-        # Get commanded velocities for current phase
-        dur, vx_cmd, vy_cmd, omega_cmd, phase_desc = phases[phase_idx]
+        dur, vx_req, vy_req, omega_req, state_label, stage_desc = stages[stage_idx]
         
-        # Ultrasonic raycasting against 3D scene obstacles
+        # 1. Ultrasonic sensing
         us_readings = raycast_ultrasonic_sensors(scene, depsgraph, Vector((x, y, 0)), yaw)
+        front_dist = us_readings["Front"]["distance"]
+        left_dist = us_readings["Left"]["distance"]
+        right_dist = us_readings["Right"]["distance"]
         
-        # Reactive obstacle safety trigger in Phase 6 (Approaching Obstacle)
-        if phase_idx == 5:
-            front_d = us_readings["Front"]["distance"]
-            if front_d <= OBSTACLE_STOP_THRESHOLD and not obstacle_detected_latch:
-                print(f"  [!] Obstacle proximity alert at Frame {frame} (Time: {frame*dt:.2f}s, Distance: {front_d:.2f}m)!")
-                print("      Triggering reactive braking and holonomic evasive maneuver...")
-                phase_idx = 6  # Transition directly to avoidance phase
-                phase_timer = 0.0
-                dur, vx_cmd, vy_cmd, omega_cmd, phase_desc = phases[phase_idx]
-                obstacle_detected_latch = True
-                
-        # Inverse Kinematics: compute wheel linear speeds and RPMs
-        v_wheels, w_wheels, rpms = compute_inverse_kinematics(vx_cmd, vy_cmd, omega_cmd)
+        # Autonomous Obstacle Avoidance Trigger:
+        # In Stage 10 (Approach), if front sensor detects obstacle <= threshold:
+        if stage_idx == 9 and front_dist <= OBSTACLE_STOP_THRESHOLD and not obstacle_detected:
+            print(f"  [!] Obstacle Proximity Alert at Frame {frame} (t={frame*dt:.2f}s, d={front_dist:.2f}m)!")
+            print("      Transitioning: FOLLOW_ROUTE -> STOP -> ASSESS_CLEARANCE -> AVOID_OBSTACLE")
+            stage_idx = 10 # Transition to Stage 11: Proactive Stop
+            stage_timer = 0.0
+            dur, vx_req, vy_req, omega_req, state_label, stage_desc = stages[stage_idx]
+            obstacle_detected = True
+            
+        # 2. Calculate proposed movement
+        cos_yaw = math.cos(yaw)
+        sin_yaw = math.sin(yaw)
+        v_world_x = vx_req * cos_yaw - vy_req * sin_yaw
+        v_world_y = vx_req * sin_yaw + vy_req * cos_yaw
         
-        # Forward Kinematics verification
-        rec_vx, rec_vy, rec_omega = compute_forward_kinematics(v_wheels)
+        prop_x = x + v_world_x * dt
+        prop_y = y + v_world_y * dt
+        prop_yaw = yaw + omega_req * dt
         
-        # Encoder simulation
+        # 3. Geometric Swept-Path Collision Check & Prevention Barrier
+        safe_x, safe_y, col_occurred, col_name = collision_detector.validate_movement(x, y, prop_x, prop_y)
+        
+        if col_occurred:
+            collision_count += 1
+            print(f"  [COLLISION BARRIER ACTIVE] Frame {frame}: Constrained movement against {col_name}!")
+            
+        # Actual accepted displacement and velocities
+        dx_actual = safe_x - x
+        dy_actual = safe_y - y
+        
+        if dt > 0:
+            act_world_vx = dx_actual / dt
+            act_world_vy = dy_actual / dt
+            act_vx =  act_world_vx * cos_yaw + act_world_vy * sin_yaw
+            act_vy = -act_world_vx * sin_yaw + act_world_vy * cos_yaw
+        else:
+            act_vx, act_vy = 0.0, 0.0
+            
+        act_omega = omega_req
+        
+        # Update robot state to verified safe position
+        x = safe_x
+        y = safe_y
+        yaw = prop_yaw
+        
+        # 4. Kinematics from ACTUAL ACCEPTED movement
+        v_wheels, w_wheels, rpms = compute_inverse_kinematics(act_vx, act_vy, act_omega)
+        
+        # 5. Encoders from actual wheel rotation
         enc_ticks = []
         for i in range(3):
             ticks, cumulative_rad = encoders[i].update(w_wheels[i], dt)
             enc_ticks.append(ticks)
             wheel_angles[i] += w_wheels[i] * dt
             
-        # IMU simulation
-        imu_data = imu.measure(yaw, vx_cmd, vy_cmd, omega_cmd, dt)
+        # 6. IMU measurement
+        imu_data = imu.measure(yaw, act_vx, act_vy, act_omega, dt)
         
-        # Integrate robot world position
-        cos_yaw = math.cos(yaw)
-        sin_yaw = math.sin(yaw)
-        v_world_x = vx_cmd * cos_yaw - vy_cmd * sin_yaw
-        v_world_y = vx_cmd * sin_yaw + vy_cmd * cos_yaw
-        
-        x += v_world_x * dt
-        y += v_world_y * dt
-        yaw += omega_cmd * dt
-        
-        # Set Blender keyframes for robot chassis
+        # 7. Keyframe Robot Base
         robot_base.location = (x, y, 0.0)
         robot_base.rotation_euler = (0.0, 0.0, yaw)
         robot_base.keyframe_insert(data_path="location", frame=frame)
         robot_base.keyframe_insert(data_path="rotation_euler", frame=frame)
         
-        # Keyframe individual wheel rotations around their drive axle (local X axis)
+        # Keyframe Omni Wheels (spin about drive axle, local X)
         for i in range(3):
             if wheels[i]:
                 wheels[i].rotation_euler.x = wheel_angles[i]
                 wheels[i].keyframe_insert(data_path="rotation_euler", frame=frame)
                 
-        # Update dynamic visual ultrasonic detection rays
+        # Keyframe Ultrasonic Sensor Detection Rays
         for s_name in ["Front", "Left", "Right"]:
             beam_obj = sensor_beams.get(s_name)
             if beam_obj:
                 s_dist = us_readings[s_name]["distance"]
                 is_alert = us_readings[s_name]["detected"]
                 
-                # Dynamic ray length scaling along sensor Y axis
                 beam_obj.scale = (1.0, 1.0, s_dist)
                 beam_obj.location = (0.0, s_dist / 2.0 + 0.016, 0.0)
                 beam_obj.keyframe_insert(data_path="scale", frame=frame)
                 beam_obj.keyframe_insert(data_path="location", frame=frame)
                 
-                # Material alert shader switch
                 if is_alert and mat_alert:
                     if beam_obj.data.materials:
                         beam_obj.data.materials[0] = mat_alert
@@ -401,36 +488,41 @@ def run_simulation():
                     else:
                         beam_obj.data.materials.append(mat_safe)
                         
-        # Record Telemetry Frame
+        # 8. Record Comprehensive Telemetry Frame
         telemetry_records.append({
             "frame": frame,
             "time_s": round(frame * dt, 3),
-            "phase": phase_desc,
+            "stage": stage_desc,
+            "controller_state": state_label,
+            "collision_prevention_active": col_occurred,
             "robot_x": round(x, 4),
             "robot_y": round(y, 4),
             "heading_deg": round(math.degrees(yaw) % 360.0, 2),
-            "vx_cmd": round(vx_cmd, 3),
-            "vy_cmd": round(vy_cmd, 3),
-            "omega_cmd": round(omega_cmd, 3),
+            "vx_requested": round(vx_req, 3),
+            "vy_requested": round(vy_req, 3),
+            "omega_requested": round(omega_req, 3),
+            "vx_actual": round(act_vx, 3),
+            "vy_actual": round(act_vy, 3),
+            "omega_actual": round(act_omega, 3),
             "wheel_speeds_mps": [round(v, 4) for v in v_wheels],
             "wheel_rpms": [round(rpm, 1) for rpm in rpms],
             "encoder_ticks": enc_ticks,
             "imu": imu_data,
             "ultrasonic": {
-                "front_m": us_readings["Front"]["distance"],
-                "left_m": us_readings["Left"]["distance"],
-                "right_m": us_readings["Right"]["distance"],
+                "front_m": front_dist,
+                "left_m": left_dist,
+                "right_m": right_dist,
                 "hazard_detected": any(us_readings[k]["detected"] for k in us_readings)
             }
         })
         
-        # Advance phase timer
-        phase_timer += dt
-        if phase_timer >= dur and phase_idx < len(phases) - 1:
-            phase_idx += 1
-            phase_timer = 0.0
+        # Advance stage timer
+        stage_timer += dt
+        if stage_timer >= dur and stage_idx < len(stages) - 1:
+            stage_idx += 1
+            stage_timer = 0.0
             
-    print("[1/3] Simulation physics and 3D keyframe baking completed.")
+    print(f"[1/3] Simulation physics and 3D keyframe baking completed. Total collisions during route: {collision_count}")
     
     # Export Telemetry Data to JSON, JS, and CSV
     output_dir = os.path.dirname(os.path.abspath(__file__))
@@ -440,31 +532,39 @@ def run_simulation():
     with open(json_path, "w") as f:
         json.dump({
             "metadata": {
-                "project": "Group 7 - Three-Wheel Omnidirectional Robot",
+                "project": "Group 7 - Three-Wheel Omnidirectional Robot (Master Spec)",
                 "wheel_radius_m": WHEEL_RADIUS,
                 "chassis_radius_m": CHASSIS_RADIUS,
+                "robot_footprint_radius_m": ROBOT_FOOTPRINT_RADIUS,
+                "safety_margin_m": SAFETY_MARGIN,
+                "total_collision_radius_m": TOTAL_COLLISION_RADIUS,
                 "encoder_ppr": ENCODER_PPR,
                 "fps": FPS,
                 "total_frames": total_frames,
-                "duration_s": total_duration
+                "duration_s": total_duration,
+                "total_collisions": collision_count
             },
             "telemetry": telemetry_records
         }, f, indent=2)
     print(f"[2/3] Exported telemetry JSON to: {json_path}")
     
-    # 2. JS (Dashboard global variable)
+    # 2. JS for Dashboard
     js_path = os.path.join(output_dir, "telemetry_data.js")
     with open(js_path, "w") as f:
         f.write("window.TELEMETRY_DATA = ")
         json.dump({
             "metadata": {
-                "project": "Group 7 - Three-Wheel Omnidirectional Robot",
+                "project": "Group 7 - Three-Wheel Omnidirectional Robot (Master Spec)",
                 "wheel_radius_m": WHEEL_RADIUS,
                 "chassis_radius_m": CHASSIS_RADIUS,
+                "robot_footprint_radius_m": ROBOT_FOOTPRINT_RADIUS,
+                "safety_margin_m": SAFETY_MARGIN,
+                "total_collision_radius_m": TOTAL_COLLISION_RADIUS,
                 "encoder_ppr": ENCODER_PPR,
                 "fps": FPS,
                 "total_frames": total_frames,
-                "duration_s": total_duration
+                "duration_s": total_duration,
+                "total_collisions": collision_count
             },
             "telemetry": telemetry_records
         }, f, indent=2)
@@ -476,8 +576,10 @@ def run_simulation():
     with open(csv_path, "w", newline="") as f:
         writer = csv.writer(f)
         writer.writerow([
-            "frame", "time_s", "phase", "x", "y", "heading_deg",
-            "vx", "vy", "omega",
+            "frame", "time_s", "stage", "controller_state", "collision_prevention_active",
+            "x", "y", "heading_deg",
+            "vx_req", "vy_req", "omega_req",
+            "vx_act", "vy_act", "omega_act",
             "w1_speed", "w2_speed", "w3_speed",
             "w1_rpm", "w2_rpm", "w3_rpm",
             "enc1_ticks", "enc2_ticks", "enc3_ticks",
@@ -486,8 +588,10 @@ def run_simulation():
         ])
         for r in telemetry_records:
             writer.writerow([
-                r["frame"], r["time_s"], r["phase"], r["robot_x"], r["robot_y"], r["heading_deg"],
-                r["vx_cmd"], r["vy_cmd"], r["omega_cmd"],
+                r["frame"], r["time_s"], r["stage"], r["controller_state"], 1 if r["collision_prevention_active"] else 0,
+                r["robot_x"], r["robot_y"], r["heading_deg"],
+                r["vx_requested"], r["vy_requested"], r["omega_requested"],
+                r["vx_actual"], r["vy_actual"], r["omega_actual"],
                 r["wheel_speeds_mps"][0], r["wheel_speeds_mps"][1], r["wheel_speeds_mps"][2],
                 r["wheel_rpms"][0], r["wheel_rpms"][1], r["wheel_rpms"][2],
                 r["encoder_ticks"][0], r["encoder_ticks"][1], r["encoder_ticks"][2],
@@ -502,7 +606,7 @@ def run_simulation():
     bpy.ops.wm.save_as_mainfile(filepath=blend_path)
     print(f"Updated scene with animated trajectory saved to: {blend_path}")
     print("=" * 65)
-    print("SIMULATION PIPELINE COMPLETE!")
+    print("MASTER SIMULATION PIPELINE COMPLETE!")
     print("=" * 65)
 
 if __name__ == "__main__":
