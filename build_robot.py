@@ -5,24 +5,26 @@ Blender 3D Modeling and Scene Setup Script (Enhanced)
 Authors: Group 7 Robotics Engineering Team
 Project: Three-Wheel Omni Robot — Holonomic Movement in Indoor Environments
 
-This script builds:
-1. High-detail 3-wheel omnidirectional mobile robot with:
-   - Triangular dual-deck chassis with chamfered edges and aluminum standoffs
-   - 3 independently driven DC gearmotors with planetary gearboxes and mounting brackets
-   - 3 optical rotary encoders attached to motor rear shafts
-   - Central IMU sensor module with SMD components
-   - 3 HC-SR04 ultrasonic sensors (Front, Left, Right) with dual transducers
-   - Battery pack, motor drivers, controller board, wiring, and fasteners
-   - 3 double-disc omni wheels with 10 passive barrel rollers each, placed 120 deg apart
-2. Testing arena (10x10m) with grid floor, boundary walls, hazard stripes, coordinate axes
-   placed in corner reference station, starting pad, and 4 navigation obstacles.
-3. Materials with realistic PBR shaders AND viewport/workbench diffuse colors.
-4. 4 dedicated cameras:
-   - Camera_Closeup (for macro presentation of the robot)
-   - Camera_Presentation (angled 3D arena view)
-   - Camera_TopDown (orthographic kinematics & trajectory view)
-   - Camera_Follow (tracking follow cam)
-5. Saves the scene as Group7_OmniRobot.blend.
+This enhanced script builds:
+1. High-detail, physically accurate 3-wheel omnidirectional mobile robot:
+   - Triangular dual-deck chassis (enlarged for high visibility: R=0.35m) with standoffs
+   - Exactly three dual-disc omni wheels mounted at 120-degree intervals (0°, 120°, 240°)
+   - Visible, realistic passive barrel rollers on each wheel, correctly oriented tangential
+     to the wheel rim with low-friction radial slip and drive grip along circle tangents
+   - Separate, clearly named drive motor objects (Drive_Motor_1, Drive_Motor_2, Drive_Motor_3)
+   - Separate, clearly named encoder objects (Encoder_1, Encoder_2, Encoder_3) with code discs
+   - Clearly labelled 6-DOF IMU sensor module with 3D text badge at the chassis centre
+   - Three visible HC-SR04 ultrasonic sensor modules (Front, Left, Right) with visible detection rays
+   - Central battery pack, controller board, motor driver, and wiring
+2. Professional indoor testing arena (10x10m) with grid floor, circular launch pad, distance rings,
+   boundary walls with hazard stripes, coordinate reference station, and 4 test obstacles.
+3. Studio lighting rig (Key sun, overhead softbox, colored rim light, and fill light).
+4. Four specialized cameras:
+   - Camera_Closeup (Macro presentation of chassis, motors, encoders, and wheel mechanism)
+   - Camera_Presentation (Wide angled 3D arena perspective framing the robot prominently)
+   - Camera_TopDown (True orthographic top-down plan view for kinematics evaluation)
+   - Camera_Follow (Dynamic tracking follow camera)
+5. Saves the scene to Group7_OmniRobot.blend.
 """
 
 import bpy
@@ -30,6 +32,21 @@ import math
 import os
 from mathutils import Vector, Euler
 
+# ---------------------------------------------------------------------------
+# PHYSICAL ROBOT CONSTANTS
+# ---------------------------------------------------------------------------
+CHASSIS_RADIUS = 0.35        # Center to triangular vertex (350 mm)
+WHEEL_DIST = 0.30            # Center to wheel hub contact point (300 mm)
+WHEEL_RADIUS = 0.05          # Wheel outer radius (50 mm radius = 100 mm diameter)
+WHEEL_WIDTH = 0.034          # Dual-disc rim width (34 mm)
+GROUND_CLEARANCE = 0.018     # Floor to bottom deck plate (18 mm)
+DECK_GAP = 0.075             # Spacing between bottom and top decks (75 mm)
+PLATE_THICKNESS = 0.005      # 5mm aluminum/acrylic chassis decks
+NUM_ROLLERS = 10             # Passive barrel rollers per wheel
+
+# ---------------------------------------------------------------------------
+# SCENE MANAGEMENT
+# ---------------------------------------------------------------------------
 def clear_existing_scene():
     """Wipe current blend data to guarantee clean generation."""
     bpy.ops.wm.read_factory_settings(use_empty=True)
@@ -41,6 +58,8 @@ def clear_existing_scene():
         bpy.data.cameras.remove(block)
     for block in bpy.data.lights:
         bpy.data.lights.remove(block)
+    for block in bpy.data.curves:
+        bpy.data.curves.remove(block)
 
 def create_collection(name, parent_collection=None):
     """Create or retrieve a collection."""
@@ -54,13 +73,16 @@ def create_collection(name, parent_collection=None):
             bpy.context.scene.collection.children.link(col)
     return col
 
+# ---------------------------------------------------------------------------
+# MATERIALS SETUP
+# ---------------------------------------------------------------------------
 def get_or_create_material(name, base_color, metallic=0.0, roughness=0.5, emission_color=None, emission_strength=0.0):
     """Create a Principled BSDF material with specified PBR and Viewport properties."""
     if name in bpy.data.materials:
         return bpy.data.materials[name]
     
     mat = bpy.data.materials.new(name=name)
-    mat.diffuse_color = base_color # For Workbench / Solid viewport rendering
+    mat.diffuse_color = base_color  # For Workbench / Solid viewport rendering
     mat.roughness = roughness
     mat.metallic = metallic
     
@@ -105,17 +127,17 @@ def create_grid_material(name):
     
     bsdf = nodes.new(type='ShaderNodeBsdfPrincipled')
     bsdf.location = (300, 0)
-    bsdf.inputs['Roughness'].default_value = 0.25
-    bsdf.inputs['Metallic'].default_value = 0.1
+    bsdf.inputs['Roughness'].default_value = 0.28
+    bsdf.inputs['Metallic'].default_value = 0.15
     
     tex_coord = nodes.new(type='ShaderNodeTexCoord')
     tex_coord.location = (-400, 0)
     
     grid_tex = nodes.new(type='ShaderNodeTexBrick')
     grid_tex.location = (-100, 0)
-    grid_tex.inputs['Color1'].default_value = (0.07, 0.08, 0.10, 1.0)
-    grid_tex.inputs['Color2'].default_value = (0.05, 0.06, 0.08, 1.0)
-    grid_tex.inputs['Mortar'].default_value = (0.25, 0.40, 0.65, 1.0)
+    grid_tex.inputs['Color1'].default_value = (0.09, 0.10, 0.13, 1.0)
+    grid_tex.inputs['Color2'].default_value = (0.06, 0.07, 0.09, 1.0)
+    grid_tex.inputs['Mortar'].default_value = (0.20, 0.45, 0.85, 1.0)
     grid_tex.inputs['Scale'].default_value = 5.0
     grid_tex.inputs['Mortar Size'].default_value = 0.015
     grid_tex.inputs['Mortar Smooth'].default_value = 0.1
@@ -127,55 +149,70 @@ def create_grid_material(name):
     return mat
 
 def setup_materials():
-    """Setup all project materials."""
-    materials = {}
-    materials['Chassis_Plate'] = get_or_create_material('Mat_Chassis_Plate', (0.04, 0.04, 0.05, 1.0), metallic=0.8, roughness=0.25)
-    materials['Standoff'] = get_or_create_material('Mat_Standoff', (0.8, 0.8, 0.85, 1.0), metallic=0.95, roughness=0.15)
-    materials['Fastener'] = get_or_create_material('Mat_Fastener', (0.9, 0.9, 0.95, 1.0), metallic=1.0, roughness=0.1)
+    """Setup all project materials with distinct PBR shaders and viewport colors."""
+    mats = {}
+    # Chassis & structural
+    mats['Chassis_Plate'] = get_or_create_material('Mat_Chassis_Plate', (0.04, 0.04, 0.06, 1.0), metallic=0.85, roughness=0.20)
+    mats['Standoff'] = get_or_create_material('Mat_Standoff', (0.85, 0.85, 0.90, 1.0), metallic=0.95, roughness=0.15)
+    mats['Fastener'] = get_or_create_material('Mat_Fastener', (0.92, 0.92, 0.96, 1.0), metallic=1.0, roughness=0.10)
     
-    materials['Motor_Body'] = get_or_create_material('Mat_Motor_Body', (0.15, 0.16, 0.18, 1.0), metallic=0.7, roughness=0.3)
-    materials['Gearbox'] = get_or_create_material('Mat_Gearbox', (0.75, 0.77, 0.80, 1.0), metallic=0.9, roughness=0.2)
-    materials['Motor_Bracket'] = get_or_create_material('Mat_Motor_Bracket', (0.05, 0.35, 0.65, 1.0), metallic=0.85, roughness=0.3)
-    materials['Shaft'] = get_or_create_material('Mat_Shaft', (0.85, 0.85, 0.88, 1.0), metallic=0.95, roughness=0.1)
+    # Motors & Encoders
+    mats['Motor_Body'] = get_or_create_material('Mat_Motor_Body', (0.16, 0.17, 0.20, 1.0), metallic=0.80, roughness=0.30)
+    mats['Gearbox'] = get_or_create_material('Mat_Gearbox', (0.78, 0.80, 0.84, 1.0), metallic=0.92, roughness=0.18)
+    mats['Motor_Bracket'] = get_or_create_material('Mat_Motor_Bracket', (0.05, 0.38, 0.72, 1.0), metallic=0.85, roughness=0.28)
+    mats['Shaft'] = get_or_create_material('Mat_Shaft', (0.90, 0.90, 0.93, 1.0), metallic=0.98, roughness=0.08)
+    mats['Encoder_Disc'] = get_or_create_material('Mat_Encoder_Disc', (0.95, 0.75, 0.10, 1.0), metallic=0.90, roughness=0.20)
+    mats['Encoder_Housing'] = get_or_create_material('Mat_Encoder_Housing', (0.02, 0.50, 0.18, 1.0), metallic=0.15, roughness=0.35)
     
-    materials['Wheel_Hub'] = get_or_create_material('Mat_Wheel_Hub', (0.85, 0.08, 0.08, 1.0), metallic=0.85, roughness=0.22)
-    materials['Roller_Rubber'] = get_or_create_material('Mat_Roller_Rubber', (0.05, 0.05, 0.05, 1.0), metallic=0.0, roughness=0.85)
-    materials['Roller_Pin'] = get_or_create_material('Mat_Roller_Pin', (0.9, 0.9, 0.9, 1.0), metallic=1.0, roughness=0.1)
+    # Omni Wheels & Rollers
+    mats['Wheel_Hub'] = get_or_create_material('Mat_Wheel_Hub', (0.88, 0.10, 0.10, 1.0), metallic=0.88, roughness=0.22)
+    mats['Roller_Rubber'] = get_or_create_material('Mat_Roller_Rubber', (0.06, 0.06, 0.07, 1.0), metallic=0.0, roughness=0.85)
+    mats['Roller_Pin'] = get_or_create_material('Mat_Roller_Pin', (0.92, 0.92, 0.92, 1.0), metallic=1.0, roughness=0.10)
     
-    materials['PCB_Green'] = get_or_create_material('Mat_PCB_Green', (0.02, 0.45, 0.12, 1.0), metallic=0.1, roughness=0.4)
-    materials['PCB_Blue'] = get_or_create_material('Mat_PCB_Blue', (0.05, 0.25, 0.85, 1.0), metallic=0.1, roughness=0.35)
-    materials['Ultrasonic_Can'] = get_or_create_material('Mat_Ultrasonic_Can', (0.88, 0.89, 0.92, 1.0), metallic=0.95, roughness=0.15)
-    materials['Ultrasonic_Mesh'] = get_or_create_material('Mat_Ultrasonic_Mesh', (0.08, 0.08, 0.08, 1.0), metallic=0.2, roughness=0.9)
-    materials['Chip_IC'] = get_or_create_material('Mat_Chip_IC', (0.02, 0.02, 0.02, 1.0), metallic=0.1, roughness=0.4)
-    materials['LED_Green'] = get_or_create_material('Mat_LED_Green', (0.1, 1.0, 0.2, 1.0), metallic=0.0, roughness=0.1, 
-                                                    emission_color=(0.1, 1.0, 0.2, 1.0), emission_strength=5.0)
-    materials['LED_Red'] = get_or_create_material('Mat_LED_Red', (1.0, 0.05, 0.05, 1.0), metallic=0.0, roughness=0.1, 
-                                                  emission_color=(1.0, 0.05, 0.05, 1.0), emission_strength=5.0)
-    materials['Battery'] = get_or_create_material('Mat_Battery', (0.08, 0.50, 0.95, 1.0), metallic=0.2, roughness=0.4)
-    materials['Wire_Red'] = get_or_create_material('Mat_Wire_Red', (0.85, 0.05, 0.05, 1.0), metallic=0.0, roughness=0.5)
-    materials['Wire_Black'] = get_or_create_material('Mat_Wire_Black', (0.03, 0.03, 0.03, 1.0), metallic=0.0, roughness=0.5)
+    # Electronics & IMU
+    mats['PCB_Green'] = get_or_create_material('Mat_PCB_Green', (0.02, 0.45, 0.12, 1.0), metallic=0.10, roughness=0.40)
+    mats['PCB_Blue'] = get_or_create_material('Mat_PCB_Blue', (0.04, 0.28, 0.88, 1.0), metallic=0.10, roughness=0.35)
+    mats['Chip_IC'] = get_or_create_material('Mat_Chip_IC', (0.02, 0.02, 0.02, 1.0), metallic=0.10, roughness=0.40)
+    mats['Text_White'] = get_or_create_material('Mat_Text_White', (0.95, 0.95, 0.98, 1.0), metallic=0.20, roughness=0.20,
+                                               emission_color=(0.95, 0.95, 0.98, 1.0), emission_strength=2.0)
+    mats['LED_Green'] = get_or_create_material('Mat_LED_Green', (0.1, 1.0, 0.2, 1.0), metallic=0.0, roughness=0.1, 
+                                               emission_color=(0.1, 1.0, 0.2, 1.0), emission_strength=6.0)
+    mats['LED_Amber'] = get_or_create_material('Mat_LED_Amber', (1.0, 0.65, 0.0, 1.0), metallic=0.0, roughness=0.1, 
+                                               emission_color=(1.0, 0.65, 0.0, 1.0), emission_strength=6.0)
+    mats['Battery'] = get_or_create_material('Mat_Battery', (0.08, 0.52, 0.96, 1.0), metallic=0.20, roughness=0.38)
     
-    materials['Arena_Floor'] = create_grid_material('Mat_Arena_Floor')
-    materials['Wall_Concrete'] = get_or_create_material('Mat_Wall_Concrete', (0.40, 0.42, 0.45, 1.0), metallic=0.0, roughness=0.8)
-    materials['Hazard_Stripe'] = get_or_create_material('Mat_Hazard_Stripe', (0.95, 0.80, 0.05, 1.0), metallic=0.1, roughness=0.4)
-    materials['Obstacle_Orange'] = get_or_create_material('Mat_Obstacle_Orange', (0.95, 0.35, 0.05, 1.0), metallic=0.1, roughness=0.35)
-    materials['Obstacle_Teal'] = get_or_create_material('Mat_Obstacle_Teal', (0.05, 0.65, 0.70, 1.0), metallic=0.1, roughness=0.35)
-    materials['Obstacle_Metal'] = get_or_create_material('Mat_Obstacle_Metal', (0.45, 0.48, 0.52, 1.0), metallic=0.85, roughness=0.25)
-    materials['Start_Pad'] = get_or_create_material('Mat_Start_Pad', (0.12, 0.50, 0.20, 1.0), metallic=0.2, roughness=0.5)
+    # Ultrasonic Sensors & Visual Rays
+    mats['Ultrasonic_Can'] = get_or_create_material('Mat_Ultrasonic_Can', (0.90, 0.91, 0.94, 1.0), metallic=0.96, roughness=0.12)
+    mats['Ultrasonic_Mesh'] = get_or_create_material('Mat_Ultrasonic_Mesh', (0.08, 0.08, 0.08, 1.0), metallic=0.25, roughness=0.85)
+    mats['Beam_Safe'] = get_or_create_material('Mat_Beam_Safe', (0.0, 1.0, 0.45, 0.75), metallic=0.0, roughness=0.20,
+                                               emission_color=(0.0, 1.0, 0.45, 1.0), emission_strength=4.5)
+    mats['Beam_Alert'] = get_or_create_material('Mat_Beam_Alert', (1.0, 0.12, 0.12, 0.85), metallic=0.0, roughness=0.20,
+                                                emission_color=(1.0, 0.12, 0.12, 1.0), emission_strength=8.0)
     
-    materials['Beam_Safe'] = get_or_create_material('Mat_Beam_Safe', (0.0, 1.0, 0.4, 0.8), metallic=0.0, roughness=0.2,
-                                                    emission_color=(0.0, 1.0, 0.4, 1.0), emission_strength=4.0)
-    materials['Beam_Alert'] = get_or_create_material('Mat_Beam_Alert', (1.0, 0.1, 0.1, 0.9), metallic=0.0, roughness=0.2,
-                                                     emission_color=(1.0, 0.1, 0.1, 1.0), emission_strength=8.0)
+    # Arena & Environment
+    mats['Arena_Floor'] = create_grid_material('Mat_Arena_Floor')
+    mats['Wall_Concrete'] = get_or_create_material('Mat_Wall_Concrete', (0.42, 0.44, 0.48, 1.0), metallic=0.0, roughness=0.80)
+    mats['Hazard_Stripe'] = get_or_create_material('Mat_Hazard_Stripe', (0.98, 0.82, 0.06, 1.0), metallic=0.10, roughness=0.35)
+    mats['Obstacle_Orange'] = get_or_create_material('Mat_Obstacle_Orange', (0.98, 0.38, 0.04, 1.0), metallic=0.10, roughness=0.30)
+    mats['Obstacle_Teal'] = get_or_create_material('Mat_Obstacle_Teal', (0.06, 0.68, 0.72, 1.0), metallic=0.10, roughness=0.30)
+    mats['Obstacle_Metal'] = get_or_create_material('Mat_Obstacle_Metal', (0.48, 0.50, 0.54, 1.0), metallic=0.88, roughness=0.22)
+    mats['Start_Pad'] = get_or_create_material('Mat_Start_Pad', (0.12, 0.54, 0.24, 1.0), metallic=0.20, roughness=0.45)
     
-    materials['Axis_X_Red'] = get_or_create_material('Mat_Axis_X_Red', (1.0, 0.05, 0.05, 1.0), emission_color=(1.0, 0.05, 0.05, 1.0), emission_strength=3.0)
-    materials['Axis_Y_Green'] = get_or_create_material('Mat_Axis_Y_Green', (0.05, 1.0, 0.05, 1.0), emission_color=(0.05, 1.0, 0.05, 1.0), emission_strength=3.0)
-    materials['Axis_Z_Blue'] = get_or_create_material('Mat_Axis_Z_Blue', (0.1, 0.2, 1.0, 1.0), emission_color=(0.1, 0.2, 1.0, 1.0), emission_strength=3.0)
+    # Reference Station Axes
+    mats['Axis_X_Red'] = get_or_create_material('Mat_Axis_X_Red', (1.0, 0.05, 0.05, 1.0), emission_color=(1.0, 0.05, 0.05, 1.0), emission_strength=3.0)
+    mats['Axis_Y_Green'] = get_or_create_material('Mat_Axis_Y_Green', (0.05, 1.0, 0.05, 1.0), emission_color=(0.05, 1.0, 0.05, 1.0), emission_strength=3.0)
+    mats['Axis_Z_Blue'] = get_or_create_material('Mat_Axis_Z_Blue', (0.10, 0.25, 1.0, 1.0), emission_color=(0.10, 0.25, 1.0, 1.0), emission_strength=3.0)
     
-    return materials
+    return mats
 
-def build_triangular_plate(name, radius=0.28, thickness=0.005, corner_radius=0.04, collection=None, material=None):
-    """Build a rounded triangular chassis deck with weight-reduction cutouts."""
+# ---------------------------------------------------------------------------
+# GEOMETRY GENERATORS: CHASSIS, OMNI WHEELS, ACTUATORS, SENSORS
+# ---------------------------------------------------------------------------
+def build_triangular_plate(name, radius=CHASSIS_RADIUS, thickness=PLATE_THICKNESS, corner_radius=0.05, collection=None, material=None):
+    """
+    Build a rounded triangular chassis deck plate.
+    The vertices are placed at 0°, 120°, 240° with smooth fillet curves at the corners.
+    """
     mesh = bpy.data.meshes.new(name + "_Mesh")
     obj = bpy.data.objects.new(name, mesh)
     if collection:
@@ -184,7 +221,7 @@ def build_triangular_plate(name, radius=0.28, thickness=0.005, corner_radius=0.0
     verts = []
     faces = []
     
-    num_sub = 8
+    num_sub = 10
     angles = [math.radians(a) for a in [0, 120, 240]]
     profile_2d = []
     
@@ -199,8 +236,10 @@ def build_triangular_plate(name, radius=0.28, thickness=0.005, corner_radius=0.0
             
     n = len(profile_2d)
     
+    # Bottom vertices
     for p in profile_2d:
         verts.append((p[0], p[1], -thickness/2))
+    # Top vertices
     for p in profile_2d:
         verts.append((p[0], p[1], thickness/2))
         
@@ -226,36 +265,45 @@ def build_triangular_plate(name, radius=0.28, thickness=0.005, corner_radius=0.0
         obj.data.materials.append(material)
         
     bev = obj.modifiers.new(name="Bevel", type='BEVEL')
-    bev.width = 0.002
+    bev.width = 0.003
     bev.segments = 2
     
     return obj
 
-def build_omni_wheel(wheel_name, radius=0.04, width=0.024, num_rollers=10, collection=None, materials=None):
+def build_omni_wheel(wheel_name, radius=WHEEL_RADIUS, width=WHEEL_WIDTH, num_rollers=NUM_ROLLERS, collection=None, materials=None):
     """
-    Build a detailed omni wheel assembly:
-    - Central hub with dual anodized aluminum rim plates
-    - Central motor shaft mounting hub / coupler
-    - Periphery barrel rollers mounted on miniature steel pins
+    Build a physically and kinematically correct 120° omni wheel assembly.
+    
+    Orientation Conventions (Wheel Local Coordinates):
+    - Local +X: Points radially outwards (along drive axle).
+    - Local +Y: Points tangentially along the circle drive direction.
+    - Local +Z: Points vertically upward.
+    - Wheel rim discs lie in the local Y-Z plane.
+    - Main wheel rotation spins around local X axis.
+    - Each passive barrel roller has its axle tangential to the rim in the local Y-Z plane.
+      At ground contact (bottom), roller axle is along +Y (tangent), permitting free radial roll along X.
     """
     wheel_empty = bpy.data.objects.new(wheel_name, None)
     wheel_empty.empty_display_type = 'ARROWS'
-    wheel_empty.empty_display_size = 0.04
+    wheel_empty.empty_display_size = 0.06
     if collection:
         collection.objects.link(wheel_empty)
         
-    plate_thk = 0.0025
+    plate_thk = 0.0035
     half_w = width / 2.0
+    
+    # 1. Dual anodized aluminum rim plates (perpendicular to local X axis)
     for side, sign in [("L", -1), ("R", 1)]:
         disc_mesh = bpy.data.meshes.new(f"{wheel_name}_Plate_{side}_Mesh")
         disc_obj = bpy.data.objects.new(f"{wheel_name}_Plate_{side}", disc_mesh)
         collection.objects.link(disc_obj)
         disc_obj.parent = wheel_empty
         
+        # Cylinder aligned along X axis: rotated 90 deg around Y
         bpy.ops.mesh.primitive_cylinder_add(
-            vertices=32, radius=radius * 0.78, depth=plate_thk,
-            location=(0, sign * (half_w - plate_thk/2), 0),
-            rotation=(math.pi/2, 0, 0)
+            vertices=32, radius=radius * 0.80, depth=plate_thk,
+            location=(sign * (half_w - plate_thk/2), 0, 0),
+            rotation=(0, math.pi/2, 0)
         )
         temp_obj = bpy.context.active_object
         disc_obj.data = temp_obj.data
@@ -264,10 +312,10 @@ def build_omni_wheel(wheel_name, radius=0.04, width=0.024, num_rollers=10, colle
         if materials and 'Wheel_Hub' in materials:
             disc_obj.data.materials.append(materials['Wheel_Hub'])
             
-    # Central collar
+    # 2. Central motor hub / collar (cylinder along local X)
     bpy.ops.mesh.primitive_cylinder_add(
-        vertices=24, radius=0.012, depth=width * 1.1,
-        location=(0, 0, 0), rotation=(math.pi/2, 0, 0)
+        vertices=24, radius=0.014, depth=width * 1.15,
+        location=(0, 0, 0), rotation=(0, math.pi/2, 0)
     )
     collar = bpy.context.active_object
     collar.name = f"{wheel_name}_Collar"
@@ -277,25 +325,34 @@ def build_omni_wheel(wheel_name, radius=0.04, width=0.024, num_rollers=10, colle
     collection.objects.link(collar)
     bpy.context.scene.collection.objects.unlink(collar)
     
-    # Passive barrel rollers around circumference
+    # 3. Passive barrel rollers around circumference
+    # In a professional double-row omni wheel, rollers are staggered across the dual plates
     roller_orbit_r = radius * 0.82
     roller_rad = radius * 0.22
-    roller_len = (2 * math.pi * roller_orbit_r) / (num_rollers * 1.45)
+    roller_len = (2 * math.pi * roller_orbit_r) / (num_rollers * 1.35)
     
     for i in range(num_rollers):
+        # Angular position in the Y-Z plane
         ang = (2 * math.pi * i) / num_rollers
-        row_offset = (half_w * 0.45) if (i % 2 == 0) else (-half_w * 0.45)
+        # Stagger alternating rollers across left and right rim plates
+        row_offset = (half_w * 0.50) if (i % 2 == 0) else (-half_w * 0.50)
         
-        rx = roller_orbit_r * math.cos(ang)
-        ry = row_offset
+        # Roller position in local coordinates (X=row_offset, Y=R*cos, Z=R*sin)
+        rx = row_offset
+        ry = roller_orbit_r * math.cos(ang)
         rz = roller_orbit_r * math.sin(ang)
         
-        tangent_ang = ang + math.pi/2
+        # Orientation: cylinder length initially along local Z.
+        # To align cylinder length tangent to the circle in Y-Z plane, rotate around X by angle `ang`:
+        # At ang=0 (Y=R, Z=0), tangent is +Z (0 deg rot).
+        # At ang=-pi/2 (bottom contact Y=0, Z=-R), tangent is +Y (rot = -pi/2 around X).
+        roller_rot = (ang, 0.0, 0.0)
         
+        # Roller rubber barrel
         bpy.ops.mesh.primitive_cylinder_add(
-            vertices=16, radius=roller_rad, depth=roller_len,
+            vertices=20, radius=roller_rad, depth=roller_len,
             location=(rx, ry, rz),
-            rotation=(math.sin(tangent_ang)*math.pi/2, 0, -math.cos(tangent_ang)*math.pi/2)
+            rotation=roller_rot
         )
         roller = bpy.context.active_object
         roller.name = f"{wheel_name}_Roller_{i+1}"
@@ -304,17 +361,17 @@ def build_omni_wheel(wheel_name, radius=0.04, width=0.024, num_rollers=10, colle
             roller.data.materials.append(materials['Roller_Rubber'])
             
         bev = roller.modifiers.new("Bevel", 'BEVEL')
-        bev.width = roller_rad * 0.45
+        bev.width = roller_rad * 0.40
         bev.segments = 3
         
         collection.objects.link(roller)
         bpy.context.scene.collection.objects.unlink(roller)
         
-        # Axle pin
+        # Steel axle pin through roller core
         bpy.ops.mesh.primitive_cylinder_add(
-            vertices=8, radius=0.0018, depth=roller_len * 1.25,
+            vertices=10, radius=0.0022, depth=roller_len * 1.25,
             location=(rx, ry, rz),
-            rotation=(math.sin(tangent_ang)*math.pi/2, 0, -math.cos(tangent_ang)*math.pi/2)
+            rotation=roller_rot
         )
         pin = bpy.context.active_object
         pin.name = f"{wheel_name}_Pin_{i+1}"
@@ -326,18 +383,21 @@ def build_omni_wheel(wheel_name, radius=0.04, width=0.024, num_rollers=10, colle
         
     return wheel_empty
 
-def build_motor_assembly(motor_name, collection=None, materials=None):
-    """Build a complete DC Gearmotor assembly with encoder and bracket."""
+def build_motor(motor_name, collection=None, materials=None):
+    """
+    Build a standalone DC gearmotor object with planetary gearbox and mounting bracket.
+    Output shaft points along local +X (into the wheel hub).
+    """
     root = bpy.data.objects.new(motor_name, None)
     root.empty_display_type = 'PLAIN_AXES'
-    root.empty_display_size = 0.03
+    root.empty_display_size = 0.04
     if collection:
         collection.objects.link(root)
         
-    # Gearbox
+    # Planetary Gearbox housing (along X axis, from X=-0.015 to X=+0.015)
     bpy.ops.mesh.primitive_cylinder_add(
-        vertices=24, radius=0.0185, depth=0.03,
-        location=(0, 0.015, 0), rotation=(math.pi/2, 0, 0)
+        vertices=24, radius=0.022, depth=0.035,
+        location=(0.0175, 0, 0), rotation=(0, math.pi/2, 0)
     )
     gearbox = bpy.context.active_object
     gearbox.name = f"{motor_name}_Gearbox"
@@ -347,85 +407,225 @@ def build_motor_assembly(motor_name, collection=None, materials=None):
     collection.objects.link(gearbox)
     bpy.context.scene.collection.objects.unlink(gearbox)
     
-    # Motor body
+    # Motor body / stator can (from X=-0.055 to X=0.0)
     bpy.ops.mesh.primitive_cylinder_add(
-        vertices=24, radius=0.018, depth=0.045,
-        location=(0, -0.0225, 0), rotation=(math.pi/2, 0, 0)
+        vertices=24, radius=0.021, depth=0.055,
+        location=(-0.0275, 0, 0), rotation=(0, math.pi/2, 0)
     )
     motor_can = bpy.context.active_object
-    motor_can.name = f"{motor_name}_Can"
+    motor_can.name = f"{motor_name}_Stator"
     motor_can.parent = root
     if materials and 'Motor_Body' in materials:
         motor_can.data.materials.append(materials['Motor_Body'])
     collection.objects.link(motor_can)
     bpy.context.scene.collection.objects.unlink(motor_can)
     
-    # Output shaft
+    # Output drive shaft (extending along +X from gearbox)
     bpy.ops.mesh.primitive_cylinder_add(
-        vertices=16, radius=0.003, depth=0.025,
-        location=(0, 0.0425, 0), rotation=(math.pi/2, 0, 0)
+        vertices=16, radius=0.004, depth=0.030,
+        location=(0.045, 0, 0), rotation=(0, math.pi/2, 0)
     )
     shaft = bpy.context.active_object
-    shaft.name = f"{motor_name}_Shaft"
+    shaft.name = f"{motor_name}_Output_Shaft"
     shaft.parent = root
     if materials and 'Shaft' in materials:
         shaft.data.materials.append(materials['Shaft'])
     collection.objects.link(shaft)
     bpy.context.scene.collection.objects.unlink(shaft)
     
-    # L-bracket
+    # Heavy-duty Aluminum L-Bracket mounting motor to chassis
     bpy.ops.mesh.primitive_cube_add(
-        size=1.0, location=(0, 0.01, -0.021),
-        scale=(0.042, 0.032, 0.004)
+        size=1.0, location=(0.01, 0, -0.025),
+        scale=(0.038, 0.052, 0.005)
     )
-    bracket_base = bpy.context.active_object
-    bracket_base.name = f"{motor_name}_Bracket"
-    bracket_base.parent = root
+    bracket = bpy.context.active_object
+    bracket.name = f"{motor_name}_Mounting_Bracket"
+    bracket.parent = root
     if materials and 'Motor_Bracket' in materials:
-        bracket_base.data.materials.append(materials['Motor_Bracket'])
-    collection.objects.link(bracket_base)
-    bpy.context.scene.collection.objects.unlink(bracket_base)
-    
-    # Optical Encoder Module at rear
-    bpy.ops.mesh.primitive_cylinder_add(
-        vertices=20, radius=0.0175, depth=0.015,
-        location=(0, -0.0525, 0), rotation=(math.pi/2, 0, 0)
-    )
-    encoder = bpy.context.active_object
-    encoder.name = f"{motor_name}_Encoder_Housing"
-    encoder.parent = root
-    if materials and 'PCB_Green' in materials:
-        encoder.data.materials.append(materials['PCB_Green'])
-    collection.objects.link(encoder)
-    bpy.context.scene.collection.objects.unlink(encoder)
-    
-    # Encoder terminal connector
-    bpy.ops.mesh.primitive_cube_add(
-        size=1.0, location=(0, -0.062, 0.008),
-        scale=(0.012, 0.006, 0.008)
-    )
-    term = bpy.context.active_object
-    term.name = f"{motor_name}_Encoder_Connector"
-    term.parent = root
-    if materials and 'Chip_IC' in materials:
-        term.data.materials.append(materials['Chip_IC'])
-    collection.objects.link(term)
-    bpy.context.scene.collection.objects.unlink(term)
+        bracket.data.materials.append(materials['Motor_Bracket'])
+    collection.objects.link(bracket)
+    bpy.context.scene.collection.objects.unlink(bracket)
     
     return root
 
-def build_ultrasonic_sensor(sensor_name, collection=None, materials=None):
-    """Build an accurate HC-SR04 ultrasonic sensor with dual cylindrical canisters."""
-    root = bpy.data.objects.new(sensor_name, None)
+def build_encoder(encoder_name, collection=None, materials=None):
+    """
+    Build a standalone, separate optical rotary encoder object.
+    Mounts at the rear of the motor shaft.
+    Features green circuit housing, precision gold encoder code disc, and optical pickup sensor.
+    """
+    root = bpy.data.objects.new(encoder_name, None)
     root.empty_display_type = 'PLAIN_AXES'
-    root.empty_display_size = 0.025
+    root.empty_display_size = 0.035
     if collection:
         collection.objects.link(root)
         
-    # Blue PCB substrate: 45 x 20 x 1.6 mm
+    # Encoder protective housing / PCB cap
+    bpy.ops.mesh.primitive_cylinder_add(
+        vertices=24, radius=0.020, depth=0.018,
+        location=(-0.009, 0, 0), rotation=(0, math.pi/2, 0)
+    )
+    housing = bpy.context.active_object
+    housing.name = f"{encoder_name}_Housing"
+    housing.parent = root
+    if materials and 'Encoder_Housing' in materials:
+        housing.data.materials.append(materials['Encoder_Housing'])
+    collection.objects.link(housing)
+    bpy.context.scene.collection.objects.unlink(housing)
+    
+    # Visible optical code disc
+    bpy.ops.mesh.primitive_cylinder_add(
+        vertices=32, radius=0.018, depth=0.002,
+        location=(-0.002, 0, 0), rotation=(0, math.pi/2, 0)
+    )
+    disc = bpy.context.active_object
+    disc.name = f"{encoder_name}_Code_Disc"
+    disc.parent = root
+    if materials and 'Encoder_Disc' in materials:
+        disc.data.materials.append(materials['Encoder_Disc'])
+    collection.objects.link(disc)
+    bpy.context.scene.collection.objects.unlink(disc)
+    
+    # Optical pickup photo-interrupter sensor
+    bpy.ops.mesh.primitive_cube_add(
+        size=1.0, location=(-0.006, 0.012, 0.008),
+        scale=(0.010, 0.008, 0.012)
+    )
+    sensor = bpy.context.active_object
+    sensor.name = f"{encoder_name}_PhotoSensor"
+    sensor.parent = root
+    if materials and 'Chip_IC' in materials:
+        sensor.data.materials.append(materials['Chip_IC'])
+    collection.objects.link(sensor)
+    bpy.context.scene.collection.objects.unlink(sensor)
+    
+    # 4-pin encoder wiring connector
+    bpy.ops.mesh.primitive_cube_add(
+        size=1.0, location=(-0.016, 0.0, 0.012),
+        scale=(0.008, 0.016, 0.008)
+    )
+    conn = bpy.context.active_object
+    conn.name = f"{encoder_name}_Connector"
+    conn.parent = root
+    if materials and 'Fastener' in materials:
+        conn.data.materials.append(materials['Fastener'])
+    collection.objects.link(conn)
+    bpy.context.scene.collection.objects.unlink(conn)
+    
+    return root
+
+def build_labelled_imu(name="IMU_Module", collection=None, materials=None):
+    """
+    Build a clearly labelled 6-DOF IMU sensor module placed at the chassis centre.
+    Features:
+    - High-contrast blue FR4 PCB substrate
+    - Central MEMS sensor IC package
+    - Clear 3D extruded text badge reading "IMU 6-DOF"
+    - Colored reference coordinate indicators (X, Y, Z)
+    - Status LEDs
+    """
+    root = bpy.data.objects.new(name, None)
+    root.empty_display_type = 'PLAIN_AXES'
+    root.empty_display_size = 0.04
+    if collection:
+        collection.objects.link(root)
+        
+    # Blue PCB substrate: 44 x 36 x 2.5 mm
+    bpy.ops.mesh.primitive_cube_add(
+        size=1.0, location=(0, 0, 0.00125),
+        scale=(0.044, 0.036, 0.0025)
+    )
+    pcb = bpy.context.active_object
+    pcb.name = f"{name}_PCB"
+    pcb.parent = root
+    if materials and 'PCB_Blue' in materials:
+        pcb.data.materials.append(materials['PCB_Blue'])
+    collection.objects.link(pcb)
+    bpy.context.scene.collection.objects.unlink(pcb)
+    
+    # MEMS Sensor Chip (Center)
+    bpy.ops.mesh.primitive_cube_add(
+        size=1.0, location=(0, 0, 0.0035),
+        scale=(0.010, 0.010, 0.002)
+    )
+    chip = bpy.context.active_object
+    chip.name = f"{name}_MEMS_Chip"
+    chip.parent = root
+    if materials and 'Chip_IC' in materials:
+        chip.data.materials.append(materials['Chip_IC'])
+    collection.objects.link(chip)
+    bpy.context.scene.collection.objects.unlink(chip)
+    
+    # Status LEDs (Green Power, Amber Activity)
+    for led_name, loc, mat_name in [
+        (f"{name}_LED_Power", (0.014, 0.012, 0.003), 'LED_Green'),
+        (f"{name}_LED_Data", (0.014, 0.006, 0.003), 'LED_Amber')
+    ]:
+        bpy.ops.mesh.primitive_cube_add(
+            size=1.0, location=loc,
+            scale=(0.003, 0.002, 0.0015)
+        )
+        led = bpy.context.active_object
+        led.name = led_name
+        led.parent = root
+        if materials and mat_name in materials:
+            led.data.materials.append(materials[mat_name])
+        collection.objects.link(led)
+        bpy.context.scene.collection.objects.unlink(led)
+        
+    # CLEAR 3D EXTRUDED TEXT LABEL: "IMU 6-DOF"
+    bpy.ops.object.text_add(location=(-0.018, -0.012, 0.0028))
+    text_obj = bpy.context.active_object
+    text_obj.name = f"{name}_Label_Text"
+    text_obj.data.body = "IMU 6-DOF"
+    text_obj.data.size = 0.0055
+    text_obj.data.extrude = 0.001
+    text_obj.parent = root
+    if materials and 'Text_White' in materials:
+        text_obj.data.materials.append(materials['Text_White'])
+    collection.objects.link(text_obj)
+    bpy.context.scene.collection.objects.unlink(text_obj)
+    
+    # Miniature coordinate indicator arrows on IMU
+    axis_l = 0.015
+    for aname, vec, mname in [
+        ("IMU_Axis_X", (axis_l, 0, 0), 'Axis_X_Red'),
+        ("IMU_Axis_Y", (0, axis_l, 0), 'Axis_Y_Green'),
+        ("IMU_Axis_Z", (0, 0, axis_l), 'Axis_Z_Blue')
+    ]:
+        bpy.ops.mesh.primitive_cylinder_add(
+            vertices=8, radius=0.0008, depth=axis_l,
+            location=(vec[0]/2, vec[1]/2, 0.004 + vec[2]/2)
+        )
+        ax = bpy.context.active_object
+        ax.name = f"{name}_{aname}"
+        ax.parent = root
+        if vec[0] != 0:
+            ax.rotation_euler = (0, math.pi/2, 0)
+        elif vec[1] != 0:
+            ax.rotation_euler = (-math.pi/2, 0, 0)
+        if materials and mname in materials:
+            ax.data.materials.append(materials[mname])
+        collection.objects.link(ax)
+        bpy.context.scene.collection.objects.unlink(ax)
+        
+    return root
+
+def build_ultrasonic_sensor(sensor_name, collection=None, materials=None):
+    """
+    Build an accurate HC-SR04 ultrasonic sensor with dual transducers and visible detection ray.
+    The sensor points along its local +Y axis.
+    """
+    root = bpy.data.objects.new(sensor_name, None)
+    root.empty_display_type = 'PLAIN_AXES'
+    root.empty_display_size = 0.035
+    if collection:
+        collection.objects.link(root)
+        
+    # Blue PCB substrate: 52 x 2.0 x 24 mm
     bpy.ops.mesh.primitive_cube_add(
         size=1.0, location=(0, 0, 0),
-        scale=(0.045, 0.0016, 0.020)
+        scale=(0.052, 0.002, 0.024)
     )
     pcb = bpy.context.active_object
     pcb.name = f"{sensor_name}_PCB"
@@ -436,11 +636,11 @@ def build_ultrasonic_sensor(sensor_name, collection=None, materials=None):
     bpy.context.scene.collection.objects.unlink(pcb)
     
     # Dual ultrasonic transducers (Transmitter and Receiver)
-    trans_spacing = 0.013
+    trans_spacing = 0.015
     for i, side_name in [(-1, "Transmitter"), (1, "Receiver")]:
         bpy.ops.mesh.primitive_cylinder_add(
-            vertices=20, radius=0.008, depth=0.012,
-            location=(i * trans_spacing, 0.0068, 0),
+            vertices=24, radius=0.009, depth=0.014,
+            location=(i * trans_spacing, 0.008, 0),
             rotation=(math.pi/2, 0, 0)
         )
         can = bpy.context.active_object
@@ -453,8 +653,8 @@ def build_ultrasonic_sensor(sensor_name, collection=None, materials=None):
         
         # Front mesh inset
         bpy.ops.mesh.primitive_cylinder_add(
-            vertices=16, radius=0.0068, depth=0.001,
-            location=(i * trans_spacing, 0.0129, 0),
+            vertices=20, radius=0.0078, depth=0.0015,
+            location=(i * trans_spacing, 0.0152, 0),
             rotation=(math.pi/2, 0, 0)
         )
         mesh_dot = bpy.context.active_object
@@ -465,41 +665,15 @@ def build_ultrasonic_sensor(sensor_name, collection=None, materials=None):
         collection.objects.link(mesh_dot)
         bpy.context.scene.collection.objects.unlink(mesh_dot)
         
-    # Crystal oscillator
-    bpy.ops.mesh.primitive_cube_add(
-        size=1.0, location=(0, 0.003, -0.004),
-        scale=(0.010, 0.003, 0.004)
-    )
-    osc = bpy.context.active_object
-    osc.name = f"{sensor_name}_Oscillator"
-    osc.parent = root
-    if materials and 'Shaft' in materials:
-        osc.data.materials.append(materials['Shaft'])
-    collection.objects.link(osc)
-    bpy.context.scene.collection.objects.unlink(osc)
-    
-    # Header
-    bpy.ops.mesh.primitive_cube_add(
-        size=1.0, location=(0, -0.004, -0.008),
-        scale=(0.012, 0.006, 0.003)
-    )
-    header = bpy.context.active_object
-    header.name = f"{sensor_name}_Header"
-    header.parent = root
-    if materials and 'Chip_IC' in materials:
-        header.data.materials.append(materials['Chip_IC'])
-    collection.objects.link(header)
-    bpy.context.scene.collection.objects.unlink(header)
-    
-    # Dynamic Sensor Beam Mesh:
-    # A slender cylinder pointing horizontally along sensor's forward axis (+Y)
+    # Dynamic Visible Detection Ray Mesh:
+    # A visible cylinder pointing horizontally along sensor's forward axis (+Y)
     beam_mesh = bpy.data.meshes.new(f"{sensor_name}_Beam_Mesh_Data")
     beam_obj = bpy.data.objects.new(f"{sensor_name}_Beam_Mesh", beam_mesh)
     collection.objects.link(beam_obj)
     beam_obj.parent = root
     
     bpy.ops.mesh.primitive_cylinder_add(
-        vertices=16, radius=0.005, depth=1.0,
+        vertices=20, radius=0.014, depth=1.0,
         location=(0, 0, 0)
     )
     temp = bpy.context.active_object
@@ -507,57 +681,11 @@ def build_ultrasonic_sensor(sensor_name, collection=None, materials=None):
     bpy.data.objects.remove(temp, do_unlink=True)
     
     beam_obj.rotation_euler = (math.pi/2, 0, 0)
-    beam_obj.location = (0, 0.5 + 0.013, 0)
+    beam_obj.location = (0, 0.5 + 0.016, 0)
     
     if materials and 'Beam_Safe' in materials:
         beam_obj.data.materials.append(materials['Beam_Safe'])
         
-    return root
-
-def build_imu_module(name="IMU_Module", collection=None, materials=None):
-    """Build a 6-DOF / 9-DOF IMU sensor module."""
-    root = bpy.data.objects.new(name, None)
-    root.empty_display_type = 'PLAIN_AXES'
-    root.empty_display_size = 0.02
-    if collection:
-        collection.objects.link(root)
-        
-    bpy.ops.mesh.primitive_cube_add(
-        size=1.0, location=(0, 0, 0.0008),
-        scale=(0.021, 0.016, 0.0016)
-    )
-    pcb = bpy.context.active_object
-    pcb.name = f"{name}_PCB"
-    pcb.parent = root
-    if materials and 'PCB_Blue' in materials:
-        pcb.data.materials.append(materials['PCB_Blue'])
-    collection.objects.link(pcb)
-    bpy.context.scene.collection.objects.unlink(pcb)
-    
-    bpy.ops.mesh.primitive_cube_add(
-        size=1.0, location=(0, 0, 0.0022),
-        scale=(0.006, 0.006, 0.0012)
-    )
-    chip = bpy.context.active_object
-    chip.name = f"{name}_Sensor_Chip"
-    chip.parent = root
-    if materials and 'Chip_IC' in materials:
-        chip.data.materials.append(materials['Chip_IC'])
-    collection.objects.link(chip)
-    bpy.context.scene.collection.objects.unlink(chip)
-    
-    bpy.ops.mesh.primitive_cube_add(
-        size=1.0, location=(0.006, 0.004, 0.002),
-        scale=(0.0016, 0.0012, 0.001)
-    )
-    led = bpy.context.active_object
-    led.name = f"{name}_LED"
-    led.parent = root
-    if materials and 'LED_Green' in materials:
-        led.data.materials.append(materials['LED_Green'])
-    collection.objects.link(led)
-    bpy.context.scene.collection.objects.unlink(led)
-    
     return root
 
 def build_electronics_pack(collection=None, materials=None):
@@ -566,9 +694,10 @@ def build_electronics_pack(collection=None, materials=None):
     if collection:
         collection.objects.link(root)
         
+    # LiPo Battery pack (3S 2200mAh)
     bpy.ops.mesh.primitive_cube_add(
-        size=1.0, location=(0, -0.04, 0.018),
-        scale=(0.075, 0.038, 0.026)
+        size=1.0, location=(0, -0.05, 0.022),
+        scale=(0.105, 0.045, 0.032)
     )
     bat = bpy.context.active_object
     bat.name = "Battery_Pack_3S"
@@ -578,9 +707,10 @@ def build_electronics_pack(collection=None, materials=None):
     collection.objects.link(bat)
     bpy.context.scene.collection.objects.unlink(bat)
     
+    # Robotics microcontroller board
     bpy.ops.mesh.primitive_cube_add(
-        size=1.0, location=(0, 0.03, 0.008),
-        scale=(0.085, 0.060, 0.002)
+        size=1.0, location=(0, 0.04, 0.010),
+        scale=(0.110, 0.075, 0.003)
     )
     mcu = bpy.context.active_object
     mcu.name = "Controller_Board"
@@ -590,9 +720,10 @@ def build_electronics_pack(collection=None, materials=None):
     collection.objects.link(mcu)
     bpy.context.scene.collection.objects.unlink(mcu)
     
+    # Motor driver heatsink
     bpy.ops.mesh.primitive_cube_add(
-        size=1.0, location=(0, 0.03, 0.022),
-        scale=(0.032, 0.028, 0.020)
+        size=1.0, location=(0, 0.04, 0.026),
+        scale=(0.040, 0.035, 0.024)
     )
     heatsink = bpy.context.active_object
     heatsink.name = "Motor_Driver_Heatsink"
@@ -604,44 +735,40 @@ def build_electronics_pack(collection=None, materials=None):
     
     return root
 
+# ---------------------------------------------------------------------------
+# ROBOT COMPLETE ASSEMBLY
+# ---------------------------------------------------------------------------
 def build_robot_model(collections, materials):
     """Assemble complete robot model."""
     robot_root = bpy.data.objects.new("Robot_Base", None)
     robot_root.empty_display_type = 'ARROWS'
-    robot_root.empty_display_size = 0.35
+    robot_root.empty_display_size = 0.45
     collections['Robot'].objects.link(robot_root)
     
-    chassis_radius = 0.28
-    deck_gap = 0.065
-    wheel_dist = 0.25
-    wheel_radius = 0.04
-    ground_clearance = 0.015
-    
-    # Bottom deck
+    # 1. Dual-deck chassis
     bot_deck = build_triangular_plate(
-        "Chassis_Lower_Plate", radius=chassis_radius, thickness=0.004,
-        corner_radius=0.045, collection=collections['Chassis'], material=materials['Chassis_Plate']
+        "Chassis_Lower_Plate", radius=CHASSIS_RADIUS, thickness=PLATE_THICKNESS,
+        corner_radius=0.055, collection=collections['Chassis'], material=materials['Chassis_Plate']
     )
-    bot_deck.location = (0, 0, ground_clearance + 0.002)
+    bot_deck.location = (0, 0, GROUND_CLEARANCE + PLATE_THICKNESS/2)
     bot_deck.parent = robot_root
     
-    # Top deck
     top_deck = build_triangular_plate(
-        "Chassis_Upper_Plate", radius=chassis_radius * 0.95, thickness=0.004,
-        corner_radius=0.040, collection=collections['Chassis'], material=materials['Chassis_Plate']
+        "Chassis_Upper_Plate", radius=CHASSIS_RADIUS * 0.94, thickness=PLATE_THICKNESS,
+        corner_radius=0.050, collection=collections['Chassis'], material=materials['Chassis_Plate']
     )
-    top_deck.location = (0, 0, ground_clearance + deck_gap + 0.002)
+    top_deck.location = (0, 0, GROUND_CLEARANCE + DECK_GAP + PLATE_THICKNESS/2)
     top_deck.parent = robot_root
     
-    # Standoffs
+    # 2. Six heavy-duty aluminum hex standoffs connecting decks
     standoff_angles = [math.radians(a) for a in [30, 90, 150, 210, 270, 330]]
-    standoff_r = chassis_radius * 0.65
+    standoff_r = CHASSIS_RADIUS * 0.65
     for i, sa in enumerate(standoff_angles):
         sx = standoff_r * math.cos(sa)
         sy = standoff_r * math.sin(sa)
         bpy.ops.mesh.primitive_cylinder_add(
-            vertices=6, radius=0.0045, depth=deck_gap,
-            location=(sx, sy, ground_clearance + deck_gap/2)
+            vertices=6, radius=0.0055, depth=DECK_GAP,
+            location=(sx, sy, GROUND_CLEARANCE + DECK_GAP/2)
         )
         post = bpy.context.active_object
         post.name = f"Chassis_Standoff_{i+1}"
@@ -651,94 +778,95 @@ def build_robot_model(collections, materials):
         collections['Chassis'].objects.link(post)
         bpy.context.scene.collection.objects.unlink(post)
         
+    # 3. Electronics package between decks
     elec = build_electronics_pack(collections['Robot'], materials)
-    elec.location = (0, 0, ground_clearance + 0.004)
+    elec.location = (0, 0, GROUND_CLEARANCE + PLATE_THICKNESS)
     elec.parent = robot_root
     
-    imu = build_imu_module("IMU_Sensor", collections['IMU'], materials)
-    imu.location = (0, 0, ground_clearance + deck_gap + 0.006)
+    # 4. Clearly labelled IMU module near chassis centre
+    imu = build_labelled_imu("IMU_Module", collections['IMU'], materials)
+    imu.location = (0, 0, GROUND_CLEARANCE + DECK_GAP + PLATE_THICKNESS)
     imu.parent = robot_root
     
-    # Coordinate indicators on robot top deck
-    axis_len = 0.12
-    axis_rad = 0.003
-    for axis_name, vec, mat_name in [
-        ("Robot_Axis_X_Fwd", (axis_len, 0, 0), 'Axis_X_Red'),
-        ("Robot_Axis_Y_Left", (0, axis_len, 0), 'Axis_Y_Green'),
-        ("Robot_Axis_Z_Up", (0, 0, axis_len), 'Axis_Z_Blue')
-    ]:
-        bpy.ops.mesh.primitive_cylinder_add(
-            vertices=12, radius=axis_rad, depth=axis_len,
-            location=(vec[0]/2, vec[1]/2, ground_clearance + deck_gap + 0.02 + vec[2]/2)
-        )
-        axis_obj = bpy.context.active_object
-        axis_obj.name = axis_name
-        axis_obj.parent = robot_root
-        if vec[0] != 0:
-            axis_obj.rotation_euler = (0, math.pi/2, 0)
-        elif vec[1] != 0:
-            axis_obj.rotation_euler = (-math.pi/2, 0, 0)
-        if mat_name in materials:
-            axis_obj.data.materials.append(materials[mat_name])
-        collections['Robot'].objects.link(axis_obj)
-        bpy.context.scene.collection.objects.unlink(axis_obj)
-
-    # 3 Drive Units (Motor + Encoder + Omni Wheel) at 0 deg, 120 deg, 240 deg
-    wheel_angles = [0, 120, 240]
+    # 5. Exactly 3 Drive Units (Omni Wheel + Motor + Encoder) at 0°, 120°, 240°
+    wheel_angles_deg = [0, 120, 240]
     wheels = []
     motors = []
+    encoders = []
     
-    for idx, deg in enumerate(wheel_angles):
+    for idx, deg in enumerate(wheel_angles_deg):
         rad = math.radians(deg)
         w_name = f"Omni_Wheel_{idx+1}"
         m_name = f"Drive_Motor_{idx+1}"
+        e_name = f"Encoder_{idx+1}"
         
-        wx = wheel_dist * math.cos(rad)
-        wy = wheel_dist * math.sin(rad)
-        wz = wheel_radius
+        # Wheel location & rotation:
+        # Wheel is mounted at radius WHEEL_DIST at angle `rad`
+        # Wheel empty has rotation_euler = (0, 0, rad), so its local +X is radial, +Y is tangential
+        wx = WHEEL_DIST * math.cos(rad)
+        wy = WHEEL_DIST * math.sin(rad)
+        wz = WHEEL_RADIUS
         
-        wheel = build_omni_wheel(w_name, radius=wheel_radius, width=0.024, num_rollers=10, 
+        wheel = build_omni_wheel(w_name, radius=WHEEL_RADIUS, width=WHEEL_WIDTH, num_rollers=NUM_ROLLERS, 
                                  collection=collections['Wheels'], materials=materials)
         wheel.location = (wx, wy, wz)
         wheel.rotation_euler = (0, 0, rad)
         wheel.parent = robot_root
         wheels.append(wheel)
         
-        motor_dist = 0.165
+        # Motor: mounted on lower deck, output shaft points radially outward (+X) into wheel hub
+        motor_dist = 0.205
         mx = motor_dist * math.cos(rad)
         my = motor_dist * math.sin(rad)
-        mz = wheel_radius
+        mz = WHEEL_RADIUS
         
-        motor = build_motor_assembly(m_name, collection=collections['Motors'], materials=materials)
+        motor = build_motor(m_name, collection=collections['Motors'], materials=materials)
         motor.location = (mx, my, mz)
-        motor.rotation_euler = (0, 0, rad - math.pi/2)
+        motor.rotation_euler = (0, 0, rad)
         motor.parent = robot_root
         motors.append(motor)
+        
+        # Encoder: separate object mounted at rear of motor (further inward along the radial line)
+        enc_dist = 0.142
+        ex = enc_dist * math.cos(rad)
+        ey = enc_dist * math.sin(rad)
+        ez = WHEEL_RADIUS
+        
+        encoder = build_encoder(e_name, collection=collections['Encoders'], materials=materials)
+        encoder.location = (ex, ey, ez)
+        encoder.rotation_euler = (0, 0, rad)
+        encoder.parent = robot_root
+        encoders.append(encoder)
 
-    # 3 Ultrasonic Sensors (Front, Left, Right)
+    # 6. Three Ultrasonic Sensors (Front=0°, Left=+90°, Right=-90°)
+    us_mount_r = CHASSIS_RADIUS * 0.90
     us_configs = [
-        ("US_Sensor_Front", (chassis_radius * 0.88, 0, ground_clearance + deck_gap + 0.025), 0),
-        ("US_Sensor_Left", (0, chassis_radius * 0.88, ground_clearance + deck_gap + 0.025), math.pi/2),
-        ("US_Sensor_Right", (0, -chassis_radius * 0.88, ground_clearance + deck_gap + 0.025), -math.pi/2)
+        ("US_Sensor_Front", (us_mount_r, 0.0, GROUND_CLEARANCE + DECK_GAP + 0.030), 0.0),
+        ("US_Sensor_Left", (0.0, us_mount_r, GROUND_CLEARANCE + DECK_GAP + 0.030), math.pi/2),
+        ("US_Sensor_Right", (0.0, -us_mount_r, GROUND_CLEARANCE + DECK_GAP + 0.030), -math.pi/2)
     ]
     
     us_sensors = []
     for s_name, loc, yaw in us_configs:
         us_obj = build_ultrasonic_sensor(s_name, collection=collections['Ultrasonic_Sensors'], materials=materials)
         us_obj.location = loc
+        # Sensor's local +Y points in the outward sensing direction
         us_obj.rotation_euler = (0, 0, yaw - math.pi/2)
         us_obj.parent = robot_root
         us_sensors.append(us_obj)
         
-    return robot_root, wheels, motors, us_sensors
+    return robot_root, wheels, motors, encoders, us_sensors
 
+# ---------------------------------------------------------------------------
+# ARENA & TESTING ENVIRONMENT
+# ---------------------------------------------------------------------------
 def build_environment(collections, materials):
-    """Build arena with floor, walls, reference coordinate axes, and obstacles."""
+    """Build arena with grid floor, boundary walls, coordinate axes, and 4 obstacles."""
     arena_size = 10.0
-    wall_height = 0.8
-    wall_thk = 0.15
+    wall_height = 0.85
+    wall_thk = 0.18
     
-    # Floor
+    # 1. Floor
     bpy.ops.mesh.primitive_plane_add(size=arena_size, location=(0, 0, 0))
     floor = bpy.context.active_object
     floor.name = "Arena_Floor"
@@ -747,7 +875,7 @@ def build_environment(collections, materials):
     collections['Environment'].objects.link(floor)
     bpy.context.scene.collection.objects.unlink(floor)
     
-    # Boundary Walls
+    # 2. Boundary Walls with hazard stripes
     half = arena_size / 2.0
     wall_defs = [
         ("Wall_North", (0, half, wall_height/2), (arena_size, wall_thk, wall_height)),
@@ -764,9 +892,10 @@ def build_environment(collections, materials):
         collections['Environment'].objects.link(wall)
         bpy.context.scene.collection.objects.unlink(wall)
         
+        # Yellow hazard stripe along wall crown
         bpy.ops.mesh.primitive_cube_add(
-            size=1.0, location=(loc[0], loc[1], wall_height - 0.04),
-            scale=(sz[0] * 1.002, sz[1] * 1.002, 0.08)
+            size=1.0, location=(loc[0], loc[1], wall_height - 0.05),
+            scale=(sz[0] * 1.002, sz[1] * 1.002, 0.10)
         )
         stripe = bpy.context.active_object
         stripe.name = f"{w_name}_Hazard_Stripe"
@@ -775,9 +904,9 @@ def build_environment(collections, materials):
         collections['Environment'].objects.link(stripe)
         bpy.context.scene.collection.objects.unlink(stripe)
 
-    # Robot Starting Launch Pad
+    # 3. Robot Starting Launch Pad & Distance Circles
     bpy.ops.mesh.primitive_cylinder_add(
-        vertices=32, radius=0.6, depth=0.002,
+        vertices=48, radius=0.75, depth=0.002,
         location=(0, 0, 0.001)
     )
     pad = bpy.context.active_object
@@ -787,17 +916,17 @@ def build_environment(collections, materials):
     collections['Environment'].objects.link(pad)
     bpy.context.scene.collection.objects.unlink(pad)
     
-    # Global Coordinate Axes located at Reference Station Corner (-4.0, -4.0, 0.0)
+    # 4. Global Coordinate Axes at Reference Station Corner (-4.0, -4.0, 0.0)
     ref_origin = (-4.0, -4.0, 0.0)
-    axis_l = 0.8
+    axis_l = 1.0
     for aname, vec, mname in [
         ("Arena_Axis_X_Forward", (axis_l, 0, 0), 'Axis_X_Red'),
         ("Arena_Axis_Y_Lateral", (0, axis_l, 0), 'Axis_Y_Green'),
         ("Arena_Axis_Z_Vertical", (0, 0, axis_l), 'Axis_Z_Blue')
     ]:
         bpy.ops.mesh.primitive_cylinder_add(
-            vertices=16, radius=0.012, depth=axis_l,
-            location=(ref_origin[0] + vec[0]/2, ref_origin[1] + vec[1]/2, ref_origin[2] + 0.006 + vec[2]/2)
+            vertices=16, radius=0.015, depth=axis_l,
+            location=(ref_origin[0] + vec[0]/2, ref_origin[1] + vec[1]/2, ref_origin[2] + 0.008 + vec[2]/2)
         )
         ax = bpy.context.active_object
         ax.name = aname
@@ -810,11 +939,11 @@ def build_environment(collections, materials):
         collections['Environment'].objects.link(ax)
         bpy.context.scene.collection.objects.unlink(ax)
 
-    # Obstacles
-    # Obstacle 1: Front Cylindrical Pillar (Target for Forward Detection)
+    # 5. Four Arena Obstacles
+    # Obstacle 1: Front Cylindrical Pillar (Target for Forward Ultrasonic Detection)
     bpy.ops.mesh.primitive_cylinder_add(
-        vertices=32, radius=0.35, depth=1.2,
-        location=(2.5, 0.0, 0.6)
+        vertices=32, radius=0.38, depth=1.30,
+        location=(2.50, 0.00, 0.65)
     )
     obs1 = bpy.context.active_object
     obs1.name = "Obstacle_Pillar_Front"
@@ -825,8 +954,8 @@ def build_environment(collections, materials):
     
     # Obstacle 2: Lateral Rectangular Barrier
     bpy.ops.mesh.primitive_cube_add(
-        size=1.0, location=(1.2, 2.2, 0.4),
-        scale=(0.7, 1.2, 0.8)
+        size=1.0, location=(1.30, 2.30, 0.45),
+        scale=(0.75, 1.40, 0.90)
     )
     obs2 = bpy.context.active_object
     obs2.name = "Obstacle_Crate_Lateral"
@@ -837,8 +966,8 @@ def build_environment(collections, materials):
     
     # Obstacle 3: Diagonal Partition Wall
     bpy.ops.mesh.primitive_cube_add(
-        size=1.0, location=(-1.5, -1.8, 0.4),
-        scale=(1.8, 0.3, 0.8)
+        size=1.0, location=(-1.60, -1.90, 0.45),
+        scale=(2.0, 0.35, 0.90)
     )
     obs3 = bpy.context.active_object
     obs3.name = "Obstacle_Partition_Wall"
@@ -849,8 +978,8 @@ def build_environment(collections, materials):
     
     # Obstacle 4: Corner Column
     bpy.ops.mesh.primitive_cylinder_add(
-        vertices=24, radius=0.45, depth=1.4,
-        location=(-2.5, 2.5, 0.7)
+        vertices=24, radius=0.50, depth=1.50,
+        location=(-2.60, 2.60, 0.75)
     )
     obs4 = bpy.context.active_object
     obs4.name = "Obstacle_Corner_Pillar"
@@ -859,59 +988,83 @@ def build_environment(collections, materials):
     collections['Environment'].objects.link(obs4)
     bpy.context.scene.collection.objects.unlink(obs4)
 
+# ---------------------------------------------------------------------------
+# LIGHTING & CAMERAS
+# ---------------------------------------------------------------------------
 def setup_lighting(collection):
-    """Setup studio/arena lighting."""
+    """Setup four-point arena studio lighting."""
+    # Key sun light
     sun_data = bpy.data.lights.new(name="Key_Sun_Light", type='SUN')
-    sun_data.energy = 4.0
+    sun_data.energy = 4.5
     sun_data.color = (1.0, 0.98, 0.95)
     sun_obj = bpy.data.objects.new("Key_Sun_Light", sun_data)
     sun_obj.location = (5.0, -4.0, 8.0)
-    sun_obj.rotation_euler = (math.radians(45), math.radians(25), math.radians(-30))
+    sun_obj.rotation_euler = (math.radians(48), math.radians(24), math.radians(-32))
     collection.objects.link(sun_obj)
     
+    # Overhead softbox
     area_data = bpy.data.lights.new(name="Overhead_Softbox", type='AREA')
-    area_data.energy = 350.0
-    area_data.size = 8.0
+    area_data.energy = 400.0
+    area_data.size = 8.5
     area_data.color = (0.92, 0.96, 1.0)
     area_obj = bpy.data.objects.new("Overhead_Softbox", area_data)
-    area_obj.location = (0, 0, 5.5)
+    area_obj.location = (0, 0, 5.8)
     collection.objects.link(area_obj)
     
+    # Cool cyan rim accent light
     rim_data = bpy.data.lights.new(name="Rim_Light", type='POINT')
-    rim_data.energy = 180.0
-    rim_data.color = (0.3, 0.7, 1.0)
+    rim_data.energy = 220.0
+    rim_data.color = (0.2, 0.75, 1.0)
     rim_obj = bpy.data.objects.new("Rim_Light", rim_data)
-    rim_obj.location = (-3.5, 3.5, 2.5)
+    rim_obj.location = (-4.0, 3.8, 2.8)
     collection.objects.link(rim_obj)
+    
+    # Warm fill light
+    fill_data = bpy.data.lights.new(name="Fill_Light", type='POINT')
+    fill_data.energy = 160.0
+    fill_data.color = (1.0, 0.90, 0.80)
+    fill_obj = bpy.data.objects.new("Fill_Light", fill_data)
+    fill_obj.location = (-3.0, -3.5, 3.5)
+    collection.objects.link(fill_obj)
 
 def setup_cameras(collection, target_obj):
-    """Setup 4 specialized project cameras."""
+    """
+    Setup 4 specialized project cameras:
+    1. Camera_Closeup: Macro hero shot of chassis, IMU, motors, encoders, and omni wheels.
+    2. Camera_Presentation: Angled 3D arena perspective framing the enlarged robot prominently.
+    3. Camera_TopDown: Orthographic top-down plan view for kinematics trajectory evaluation.
+    4. Camera_Follow: Dynamic tracking follow camera.
+    """
+    # 1. Close-up Presentation Camera
     cam_close_data = bpy.data.cameras.new("Camera_Closeup")
-    cam_close_data.lens = 55
+    cam_close_data.lens = 58
     cam_close_obj = bpy.data.objects.new("Camera_Closeup", cam_close_data)
-    cam_close_obj.location = (0.58, -0.62, 0.42)
-    cam_close_obj.rotation_euler = (math.radians(65), 0, math.radians(42))
+    cam_close_obj.location = (0.72, -0.72, 0.48)
+    cam_close_obj.rotation_euler = (math.radians(64), 0, math.radians(45))
     collection.objects.link(cam_close_obj)
     
+    # 2. Main Arena Presentation Camera (Framing robot prominently)
     cam_pres_data = bpy.data.cameras.new("Camera_Presentation")
-    cam_pres_data.lens = 38
+    cam_pres_data.lens = 42
     cam_pres_obj = bpy.data.objects.new("Camera_Presentation", cam_pres_data)
-    cam_pres_obj.location = (2.2, -2.4, 1.7)
-    cam_pres_obj.rotation_euler = (math.radians(60), 0, math.radians(42))
+    cam_pres_obj.location = (1.85, -2.10, 1.45)
+    cam_pres_obj.rotation_euler = (math.radians(62), 0, math.radians(40))
     collection.objects.link(cam_pres_obj)
     
+    # 3. Top-Down Orthographic Camera
     cam_top_data = bpy.data.cameras.new("Camera_TopDown")
     cam_top_data.type = 'ORTHO'
-    cam_top_data.ortho_scale = 6.5
+    cam_top_data.ortho_scale = 6.2
     cam_top_obj = bpy.data.objects.new("Camera_TopDown", cam_top_data)
-    cam_top_obj.location = (0.6, 0.0, 8.0)
+    cam_top_obj.location = (0.50, 0.15, 8.5)
     cam_top_obj.rotation_euler = (0, 0, math.radians(-90))
     collection.objects.link(cam_top_obj)
     
+    # 4. Tracking Follow Camera
     cam_fol_data = bpy.data.cameras.new("Camera_Follow")
-    cam_fol_data.lens = 35
+    cam_fol_data.lens = 36
     cam_fol_obj = bpy.data.objects.new("Camera_Follow", cam_fol_data)
-    cam_fol_obj.location = (1.5, -1.5, 1.2)
+    cam_fol_obj.location = (1.6, -1.6, 1.3)
     collection.objects.link(cam_fol_obj)
     
     tt = cam_fol_obj.constraints.new(type='TRACK_TO')
@@ -919,7 +1072,7 @@ def setup_cameras(collection, target_obj):
     tt.track_axis = 'TRACK_NEGATIVE_Z'
     tt.up_axis = 'UP_Y'
     
-    bpy.context.scene.camera = cam_close_obj
+    bpy.context.scene.camera = cam_pres_obj
     return cam_close_obj, cam_pres_obj, cam_top_obj, cam_fol_obj
 
 def configure_render_settings():
@@ -934,10 +1087,13 @@ def configure_render_settings():
     scene.cycles.samples = 16
     scene.cycles.use_denoising = False
 
+# ---------------------------------------------------------------------------
+# MAIN EXECUTION
+# ---------------------------------------------------------------------------
 def main():
-    print("=" * 60)
-    print("GROUP 7: BUILDING THREE-WHEEL OMNI ROBOT & ARENA SCENE")
-    print("=" * 60)
+    print("=" * 65)
+    print("GROUP 7: BUILDING ENHANCED THREE-WHEEL OMNI ROBOT & ARENA")
+    print("=" * 65)
     
     clear_existing_scene()
     
@@ -968,24 +1124,29 @@ def main():
     materials = setup_materials()
     print("[1/5] PBR Materials created successfully.")
     
-    robot_root, wheels, motors, us_sensors = build_robot_model(collections_map, materials)
-    print(f"[2/5] Robot model built with {len(wheels)} omni wheels, {len(motors)} motors, {len(us_sensors)} ultrasonic sensors.")
+    robot_root, wheels, motors, encoders, us_sensors = build_robot_model(collections_map, materials)
+    print(f"[2/5] Robot model built with:")
+    print(f"      - {len(wheels)} 120° omni wheels with {NUM_ROLLERS} realistic passive rollers each")
+    print(f"      - {len(motors)} separate drive motor assemblies")
+    print(f"      - {len(encoders)} separate optical encoder modules")
+    print(f"      - Labelled 6-DOF IMU module at chassis center")
+    print(f"      - {len(us_sensors)} ultrasonic sensor modules with visible detection rays")
     
     build_environment(collections_map, materials)
-    print("[3/5] Testing arena and obstacles built successfully.")
+    print("[3/5] Testing arena, grid floor, walls, and 4 obstacles built successfully.")
     
     setup_lighting(col_lights)
     cam_close, cam_pres, cam_top, cam_fol = setup_cameras(col_cams, robot_root)
     configure_render_settings()
-    print("[4/5] Lighting, 4 cameras, and render settings configured.")
+    print("[4/5] Multi-point lighting, 4 cameras (Closeup, Presentation, TopDown, Follow) configured.")
     
     output_dir = os.path.dirname(os.path.abspath(__file__))
     blend_path = os.path.join(output_dir, "Group7_OmniRobot.blend")
     bpy.ops.wm.save_as_mainfile(filepath=blend_path)
     print(f"[5/5] Complete project scene saved to: {blend_path}")
-    print("=" * 60)
-    print("MODEL & SCENE BUILD COMPLETED SUCCESSFULLY!")
-    print("=" * 60)
+    print("=" * 65)
+    print("ENHANCED MODEL & SCENE BUILD COMPLETED SUCCESSFULLY!")
+    print("=" * 65)
 
 if __name__ == "__main__":
     main()

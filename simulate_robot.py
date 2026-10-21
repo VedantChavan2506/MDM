@@ -1,29 +1,37 @@
 """
 Group 7 - Three-Wheel Omnidirectional Robot
-Kinematics, Sensor Simulation, and Obstacle Avoidance Script
-===========================================================
+Kinematics, Sensor Simulation, and Obstacle Avoidance Script (Enhanced)
+=====================================================================
 Authors: Group 7 Robotics Engineering Team
 Project: Three-Wheel Omni Robot — Holonomic Movement in Indoor Environments
 
-This script implements:
-1. Exact Three-Wheel Omni-Drive Kinematics (Inverse & Forward kinematics matrices).
-2. Sensor Simulation:
-   - 3 Wheel Encoders (angular velocity, RPM, cumulative angle, ticks at configurable PPR).
-   - IMU (Yaw heading, gyroscope angular velocity, body linear acceleration + Coriolis terms, noise/bias).
-   - 3 Ultrasonic Rangefinders (Front, Left, Right) using 3D raycasting against arena obstacles.
-3. Indoor Test Route with 6 distinct navigation phases:
-   - Phase 1: Pure forward translation
-   - Phase 2: Pure lateral (sideways) translation with fixed heading
-   - Phase 3: Diagonal translation
-   - Phase 4: Pure in-place counter-clockwise rotation
-   - Phase 5: Approach obstacle with real-time distance tracking
-   - Phase 6: Reactive obstacle avoidance (smooth deceleration, stop at safety threshold, holonomic evade)
-4. Keyframe animation baking into Group7_OmniRobot.blend for:
-   - Chassis global position (X, Y) and heading (Yaw)
-   - 3 Omni wheel drive rotations
-   - Dynamic ultrasonic sensor visual beams (color change and ray length truncation on obstacle contact)
-5. Telemetry data generation (JSON & CSV formats).
-6. High-resolution screenshot rendering and video demonstration export.
+This enhanced script implements:
+1. Exact Three-Wheel Omni-Drive Kinematics:
+   - Inverse Kinematics: [vx, vy, omega] -> [v1, v2, v3], [w1, w2, w3], [rpm1, rpm2, rpm3]
+   - Forward Kinematics: [v1, v2, v3] -> [vx, vy, omega] (analytical inverse Jacobian)
+   - Kinematics unit tests verifying Forward, Backward, Sideways, Diagonal, and In-place Rotation.
+2. Sensor Simulation Engine:
+   - 3 Wheel Encoders (cumulative angle, tick counts at 360 PPR, velocity tracking)
+   - 6-DOF IMU (yaw angle, gyro angular rate with noise & bias, body frame linear accelerations
+     including rotating frame centripetal / Coriolis terms)
+   - 3 HC-SR04 Ultrasonic Rangefinders using Blender 3D scene raycasting against arena obstacles
+3. Programmed Demonstration Trajectory with 7 Distinct Navigation Phases:
+   - Phase 1: Pure Forward translation
+   - Phase 2: Pure Backward translation (reverse kinematics verification)
+   - Phase 3: Pure Sideways (lateral crab walk) translation with fixed heading
+   - Phase 4: Diagonal translation (+X, -Y)
+   - Phase 5: Pure In-Place Rotation (360° yaw spin)
+   - Phase 6: Obstacle Approach (forward proximity tracking against pillar at X=2.5m)
+   - Phase 7: Reactive Obstacle Avoidance (emergency deceleration at safety threshold <0.55m,
+     visual ray warning color change, holonomic evasive escape)
+4. 3D Keyframe Animation Baking into Group7_OmniRobot.blend for:
+   - Robot chassis position (X, Y) and orientation (Yaw)
+   - 3 Omni wheels spinning about their drive axles (local X axis)
+   - Dynamic ultrasonic detection rays scaling to obstacle contact and switching safe/alert shaders
+5. Telemetry Data Generation:
+   - telemetry_data.json
+   - telemetry_data.js
+   - telemetry_data.csv
 """
 
 import bpy
@@ -35,17 +43,17 @@ import random
 from mathutils import Vector, Matrix, Euler
 
 # ---------------------------------------------------------------------------
-# ROBOT PHYSICAL & SIMULATION PARAMETERS
+# ROBOT PHYSICAL & SIMULATION PARAMETERS (Matches build_robot.py)
 # ---------------------------------------------------------------------------
-WHEEL_RADIUS = 0.04          # r = 40 mm
-CHASSIS_RADIUS = 0.25        # R = 250 mm (center to wheel contact point)
-ENCODER_PPR = 360            # Pulses (ticks) per revolution
-FPS = 30                     # Simulation frame rate
+WHEEL_RADIUS = 0.05            # r = 50 mm (100 mm diameter)
+CHASSIS_RADIUS = 0.30          # R = 300 mm (center to wheel contact point)
+ENCODER_PPR = 360              # Pulses (ticks) per revolution
+FPS = 30                       # Simulation frame rate
 OBSTACLE_STOP_THRESHOLD = 0.55 # Stop/evade threshold distance (meters)
 ULTRASONIC_MAX_RANGE = 2.50    # Maximum reliable sensing distance (meters)
 
 # Wheel mounting angles relative to forward axis (+X_B)
-WHEEL_ANGLES = [0.0, 2.0 * math.pi / 3.0, 4.0 * math.pi / 3.0] # 0, 120, 240 deg
+WHEEL_ANGLES = [0.0, 2.0 * math.pi / 3.0, 4.0 * math.pi / 3.0] # 0°, 120°, 240°
 
 # ---------------------------------------------------------------------------
 # KINEMATICS ENGINE
@@ -95,13 +103,14 @@ def compute_forward_kinematics(v_wheels, R=CHASSIS_RADIUS, r=WHEEL_RADIUS):
     return vx, vy, omega
 
 def verify_kinematics():
-    """Unit test for forward and inverse kinematics consistency."""
+    """Unit test for forward and inverse kinematics consistency across all movement modes."""
     test_cases = [
-        ("Pure Forward", 0.5, 0.0, 0.0),
-        ("Pure Lateral", 0.0, 0.5, 0.0),
-        ("Diagonal", 0.35, -0.35, 0.0),
-        ("Pure Rotation", 0.0, 0.0, 1.2),
-        ("Combined", 0.3, 0.2, 0.8)
+        ("Pure Forward",  0.50,  0.00,  0.00),
+        ("Pure Backward", -0.40,  0.00,  0.00),
+        ("Pure Lateral",  0.00,  0.50,  0.00),
+        ("Diagonal",      0.35, -0.35,  0.00),
+        ("Pure Rotation", 0.00,  0.00,  1.50),
+        ("Combined",      0.30,  0.20,  0.80)
     ]
     print("--- VERIFYING KINEMATICS ENGINE ---")
     for name, tx, ty, tw in test_cases:
@@ -111,7 +120,7 @@ def verify_kinematics():
         err_y = abs(ty - ry)
         err_w = abs(tw - rw)
         assert err_x < 1e-6 and err_y < 1e-6 and err_w < 1e-6, f"Mismatch in {name}!"
-        print(f"  [PASS] {name:<15}: vx={tx:.2f}, vy={ty:.2f}, w={tw:.2f} -> Wheel speeds: [{vw[0]:.3f}, {vw[1]:.3f}, {vw[2]:.3f}] m/s")
+        print(f"  [PASS] {name:<15}: vx={tx:+.2f}, vy={ty:+.2f}, w={tw:+.2f} -> Wheel speeds: [{vw[0]:+.3f}, {vw[1]:+.3f}, {vw[2]:+.3f}] m/s")
     print("--- KINEMATICS VERIFICATION SUCCESSFUL ---\n")
 
 # ---------------------------------------------------------------------------
@@ -143,11 +152,9 @@ class SimulatedIMU:
         Simulate IMU measurements including gyro angular rate and
         accelerometer readings with centripetal/Coriolis acceleration.
         """
-        # Gyro reading with bias and Gaussian noise
         gyro_noise = random.gauss(0, self.noise_std_gyro)
         meas_omega = omega + self.bias_gyro + gyro_noise
         
-        # Linear acceleration in body frame:
         if dt > 0:
             dvx_dt = (vx - self.last_vx) / dt
             dvy_dt = (vy - self.last_vy) / dt
@@ -155,8 +162,6 @@ class SimulatedIMU:
             dvx_dt, dvy_dt = 0.0, 0.0
             
         # Kinematic acceleration in non-inertial rotating frame:
-        # a_body_x = dvx/dt - vy * omega
-        # a_body_y = dvy/dt + vx * omega
         ax_true = dvx_dt - vy * omega
         ay_true = dvy_dt + vx * omega
         
@@ -176,14 +181,14 @@ class SimulatedIMU:
 
 def raycast_ultrasonic_sensors(scene, depsgraph, robot_pos, robot_yaw, max_range=ULTRASONIC_MAX_RANGE):
     """
-    Simulate HC-SR04 ultrasonic rangefinders using Blender 3D raycasting against arena obstacles.
+    Simulate HC-SR04 ultrasonic rangefinders using Blender 3D scene raycasting against arena obstacles.
     Sensor Mounts:
-    - Front: yaw offset 0 deg
-    - Left:  yaw offset +90 deg
-    - Right: yaw offset -90 deg
+    - Front: yaw offset 0°
+    - Left:  yaw offset +90°
+    - Right: yaw offset -90°
     """
-    sensor_mount_r = 0.245
-    sensor_height = 0.088
+    sensor_mount_r = 0.315
+    sensor_height = 0.123
     
     sensors_def = [
         ("Front", 0.0),
@@ -195,28 +200,24 @@ def raycast_ultrasonic_sensors(scene, depsgraph, robot_pos, robot_yaw, max_range
     
     for s_name, angle_offset in sensors_def:
         beam_angle = robot_yaw + angle_offset
-        # World origin of the sensor module
         origin_x = robot_pos.x + sensor_mount_r * math.cos(beam_angle)
         origin_y = robot_pos.y + sensor_mount_r * math.sin(beam_angle)
         origin_z = sensor_height
         origin = Vector((origin_x, origin_y, origin_z))
         
-        # Ray direction vector
         direction = Vector((math.cos(beam_angle), math.sin(beam_angle), 0.0)).normalized()
         
-        # Perform raycast in scene
         hit, hit_loc, normal, index, obj, matrix = scene.ray_cast(
             depsgraph, origin, direction, distance=max_range
         )
         
-        # Ignore hits on the robot itself
-        if hit and obj and ("Robot" in obj.name or "Wheel" in obj.name or "Chassis" in obj.name or "Pad" in obj.name):
+        # Ignore hits on robot components
+        if hit and obj and ("Robot" in obj.name or "Wheel" in obj.name or "Chassis" in obj.name or "Pad" in obj.name or "Motor" in obj.name or "Beam" in obj.name):
             hit = False
             
         if hit:
             dist = (hit_loc - origin).length
-            # Add slight ultrasonic noise (±3mm)
-            noisy_dist = max(0.02, dist + random.gauss(0, 0.004))
+            noisy_dist = max(0.02, dist + random.gauss(0, 0.003))
             readings[s_name] = {
                 "distance": round(noisy_dist, 3),
                 "detected": noisy_dist <= OBSTACLE_STOP_THRESHOLD,
@@ -232,26 +233,28 @@ def raycast_ultrasonic_sensors(scene, depsgraph, robot_pos, robot_yaw, max_range
     return readings
 
 # ---------------------------------------------------------------------------
-# PROGRAMMED TEST ROUTE & OBSTACLE AVOIDANCE
+# PROGRAMMED TEST ROUTE: FORWARD, BACKWARD, SIDEWAYS, DIAGONAL, ROTATION, EVADE
 # ---------------------------------------------------------------------------
 def generate_trajectory():
     """
-    Define 6-phase test trajectory:
-    1. Forward translation (0 - 2.5s)
-    2. Lateral translation (2.5 - 5.0s)
-    3. Diagonal translation (5.0 - 7.5s)
-    4. In-place rotation (7.5 - 9.5s)
-    5. Approach obstacle at X=2.5m (9.5 - 12.0s)
-    6. Obstacle avoidance maneuver (12.0 - 15.0s)
+    Define 7-phase holonomic demonstration trajectory:
+    1. Forward translation (0.0 - 2.0s)
+    2. Backward translation (2.0 - 4.0s)  -- VERIFIES BACKWARD
+    3. Lateral translation (4.0 - 6.5s)   -- VERIFIES SIDEWAYS CRAB WALK
+    4. Diagonal translation (6.5 - 9.0s)  -- VERIFIES DIAGONAL
+    5. In-place rotation (9.0 - 11.5s)    -- VERIFIES ROTATION
+    6. Approach obstacle (11.5 - 14.0s)   -- VERIFIES SENSOR TRACKING
+    7. Reactive avoidance (14.0 - 17.5s)  -- VERIFIES BRAKING & HOLONOMIC EVASION
     """
     phases = [
         # (duration_sec, vx, vy, omega, description)
-        (2.5,  0.40,  0.00,  0.00, "Phase 1: Pure Forward Translation"),
-        (2.5,  0.00,  0.40,  0.00, "Phase 2: Pure Lateral (Sideways) Translation"),
-        (2.5,  0.30, -0.30,  0.00, "Phase 3: Diagonal Translation"),
-        (2.0,  0.00,  0.00,  1.20, "Phase 4: Pure In-Place Rotation"),
-        (3.0,  0.35,  0.00,  0.00, "Phase 5: Approaching Obstacle"),
-        (3.5,  0.00,  0.35,  0.40, "Phase 6: Obstacle Avoidance Holonomic Escape")
+        (2.0,  0.45,  0.00,  0.00, "Phase 1: Pure Forward Translation"),
+        (2.0, -0.40,  0.00,  0.00, "Phase 2: Pure Backward Translation"),
+        (2.5,  0.00,  0.45,  0.00, "Phase 3: Pure Sideways (Lateral) Translation"),
+        (2.5,  0.35, -0.35,  0.00, "Phase 4: Diagonal Translation (+X, -Y)"),
+        (2.5,  0.00,  0.00,  1.50, "Phase 5: Pure In-Place Rotation (360° Spin)"),
+        (2.5,  0.40,  0.00,  0.00, "Phase 6: Approaching Forward Obstacle"),
+        (3.5,  0.00,  0.40,  0.35, "Phase 7: Reactive Obstacle Avoidance & Holonomic Evasion")
     ]
     return phases
 
@@ -260,13 +263,12 @@ def generate_trajectory():
 # ---------------------------------------------------------------------------
 def run_simulation():
     print("=" * 65)
-    print("GROUP 7: RUNNING HOLONOMIC SIMULATION & SENSOR PIPELINE")
+    print("GROUP 7: RUNNING ENHANCED HOLONOMIC SIMULATION & SENSOR PIPELINE")
     print("=" * 65)
     
-    # Verify math first
+    # 1. Verify kinematics
     verify_kinematics()
     
-    # Get references to scene objects
     scene = bpy.context.scene
     depsgraph = bpy.context.evaluated_depsgraph_get()
     
@@ -274,9 +276,7 @@ def run_simulation():
     if not robot_base:
         raise RuntimeError("Robot_Base object not found in scene! Run build_robot.py first.")
         
-    wheels = [
-        bpy.data.objects.get(f"Omni_Wheel_{i+1}") for i in range(3)
-    ]
+    wheels = [bpy.data.objects.get(f"Omni_Wheel_{i+1}") for i in range(3)]
     sensor_beams = {
         "Front": bpy.data.objects.get("US_Sensor_Front_Beam_Mesh"),
         "Left": bpy.data.objects.get("US_Sensor_Left_Beam_Mesh"),
@@ -285,7 +285,6 @@ def run_simulation():
     mat_safe = bpy.data.materials.get("Mat_Beam_Safe")
     mat_alert = bpy.data.materials.get("Mat_Beam_Alert")
     
-    # Initialize Sensor Simulation Models
     encoders = [WheelEncoder(ENCODER_PPR) for _ in range(3)]
     imu = SimulatedIMU()
     
@@ -294,7 +293,7 @@ def run_simulation():
         if obj and obj.animation_data:
             obj.animation_data_clear()
             
-    # Trajectory integration state
+    # Trajectory state
     x = 0.0
     y = 0.0
     yaw = 0.0
@@ -309,11 +308,10 @@ def run_simulation():
     
     telemetry_records = []
     
-    current_frame = 1
     phase_idx = 0
     phase_timer = 0.0
     
-    # Cumulative wheel rotation angles (radians)
+    # Cumulative wheel rotation angles (radians) around drive axle (local X)
     wheel_angles = [0.0, 0.0, 0.0]
     
     obstacle_detected_latch = False
@@ -321,29 +319,29 @@ def run_simulation():
     print(f"Simulating {total_frames} frames ({total_duration:.1f} seconds at {FPS} FPS)...")
     
     for frame in range(1, total_frames + 1):
-        # Determine current phase
+        scene.frame_set(frame)
+        
+        # Get commanded velocities for current phase
         dur, vx_cmd, vy_cmd, omega_cmd, phase_desc = phases[phase_idx]
         
-        # Real-time raycasting for ultrasonic sensors at current robot pose
-        robot_pos = Vector((x, y, 0.0))
-        us_readings = raycast_ultrasonic_sensors(scene, depsgraph, robot_pos, yaw)
+        # Ultrasonic raycasting against 3D scene obstacles
+        us_readings = raycast_ultrasonic_sensors(scene, depsgraph, Vector((x, y, 0)), yaw)
         
-        # Active Obstacle Avoidance Controller:
-        # If in Phase 5 and approaching obstacle, monitor Front ultrasonic sensor
-        if phase_idx == 4:
+        # Reactive obstacle safety trigger in Phase 6 (Approaching Obstacle)
+        if phase_idx == 5:
             front_d = us_readings["Front"]["distance"]
-            if front_d <= OBSTACLE_STOP_THRESHOLD:
-                # Trigger emergency stop & transition to Phase 6 (Escape)
-                print(f"  [FRAME {frame}] Obstacle Detected at {front_d:.2f}m! Triggering Reactive Avoidance Maneuver.")
-                phase_idx = 5
+            if front_d <= OBSTACLE_STOP_THRESHOLD and not obstacle_detected_latch:
+                print(f"  [!] Obstacle proximity alert at Frame {frame} (Time: {frame*dt:.2f}s, Distance: {front_d:.2f}m)!")
+                print("      Triggering reactive braking and holonomic evasive maneuver...")
+                phase_idx = 6  # Transition directly to avoidance phase
                 phase_timer = 0.0
                 dur, vx_cmd, vy_cmd, omega_cmd, phase_desc = phases[phase_idx]
                 obstacle_detected_latch = True
                 
-        # Inverse Kinematics: compute wheel speeds
+        # Inverse Kinematics: compute wheel linear speeds and RPMs
         v_wheels, w_wheels, rpms = compute_inverse_kinematics(vx_cmd, vy_cmd, omega_cmd)
         
-        # Forward Kinematics verification (check round-trip accuracy)
+        # Forward Kinematics verification
         rec_vx, rec_vy, rec_omega = compute_forward_kinematics(v_wheels)
         
         # Encoder simulation
@@ -356,8 +354,7 @@ def run_simulation():
         # IMU simulation
         imu_data = imu.measure(yaw, vx_cmd, vy_cmd, omega_cmd, dt)
         
-        # Integrate robot pose in world coordinates:
-        # Transform body velocities (vx_cmd, vy_cmd) to world velocities (v_world_x, v_world_y)
+        # Integrate robot world position
         cos_yaw = math.cos(yaw)
         sin_yaw = math.sin(yaw)
         v_world_x = vx_cmd * cos_yaw - vy_cmd * sin_yaw
@@ -367,38 +364,44 @@ def run_simulation():
         y += v_world_y * dt
         yaw += omega_cmd * dt
         
-        # Set Blender object transforms & keyframes
+        # Set Blender keyframes for robot chassis
         robot_base.location = (x, y, 0.0)
         robot_base.rotation_euler = (0.0, 0.0, yaw)
         robot_base.keyframe_insert(data_path="location", frame=frame)
         robot_base.keyframe_insert(data_path="rotation_euler", frame=frame)
         
-        # Keyframe individual wheel rotations
+        # Keyframe individual wheel rotations around their drive axle (local X axis)
         for i in range(3):
             if wheels[i]:
-                # Rotate wheel about its drive axle (local Y axis in our model)
-                wheels[i].rotation_euler.y = wheel_angles[i]
+                wheels[i].rotation_euler.x = wheel_angles[i]
                 wheels[i].keyframe_insert(data_path="rotation_euler", frame=frame)
                 
-        # Update dynamic visual ultrasonic beam length & color
+        # Update dynamic visual ultrasonic detection rays
         for s_name in ["Front", "Left", "Right"]:
             beam_obj = sensor_beams.get(s_name)
             if beam_obj:
                 s_dist = us_readings[s_name]["distance"]
-                # Scale cylinder along its local Z (height) and position along local Y
+                is_alert = us_readings[s_name]["detected"]
+                
+                # Dynamic ray length scaling along sensor Y axis
                 beam_obj.scale = (1.0, 1.0, s_dist)
-                beam_obj.location = (0.0, s_dist / 2.0 + 0.013, 0.0)
+                beam_obj.location = (0.0, s_dist / 2.0 + 0.016, 0.0)
                 beam_obj.keyframe_insert(data_path="scale", frame=frame)
                 beam_obj.keyframe_insert(data_path="location", frame=frame)
                 
-                # Material alert switch
-                if mat_alert and mat_safe and len(beam_obj.data.materials) > 0:
-                    if us_readings[s_name]["detected"]:
+                # Material alert shader switch
+                if is_alert and mat_alert:
+                    if beam_obj.data.materials:
                         beam_obj.data.materials[0] = mat_alert
                     else:
+                        beam_obj.data.materials.append(mat_alert)
+                elif mat_safe:
+                    if beam_obj.data.materials:
                         beam_obj.data.materials[0] = mat_safe
+                    else:
+                        beam_obj.data.materials.append(mat_safe)
                         
-        # Record Telemetry
+        # Record Telemetry Frame
         telemetry_records.append({
             "frame": frame,
             "time_s": round(frame * dt, 3),
@@ -421,7 +424,7 @@ def run_simulation():
             }
         })
         
-        # Phase timer update
+        # Advance phase timer
         phase_timer += dt
         if phase_timer >= dur and phase_idx < len(phases) - 1:
             phase_idx += 1
@@ -429,8 +432,10 @@ def run_simulation():
             
     print("[1/3] Simulation physics and 3D keyframe baking completed.")
     
-    # Export Telemetry Data to JSON and CSV
+    # Export Telemetry Data to JSON, JS, and CSV
     output_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # 1. JSON
     json_path = os.path.join(output_dir, "telemetry_data.json")
     with open(json_path, "w") as f:
         json.dump({
@@ -447,6 +452,7 @@ def run_simulation():
         }, f, indent=2)
     print(f"[2/3] Exported telemetry JSON to: {json_path}")
     
+    # 2. JS (Dashboard global variable)
     js_path = os.path.join(output_dir, "telemetry_data.js")
     with open(js_path, "w") as f:
         f.write("window.TELEMETRY_DATA = ")
@@ -465,6 +471,7 @@ def run_simulation():
         f.write(";\n")
     print(f"[2.5/3] Exported telemetry JS to: {js_path}")
     
+    # 3. CSV
     csv_path = os.path.join(output_dir, "telemetry_data.csv")
     with open(csv_path, "w", newline="") as f:
         writer = csv.writer(f)
